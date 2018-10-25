@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ 
+ <ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.name}}
+  </li>
+</ul>
+
+<!--
+<form name="userform" method="post" #formCtrl="ngForm">
+   <div class="form-group">
+     <label>Email address</label>
+     <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Email" required>
+   </div>
+   <div class="form-group">
+     <label>Password</label>
+     <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Password" required>
+     <label class="error">{{errorMessage}}</label>
+     <label class="success">{{successMessage}}</label>
+   </div>
+   <button type="submit" class="btn btn-default">Register</button>
+</form>
+-->
+<div class="container">
+	<div style="color: blue; margin-bottom:20px">
+		<h1>{{title}}</h1>
+		<h3>{{description}}</h3>
+	</div>
+
+<router-outlet></router-outlet>
