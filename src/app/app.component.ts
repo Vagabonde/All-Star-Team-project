@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'All-Star-Team-project';
+  groupId = 1; //id for group from database
 }
