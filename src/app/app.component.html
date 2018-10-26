@@ -1,5 +1,6 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.name}}
-  </li>
-</ul>
+<a routerLink="">home </a>
+<a routerLink="login">login </a>
+<a routerLink="groups">groups </a>
+<a [routerLink]="['groups', groupId]">group {{groupId}} </a>
+
+<router-outlet></router-outlet>

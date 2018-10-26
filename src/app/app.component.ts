@@ -11,5 +11,7 @@ export class AppComponent {
   items: Observable<any[]>;
   constructor(db: AngularFirestore) {
     this.items = db.collection('items').valueChanges();
-  }
+  };
+  title = 'All-Star-Team-project';
+  groupId = 1; //id for group from database
 }
