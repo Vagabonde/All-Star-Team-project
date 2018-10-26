@@ -9,21 +9,30 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {ModalLoginComponent} from './modal-login/modal-login.component';
 import {ModalSignUpComponent} from './modal-sign-up/modal-sign-up.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {environment} from '../environments/environment';
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent,
-        HomepageComponent,
-        ModalLoginComponent,
-        ModalSignUpComponent,
         GroupsComponent,
-        GroupComponent
+        GroupComponent,
+        HomepageComponent,
+        NavbarComponent,
+        ModalLoginComponent,
+        ModalSignUpComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         MDBBootstrapModule.forRoot(),
+        AngularFireModule.initializeApp(environment.firebase, 'All-Star-Team-project'),
+        AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+        AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+        AngularFireStorageModule
     ],
     providers: [],
     bootstrap: [AppComponent],
