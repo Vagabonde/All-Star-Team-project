@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TimelineComponent } from './timeline/timeline.component';
 
 
@@ -6,10 +7,12 @@ import { TimelineComponent } from './timeline/timeline.component';
   declarations: [
     TimelineComponent
   ],
-  imports: [], 
+  imports: [
+    CommonModule
+  ],
   exports:[
     TimelineComponent
   ]
 })
- 
+
 export class GroupModule {}
