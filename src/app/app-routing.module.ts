@@ -1,19 +1,18 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {GroupsComponent} from "./groups/groups.component";
-import {LoginComponent} from "./login/login.component";
-import {HomeComponent} from "./home/home.component";
 import {GroupComponent} from "./group/group.component";
+import {HomepageComponent} from "./homepage/homepage.component";
 
 const routes: Routes = [
-    {path:'', component: HomeComponent},
-    {path:'login', component: LoginComponent},
-    {path:'groups', component: GroupsComponent},
-    {path:'groups/:groupId', component: GroupComponent}
+    {path: '', component: HomepageComponent},
+    {path: 'groups', component: GroupsComponent},
+    {path: 'groups/:groupId', component: GroupComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
