@@ -1,3 +1,10 @@
-<p>
-  group works!
-</p>
+<div class="container">
+        <div class="row">
+            <div class="col-3 ">
+                    <div [ngClass] = "get_side_nav_state()"></div>   
+                    <a class="btn btn-light-green p-3 button-collapse" (click)="toggle_side_nav_state()"><i class="fa fa-bars"></i></a>                    
+            </div>
+        </div>
+
+     <app-timeline></app-timeline>   
+</div>
