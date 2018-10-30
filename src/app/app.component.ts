@@ -9,7 +9,6 @@ import {Observable} from 'rxjs';
 })
 export class AppComponent {
     title = 'keep-up-to-date';
-    groupId = 1; //id for group from database
     items: Observable<any[]>;
 
     constructor(db: AngularFirestore) {
