@@ -1,3 +1,12 @@
-<p>
-  group works!
-</p>
+<div class="container">
+  <div class="row">
+
+    <div class="col-3 ">
+        <div [ngClass] = "getSideNavState()"></div>
+        <a class="btn btn-light-green p-3 button-collapse" (click)="toggleSideNavState()"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <app-timeline class="col"></app-timeline>
+
+  </div>
+</div>

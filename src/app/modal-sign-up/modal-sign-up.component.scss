@@ -1,0 +1,16 @@
+button {
+  width: 250px;
+  font-size: 18px;
+  color: #000;
+  border-radius: 25px;
+}
+
+.modal-content .close {
+  position: absolute;
+  right: -80px;
+  outline: none;
+}
+
+.modal-dialog .modal-content {
+  text-align: initial;
+}

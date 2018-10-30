@@ -15,6 +15,18 @@ export class GroupComponent implements OnInit {
 
   }
 
+  sideNavEnabled:boolean = true;
+
+  toggleSideNavState() {
+    this.sideNavEnabled = !this.sideNavEnabled;
+  }
+
   ngOnInit() {
+  }
+
+  getSideNavState() {
+    return {
+      'side-nav': this.sideNavEnabled
+    };
   }
 }

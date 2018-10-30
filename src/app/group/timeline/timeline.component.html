@@ -1,0 +1,11 @@
+<div class="d-flex">
+    <div *ngFor="let task of tasks" (click)="onSelect(task)" class="task">
+        {{task.name}}
+    </div>
+</div>
+
+<div>
+    <div *ngIf="selectedTask">
+        <p>{{selectedTask.name}}</p>
+    <div>
+</div>
