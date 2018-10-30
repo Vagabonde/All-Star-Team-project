@@ -14,7 +14,7 @@ export class TimelineComponent implements OnInit {
   selectedTask: Task;
 
   onSelect(currentTask: Task): void {
-    if(this.selectedTask == currentTask){
+    if(this.selectedTask === currentTask){
       this.selectedTask = null;
     } else {
       this.selectedTask = currentTask;
