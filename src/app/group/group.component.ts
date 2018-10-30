@@ -11,13 +11,8 @@ export class GroupComponent implements OnInit {
 
   groups = GROUPS;
 
-  constructor(private route: ActivatedRoute) {
+  constructor() {
 
-   this.route.params.subscribe(params => {
-     let group = this.groups.find((el) => {
-       return params.groupId == el.id;
-     });
-   });
   }
 
   ngOnInit() {
