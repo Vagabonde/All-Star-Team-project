@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import { GROUPS } from '../mock-groups';
 
 @Component({
   selector: 'app-group',
@@ -8,8 +9,10 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class GroupComponent implements OnInit {
 
-  constructor(/*private route: ActivatedRoute*/) {
-   // this.route.params.subscribe(params => console.log(params));
+  groups = GROUPS;
+
+  constructor() {
+
   }
 
   sideNavEnabled:boolean = true;

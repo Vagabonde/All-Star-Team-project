@@ -1,0 +1,28 @@
+<div class="container-fluid p-0">
+    <div class="container">
+        <h1 class="mb-5 font-weight-bold ml-2">Select group</h1>
+        <div class="row align-content-space-evenly justify-content-around justify-content-sm-start m-0">
+            <div class="col-12 col-md-4 col-lg-3 mb-4 p-2" *ngFor="let group of groups">
+                <div class="card h-100">
+                    <div class="img-wrapper">
+                        <img class="card-img-top w-100" src="#" alt="Group image">
+                    </div>
+                    <div class="card-body p-2">
+                        <p class="card-text text-center"><a [routerLink]="['/groups', group.id]"> {{group.name}} </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- button for adding new group-->
+            <div class="col-12 col-md-4 col-lg-3 btn p-2 mb-4 mx-0 mt-0">
+                <div class="card h-100">
+                    <div class="img-wrapper p-5">
+                        <img class="card-img-top w-100" src="#" alt="sprite img">
+                    </div>
+                    <div class="card-body p-2">
+                        <p class="card-text text-center">Enter name ...</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

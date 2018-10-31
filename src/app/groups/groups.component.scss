@@ -1,0 +1,69 @@
+$col-height: 130px;
+$hoverColor: #4fcbdb;
+$borderColor: #a7a7a7;
+$textColor: #3e3e3e;
+$bg-color: #eef3f6;
+
+@media (max-width: 767.98px) {
+  .card {
+    .card-text {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.container-fluid {
+  background-color: $bg-color;
+}
+
+.container {
+  padding: 5% 10%;
+}
+
+.col-3 {
+  height: $col-height;
+}
+
+.card {
+  box-shadow: none;
+  border-radius: unset;
+  background-color: transparent;
+}
+
+.card:hover {
+  cursor: pointer;
+  & .img-wrapper {
+    border-color: $hoverColor;
+  }
+  & a {
+    color: $hoverColor;
+  }
+}
+
+.img-wrapper {
+  border: 1px solid $borderColor;
+}
+
+.card-text > a {
+  color: $textColor;
+}
+
+h2 {
+  color: $textColor;
+}
+
+.btn {
+  background-color: transparent;
+  box-shadow: none;
+  box-sizing: border-box;
+  .card-text {
+    color: $borderColor;
+  }
+}
+
+.btn:hover {
+  border-color: $hoverColor;
+  .card-text {
+    color: $hoverColor;
+  }
+}
