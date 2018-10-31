@@ -3,7 +3,7 @@ import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {GroupsComponent} from './groups-page/groups/groups.component';
+import {GroupsComponent} from './groups/groups.component';
 import {GroupComponent} from './group/group.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {HomepageComponent} from './homepage/homepage.component';

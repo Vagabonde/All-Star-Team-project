@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {GroupsComponent} from "./groups-page/groups/groups.component";
+import {GroupsComponent} from "./groups/groups.component";
 import {GroupComponent} from "./group/group.component";
 import {HomepageComponent} from "./homepage/homepage.component";
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';

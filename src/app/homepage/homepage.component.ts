@@ -7,7 +7,8 @@ import {Router, RouterModule, Routes} from '@angular/router';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  title = 'Keep up to date';
+  title = 'EPAM LAB';
+  subTitle = 'Start sharing your knowledge';
 
   constructor(private router: Router) {
   }

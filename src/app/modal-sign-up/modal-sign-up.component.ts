@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./modal-sign-up.component.scss']
 })
 export class ModalSignUpComponent implements OnInit {
-  register = 'Sign up';
+  register = 'Register';
 
     isNewUser = true;
     email = '';
