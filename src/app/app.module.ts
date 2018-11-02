@@ -19,17 +19,18 @@ import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {AuthGuard} from './core/auth.guard';
+import {GroupsPageModule} from './groups/groups-page.module'
 
 @NgModule({
     declarations: [
         AppComponent,
-        GroupsComponent,
         GroupComponent,
         HomepageComponent,
         ModalLoginComponent,
         ModalSignUpComponent,
         HeaderComponent,
         PageNotFoundComponent,
+        GroupsComponent
     ],
     imports: [
         BrowserModule,
@@ -40,6 +41,7 @@ import {AuthGuard} from './core/auth.guard';
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
         AngularFireStorageModule,
         GroupModule,
+        GroupsPageModule,
         FormsModule
     ],
     providers: [AuthService, AuthGuard],

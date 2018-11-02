@@ -2,6 +2,7 @@
     <div *ngFor="let task of tasks" (click)="onSelect(task)" class="task">
         {{task.name}}
     </div>
+    <div class="lessonDate"></div>
 </div>
 <div>
     <div *ngIf="selectedTask">
