@@ -1,0 +1,42 @@
+<div [ngClass] = "getSideNavState()">
+  <div class="group-name-block sidebar-block ">
+    <img class="group-name-arrow" src="../../../assets/arrow-point-to-right.png" alt="arrow-left">
+    <p class="group-name-paragraph">{{groupExample.groupName}}</p>
+    <img class="group-name-logo" src="../../../assets/JS.png" alt="js-logo">
+  </div>
+  <div class="current-student-block sidebar-block">
+    <div class="current-student-logo">
+      <img class="current-student-img" src="../../../assets/user_icon.png" alt="current-user-logo">
+    </div>
+    <div class="current-student-info">
+      <p class="current-student-name">{{groupExample.currentStudent.name}}</p>
+      <span class="current-student-prof profession">{{groupExample.currentStudent.job}}</span>
+      <span class="current-student-email">{{groupExample.currentStudent.email}}</span>
+    </div>
+  </div>
+  <div class="participants-block sidebar-block">
+    <p class="participants-header">PARTICIPANTS</p>
+    <div class="curator-block">
+      <div class="user-card curator">
+        <div class="curator-block-left block-left">
+          <img class="curator-logo partisipants-logo" src="../../../assets/student_icon.png" alt="curator-logo">
+          <div class="curator-info">
+            <p class="curator-name">{{groupExample.partisipants.curator.name}}</p>
+            <span class="curator-prof profession">{{groupExample.partisipants.curator.job}}</span>
+          </div>
+        </div>
+        <img class="curator-else-button else-button" src="../../../assets/dots icon.png" alt="else button">
+      </div>
+    </div>
+    <div class="students-block">
+      <div class="user-card studets" *ngFor="let user of groupExample.partisipants.students">
+        <div class="student-block-left block-left">
+          <img class="student-logo partisipants-logo" src="../../../assets/student_icon.png" alt="student-logo">
+          <p class="student-name">{{user}}</p>
+        </div>
+        <img class="student-else-button else-button" src="../../../assets/dots icon.png" alt="else button">
+      </div>
+    </div>
+  </div>
+</div>
+<a class="btn p-3 button-collapse d-lg-none" (click)="toggleSideNavState()"><i class="fa fa-bars"></i></a>
