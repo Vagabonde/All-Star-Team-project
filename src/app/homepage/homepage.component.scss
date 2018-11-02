@@ -4,7 +4,7 @@
 }
 
 .view {
-  background: url('~img/1_ee9Ji2ToUxeYfj3YUQ1xsA.jpeg') no-repeat center center;
+  background: url('~img/photo_2018-11-01_14-21-34.jpg') no-repeat center center;
   background-size: cover;
   height: 100vh;
 }
@@ -25,18 +25,17 @@ h3{
   text-align: left;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .align-items {
     text-align: center;
   };
   h2{
-    font-size: 60px;
+    font-size: 80px;
     text-align: center;
+    margin-bottom: 20px;
   };
   h3{
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 30px;
+    display: none;
   }
 }
 
