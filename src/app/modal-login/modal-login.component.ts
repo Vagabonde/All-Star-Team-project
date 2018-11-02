@@ -45,7 +45,7 @@ export class ModalLoginComponent implements OnInit {
 
         if (this.validateForm(this.email, this.password)) {
             this.authService.loginWithEmail(this.email, this.password)
-                .then(() => this.router.navigate(['/groups/1']))
+                .then(() => this.router.navigate(['/groups']))
                 .catch(_error => {
                     this.error = _error
                     this.router.navigate(['/'])
