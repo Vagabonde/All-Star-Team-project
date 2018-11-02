@@ -9,7 +9,6 @@ import { TASKS } from './mock-tasks'
 })
 
 export class TimelineComponent implements OnInit {
-
   tasks = TASKS;
   selectedTask: Task;
 

@@ -1,17 +1,85 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .view {
-  background: url('~img/1_ee9Ji2ToUxeYfj3YUQ1xsA.jpeg') no-repeat center center;
+  background: url('~img/photo_2018-11-01_14-21-34.jpg') no-repeat center center;
   background-size: cover;
   height: 100vh;
 }
 
-.navbar {
-  z-index: 1;
-}
-
 h2 {
-  font-size: 7vw;
+  font-size: 90px;
+  text-align: left;
   text-shadow: 0 0 3px #000, 0 0 5px #000;
   color: azure;
 }
 
+h3{
+  font-size: 50px;
+  text-align: left;
+}
 
+.align-items{
+  text-align: left;
+}
+
+@media (max-width: 576px) {
+  .align-items {
+    text-align: center;
+  };
+  h2{
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 20px;
+  };
+  h3{
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .align-items {
+    text-align: left;
+  };
+  h2{
+    font-size: 80px;
+    text-align: left;
+  };
+  h3{
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .align-items{
+    text-align: left;
+  };
+  h2{
+    font-size: 80px;
+    text-align: left;
+  };
+  h3{
+    font-size: 50px;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .align-items{
+    text-align: left;
+  };
+  h2{
+    font-size: 100px;
+    text-align: left;
+  }
+  h3{
+    font-size: 60px;
+    text-align: left;
+    margin-bottom: 35px;
+  }
+}

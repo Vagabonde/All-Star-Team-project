@@ -3,7 +3,7 @@ import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {GroupsComponent} from './groups-page/groups/groups.component';
+import {GroupsComponent} from './groups/groups.component';
 import {GroupComponent} from './group/group.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {HomepageComponent} from './homepage/homepage.component';
@@ -20,6 +20,7 @@ import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {AuthGuard} from './core/auth.guard';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import {AuthGuard} from './core/auth.guard';
         ModalLoginComponent,
         ModalSignUpComponent,
         HeaderComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        TabsComponent,
     ],
     imports: [
         BrowserModule,
