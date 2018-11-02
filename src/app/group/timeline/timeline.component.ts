@@ -11,8 +11,6 @@ import { TASKS } from './mock-tasks'
 export class TimelineComponent implements OnInit {
   tasks = TASKS;
   selectedTask: Task;
-  selectedInfo: Task;
-  tabs = 'Hello';
 
   onSelect(currentTask: Task): void {
     if(this.selectedTask === currentTask){
