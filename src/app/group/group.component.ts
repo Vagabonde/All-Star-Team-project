@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+
 import {GROUPS} from '../mock-groups';
 
 @Component({
@@ -9,13 +10,15 @@ import {GROUPS} from '../mock-groups';
 })
 export class GroupComponent implements OnInit, OnDestroy {
 
+
     groups = GROUPS;
     paramsSubscription;
     group;
 
+
     constructor(private route: ActivatedRoute) {
 
-    }
+  }
 
     sideNavEnabled: boolean = true;
 
