@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
            .do(loggedIn => {
              if (!loggedIn) {
                console.log("Denied")
-               this.router.navigate(['/notfound']);
+               this.router.navigate(['/']);
              }
          })
 

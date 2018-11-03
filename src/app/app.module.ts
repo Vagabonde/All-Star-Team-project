@@ -20,6 +20,7 @@ import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {AuthGuard} from './core/auth.guard';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import {AuthGuard} from './core/auth.guard';
         ModalLoginComponent,
         ModalSignUpComponent,
         HeaderComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        TabsComponent,
     ],
     imports: [
         BrowserModule,

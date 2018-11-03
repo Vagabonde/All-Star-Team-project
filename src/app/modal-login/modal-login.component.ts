@@ -7,8 +7,8 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./modal-login.component.scss']
 })
 export class ModalLoginComponent implements OnInit {
-  logAsAdmin = 'Sign in as curator';
-  logAsStudent = 'Sign in as Student';
+  logAsAdmin = 'LOG IN';
+  // logAsStudent = 'Sign in as Student';
 
   isNewUser = true;
     email = '';
