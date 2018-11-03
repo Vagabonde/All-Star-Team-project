@@ -11,10 +11,22 @@ import { TASKS } from './mock-tasks'
 export class TimelineComponent implements OnInit {
   tasks = TASKS;
   selectedTask: Task;
+  activeState: boolean = false;
 
-  onSelect(currentTask: Task): void {
+
+  toggle() {
+    this.activeState =!this.activeState;
+  }
+
+
+  onSelect(currentTask: Task, event): void {
+    console.log(currentTask);
+    console.log(event.target);
+
+
     if(this.selectedTask === currentTask){
       this.selectedTask = null;
+
     } else {
       this.selectedTask = currentTask;
     }

@@ -7,9 +7,10 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AuthGuard} from './core/auth.guard';
 
 const routes: Routes = [
-    {path: '', component: HomepageComponent},
-    {path: 'groups', component: GroupsComponent, canActivate: [AuthGuard]},
-    {path: 'groups/:groupId', component: GroupComponent, canActivate: [AuthGuard]},
+    // {path: '', component: HomepageComponent},
+    {path: '', component: GroupComponent},
+    // {path: 'groups', component: GroupsComponent, canActivate: [AuthGuard]},
+    // {path: 'groups/:groupId', component: GroupComponent, canActivate: [AuthGuard]},
     {path: 'notfound', component: PageNotFoundComponent}
 ];
 

@@ -1,13 +1,22 @@
-<div class="d-flex">
-    <div *ngFor="let task of tasks" (click)="onSelect(task)" class="task">
-        {{task.name}}
+<div class=" timeLineBox d-flex">
+
+    <div *ngFor="let task of tasks">
+        <div (click)="onSelect(task, $event)" [ngClass]="{task: true,
+                                                            active: activeState}">
+            {{task.name}}
+        </div>
+        <div class="lessonDate">{{task.lessonDate}}</div>
     </div>
-    <div class="lessonDate"></div>
+    <div class="line"></div>
+
 </div>
+
+
 <div>
     <div *ngIf="selectedTask">
         <p>{{selectedTask.name}}</p>
     </div>
+
 </div>
 <div *ngIf="selectedTask">
     <app-tabs [selectedTask]="selectedTask"></app-tabs>

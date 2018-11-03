@@ -3,7 +3,6 @@ import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {GroupsComponent} from './groups/groups.component';
 import {GroupComponent} from './group/group.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {ModalLoginComponent} from './modal-login/modal-login.component';
@@ -30,7 +29,6 @@ import {GroupsPageModule} from './groups/groups-page.module'
         ModalSignUpComponent,
         HeaderComponent,
         PageNotFoundComponent,
-        GroupsComponent
     ],
     imports: [
         BrowserModule,

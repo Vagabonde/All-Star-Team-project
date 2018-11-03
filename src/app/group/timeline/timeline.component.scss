@@ -1,8 +1,40 @@
+.timeLineBox {
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.line {
+    position: absolute;
+    width: 95%;
+    height: 2px;
+    background-color: rgb(238, 238, 238);
+    z-index: -1;
+}
+
+
 .task {
     width: 50px;
     height: 50px;
-    border: 1px solid black;
     border-radius: 50%;
     padding: 5px;
-    text-align: center;
+    margin: 15px;
+    background: #cfcfcf;
+    color: #fff;
+}
+
+.task:hover {
+    box-shadow: 14px 15px 50px -17px rgba(0,0,0,0.75);
+    cursor: pointer;
+    // width: 60px;
+    // height: 60px;
+    // // margin-top: 0px;
+}
+
+
+.task .active {
+    width: 70px;
+    height: 70px;
+    background-color: blue;
 }
