@@ -9,6 +9,7 @@ import {TASKS} from "../group/timeline/mock-tasks";
 })
 export class TabsComponent implements OnInit {
     @Input() selectedTask;
+
     constructor() {
     }
 
