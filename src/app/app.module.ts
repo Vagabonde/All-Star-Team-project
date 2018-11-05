@@ -5,7 +5,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {GroupsComponent} from './groups/groups.component';
 import {GroupComponent} from './group/group.component';
-import {NavbarComponent} from './navbar/navbar.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {ModalLoginComponent} from './modal-login/modal-login.component';
 import {ModalSignUpComponent} from './modal-sign-up/modal-sign-up.component';
@@ -20,8 +19,6 @@ import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {AuthGuard} from './core/auth.guard';
-import { TabsComponent } from './tabs/tabs.component';
-import {ModalAddGroupComponent} from "./groups/modal-add-group/modal-add-group.component";
 
 @NgModule({
     declarations: [
@@ -29,13 +26,10 @@ import {ModalAddGroupComponent} from "./groups/modal-add-group/modal-add-group.c
         GroupsComponent,
         GroupComponent,
         HomepageComponent,
-        NavbarComponent,
         ModalLoginComponent,
         ModalSignUpComponent,
         HeaderComponent,
         PageNotFoundComponent,
-        TabsComponent,
-        ModalAddGroupComponent
     ],
     imports: [
         BrowserModule,
