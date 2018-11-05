@@ -21,6 +21,7 @@ import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {AuthGuard} from './core/auth.guard';
 import { TabsComponent } from './tabs/tabs.component';
+import {ModalAddGroupComponent} from "./groups/modal-add-group/modal-add-group.component";
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import { TabsComponent } from './tabs/tabs.component';
         HeaderComponent,
         PageNotFoundComponent,
         TabsComponent,
+        ModalAddGroupComponent
     ],
     imports: [
         BrowserModule,

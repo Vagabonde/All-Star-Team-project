@@ -9,6 +9,20 @@ $bgColor: #f0f2f5;
       font-size: 1.5rem;
     }
   }
+
+  .btn-add {
+    min-height: 200px;
+
+    .btn-img {
+      border-radius: 50%;
+      width: 50%;
+      align-self: flex-end;
+    }
+
+    .card-body {
+      display: none;
+    }
+  }
 }
 
 .container-fluid {
@@ -27,9 +41,11 @@ $bgColor: #f0f2f5;
 
 .card:hover {
   cursor: pointer;
+
   & .img-wrapper {
     border-color: $hoverColor;
   }
+
   & a {
     color: $hoverColor;
   }
@@ -49,26 +65,28 @@ h2 {
   color: $textColor;
 }
 
-.btn {
-  background-color: transparent;
-  box-shadow: none;
-  //box-sizing: border-box;
+.btn-add {
 
   .btn-img {
-    background: #fff url("../../assets/icon-plus.png") no-repeat;
-    background-size: cover;
+    background: #fff url("../../assets/icon-plus.png") no-repeat center center;
+    border: 1px solid $borderColor;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);
   }
+
   .card-text {
     color: $borderColor;
+    text-transform: uppercase;
   }
 }
 
-.btn:hover {
+.btn-add:hover {
   border-color: $hoverColor;
+
   .btn-img {
-    background: #fff url("../../assets/icon-plus-active.png") no-repeat;
-    background-size: cover;
+    background: #fff url("../../assets/icon-plus-active.png") no-repeat center;
+    border-color: $hoverColor;
   }
+
   .card-text {
     color: $hoverColor;
   }
