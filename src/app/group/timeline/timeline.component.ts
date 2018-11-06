@@ -9,30 +9,45 @@ import { TASKS } from './mock-tasks'
 })
 
 export class TimelineComponent implements OnInit {
-  tasks = TASKS;
-  selectedTask: Task;
-  activeState: boolean = false;
+  tasks = TASKS
+  selectedTask: Task
+  currentDate: Date = new Date()
+  fiveDaysInMillisec: number = 5 * 24 * 60 * 60 * 1000
 
-
-  toggle() {
-    this.activeState =!this.activeState;
+  onSelect(currentTask: Task): void {
+    this.selectedTask = currentTask
   }
 
+  isOldTask(task: Task): boolean {
+    let taskDate: Date = new Date(task.date)
 
-  onSelect(currentTask: Task, event): void {
-    console.log(currentTask);
-    console.log(event.target);
-
-
-    if(this.selectedTask === currentTask){
-      this.selectedTask = null;
-
-    } else {
-      this.selectedTask = currentTask;
+    if (((this.currentDate.getTime() - taskDate.getTime()) > this.fiveDaysInMillisec)
+       && task != this.selectedTask) { //so that we don't try to paint tasks in blue and yellow simultaneously
+      return true
     }
   }
 
-  constructor() { }
+  constructor() {
+
+    let todayTime = new Date(this.currentDate.toLocaleDateString()).getTime()
+    let activeTask: Task = this.tasks[0];
+
+    for (let task of this.tasks) {
+      let taskTime = new Date(task.date).getTime()
+
+      if (todayTime == taskTime) {
+        this.selectedTask = task
+        break
+
+      } else if (todayTime > taskTime) {
+        activeTask = task;
+
+      } else {
+        this.selectedTask = activeTask
+        break
+      }
+    }
+  }
 
   ngOnInit() { }
-}
+  }

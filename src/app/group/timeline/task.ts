@@ -4,5 +4,5 @@ export class Task {
     lectureTitle: string;
     lecturerName: string;
     description: string;
-    lessonDate: string
+    date: string
   }

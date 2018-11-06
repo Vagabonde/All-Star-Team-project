@@ -1,23 +1,24 @@
-<div class=" timeLineBox d-flex">
+<div class="timeLineBox d-flex">
 
     <div *ngFor="let task of tasks">
-        <div (click)="onSelect(task, $event)" [ngClass]="{task: true,
-                                                            active: activeState}">
-            {{task.name}}
+        <div (click)="onSelect(task, $event)"
+                [ngClass]="{
+                    'task': true,
+                    'hoverable': true,
+                    'task-old': isOldTask(task),
+                    'task-active': task == selectedTask
+                }">
+                <div class="task-name">{{task.name.toUpperCase()}}</div>
+                <div class="task-number">{{task.id.toString().padStart(2, '0')}}</div>
+                <div class="lessonDate">{{task.date}}</div>
+
         </div>
-        <div class="lessonDate">{{task.lessonDate}}</div>
+        <!-- <div class="lessonDate">{{task.date}}</div> -->
     </div>
     <div class="line"></div>
 
 </div>
 
-
-<div>
-    <div *ngIf="selectedTask">
-        <p>{{selectedTask.name}}</p>
-    </div>
-
-</div>
 <div *ngIf="selectedTask">
     <app-tabs [selectedTask]="selectedTask"></app-tabs>
 </div>
