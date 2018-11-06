@@ -18,7 +18,7 @@ import {GroupModule} from './group/group.module';
 import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
-import {AuthGuard} from './core/auth.guard';
+//import {AuthGuard} from './core/auth.guard';
 
 @NgModule({
     declarations: [
@@ -42,7 +42,7 @@ import {AuthGuard} from './core/auth.guard';
         GroupModule,
         FormsModule
     ],
-    providers: [AuthService, AuthGuard],
+    providers: [AuthService],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
 })
