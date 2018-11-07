@@ -8,7 +8,7 @@ import {GroupComponent} from './group/group.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {ModalLoginComponent} from './modal-login/modal-login.component';
 import {ModalSignUpComponent} from './modal-sign-up/modal-sign-up.component';
-import {ModalAddGroupComponent} from "./groups/modal-add-group/modal-add-group.component";
+import {ModalAddGroupComponent} from './groups/modal-add-group/modal-add-group.component';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';

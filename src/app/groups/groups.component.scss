@@ -68,7 +68,7 @@ h2 {
 .btn-add {
 
   .btn-img {
-    background: #fff url("../../assets/icon-plus.png") no-repeat center center;
+    background: #fff url("/assets/icon-plus.png") no-repeat center center;
     border: 1px solid $borderColor;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);
   }
@@ -83,7 +83,7 @@ h2 {
   border-color: $hoverColor;
 
   .btn-img {
-    background: #fff url("../../assets/icon-plus-active.png") no-repeat center;
+    background: #fff url("/assets/icon-plus-active.png") no-repeat center;
     border-color: $hoverColor;
   }
 

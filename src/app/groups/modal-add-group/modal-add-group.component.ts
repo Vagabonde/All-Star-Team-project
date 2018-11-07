@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {GROUPS} from "../../mock-groups";
+import {GROUPS} from '../../mock-groups';
 
 @Component({
     selector: 'app-modal-add-group',
@@ -17,7 +17,9 @@ export class ModalAddGroupComponent implements OnInit {
     }
 
     addGroup() {
-        GROUPS.push({id: GROUPS[GROUPS.length - 1].id + 1, name: this.inputValue, img: 'default-group.png'});
-        this.inputValue = '';
+        if (this.inputValue) {
+            GROUPS.push({id: GROUPS[GROUPS.length - 1].id + 1, name: this.inputValue, img: 'default-group.png'});
+            this.inputValue = '';
+        }
     }
 }
