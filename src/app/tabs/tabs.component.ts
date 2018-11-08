@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Task} from "../group/timeline/task";
-import {TASKS} from "../group/timeline/mock-tasks";
+import {Task} from "../interface/task";
+import {TASKS} from "../shared/mocks/mock-tasks";
 
 @Component({
     selector: 'app-tabs',

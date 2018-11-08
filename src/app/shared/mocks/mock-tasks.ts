@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../../interface/task';
 
 export const TASKS: Task[] = [
   { id: 1, name: 'Task 1', lectureTitle: 'CSS Frameworks', lecturerName: 'Yuriy Dzhavala', description: 'A CSS framework is a pre-prepared software framework that is meant to allow for easier, more standards-compliant web design using the Cascading Style Sheets language. Most of these frameworks contain at least a grid'},

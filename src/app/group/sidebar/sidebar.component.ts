@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GROUPS } from '../../mock-groups';
+import { GROUPS } from '../../shared/mocks/mock-groups';
 
 
 @Component({
