@@ -2,3 +2,28 @@
     height: 90%;
     background-color: #f0f2f5;
 }
+
+.col-4 {
+    transition: all .7s;
+    padding: 0;
+    flex: none;
+}
+
+.closed {
+    width: 0;
+    z-index: -1;
+    transform: translate(-150%);
+}
+
+.side-nav {
+    width: 100%;
+    z-index: 1;
+    transform: translate(0%);
+}
+
+a.btn {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin: 0px 0.375rem;
+}

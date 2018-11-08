@@ -28,7 +28,10 @@
                     <p>{{selectedTask.description}}</p>
                 </div>
             </div>
-            <div class="tab-pane fade" id="nav-materials" role="tabpanel" aria-labelledby="nav-profile-tab">Materials
+            <div class="tab-pane fade" id="nav-materials" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <ul *ngIf="selectedTask">
+                    <li *ngFor="let material of selectedTask.materials"><a href="{{material[1]}}">{{material[0]}}</a></li>
+                </ul>
             </div>
             <div class="tab-pane fade" id="nav-homework" role="tabpanel" aria-labelledby="nav-contact-tab">Homework
             </div>

@@ -15,6 +15,7 @@ export class GroupComponent implements OnInit, OnDestroy {
     paramsSubscription;
     group;
 
+    
 
     constructor(private route: ActivatedRoute) {
 
@@ -28,9 +29,10 @@ export class GroupComponent implements OnInit, OnDestroy {
 
     getSideNavState() {
         return {
-            'side-nav': this.sideNavEnabled
+          'side-nav': this.sideNavEnabled,
+          'closed': !this.sideNavEnabled
         };
-    }
+      }
 
     ngOnInit() {
       this.paramsSubscription = this.route.params.subscribe(params => {
