@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { Task } from '../../interface/task'
 import { TASKS } from '../../shared/mocks/mock-tasks'
-=======
-import { Task } from './task';
-import { TASKS } from './mock-tasks';
->>>>>>> 4b49473841149054098e600b5602a3a4f22f7def
 
 @Component({
   selector: 'app-timeline',
