@@ -1,15 +1,23 @@
-<div>
-  <nav>
-    <div class="nav nav-tabs nav-fill mt-5" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" id="nav-agenda-tab" data-toggle="tab" href="#nav-agenda" role="tab" aria-controls="nav-home" aria-selected="true">Agenda</a>
-      <a class="nav-item nav-link" id="nav-materials-tab" data-toggle="tab" href="#nav-materials" role="tab" aria-controls="nav-profile" aria-selected="false">Materials</a>
-      <a class="nav-item nav-link" id="nav-homework-tab" data-toggle="tab" href="#nav-homework" role="tab" aria-controls="nav-contact" aria-selected="false">Homework</a>
-      <a class="nav-item nav-link" id="nav-result-tab" data-toggle="tab" href="#nav-result" role="tab" aria-controls="nav-contact" aria-selected="false">Results</a>
+<nav>
+    <div class="nav nav-tabs nav-fill mt-5 mb-5" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-agenda-tab" data-toggle="tab" href="#nav-agenda" role="tab" aria-controls="nav-home" aria-selected="true">Agenda</a>
+        <a class="nav-item nav-link" id="nav-materials-tab" data-toggle="tab" href="#nav-materials" role="tab" aria-controls="nav-profile" aria-selected="false">Materials</a>
+        <a class="nav-item nav-link" id="nav-homework-tab" data-toggle="tab" href="#nav-homework" role="tab" aria-controls="nav-contact" aria-selected="false">Homework</a>
+        <a class="nav-item nav-link" id="nav-result-tab" data-toggle="tab" href="#nav-result" role="tab" aria-controls="nav-contact" aria-selected="false">Results</a>
     </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-agenda" role="tabpanel" aria-labelledby="nav-home-tab">Agenda</div>
-    <div class="tab-pane fade" id="nav-materials" role="tabpanel" aria-labelledby="nav-profile-tab">Materials</div>
-    <div class="tab-pane fade" id="nav-homework" role="tabpanel" aria-labelledby="nav-contact-tab">Homework</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-agenda" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div *ngIf="selectedTask">
+            <h1>{{selectedTask.lectureTitle}}</h1>
+            <h1>{{selectedTask.lecturerName}}</h1>
+            <p>{{selectedTask.description}}</p>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-materials" role="tabpanel" aria-labelledby="nav-profile-tab">Materials
+    </div>
+    <div class="tab-pane fade" id="nav-homework" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <app-homework-tab [selectedTask]="selectedTask"></app-homework-tab>
+    </div>
     <div class="tab-pane fade" id="nav-result" role="tabpanel" aria-labelledby="nav-contact-tab">Results</div>
-  </div>
+</div>

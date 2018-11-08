@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GROUPS } from '../mock-groups';
 
+
 @Component({
   selector: 'app-groups',
   templateUrl: './groups.component.html',

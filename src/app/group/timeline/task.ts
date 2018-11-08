@@ -5,4 +5,5 @@ export class Task {
     lecturerName: string;
     description: string;
     materials: Array<Array<string>>;
+    date: string;
   }

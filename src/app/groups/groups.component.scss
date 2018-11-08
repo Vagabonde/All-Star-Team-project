@@ -1,8 +1,7 @@
-$col-height: 130px;
-$hoverColor: #4fcbdb;
+$hoverColor: #2ec2da;
 $borderColor: #a7a7a7;
 $textColor: #3e3e3e;
-$bg-color: #eef3f6;
+$bgColor: #f0f2f5;
 
 @media (max-width: 767.98px) {
   .card {
@@ -10,18 +9,28 @@ $bg-color: #eef3f6;
       font-size: 1.5rem;
     }
   }
+
+  .btn-add {
+    min-height: 200px;
+
+    .btn-img {
+      border-radius: 50%;
+      width: 50%;
+      align-self: flex-end;
+    }
+
+    .card-body {
+      display: none;
+    }
+  }
 }
 
 .container-fluid {
-  background-color: $bg-color;
+  background-color: $bgColor;
 }
 
 .container {
   padding: 5% 10%;
-}
-
-.col-3 {
-  height: $col-height;
 }
 
 .card {
@@ -32,16 +41,20 @@ $bg-color: #eef3f6;
 
 .card:hover {
   cursor: pointer;
+
   & .img-wrapper {
     border-color: $hoverColor;
   }
+
   & a {
     color: $hoverColor;
   }
 }
 
 .img-wrapper {
+  background-color: #fff;
   border: 1px solid $borderColor;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);
 }
 
 .card-text > a {
@@ -52,17 +65,28 @@ h2 {
   color: $textColor;
 }
 
-.btn {
-  background-color: transparent;
-  box-shadow: none;
-  box-sizing: border-box;
+.btn-add {
+
+  .btn-img {
+    background: #fff url("/assets/icon-plus.png") no-repeat center center;
+    border: 1px solid $borderColor;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);
+  }
+
   .card-text {
     color: $borderColor;
+    text-transform: uppercase;
   }
 }
 
-.btn:hover {
+.btn-add:hover {
   border-color: $hoverColor;
+
+  .btn-img {
+    background: #fff url("/assets/icon-plus-active.png") no-repeat center;
+    border-color: $hoverColor;
+  }
+
   .card-text {
     color: $hoverColor;
   }
