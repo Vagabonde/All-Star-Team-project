@@ -7,13 +7,13 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AuthGuard} from './core/auth.guard';
 
 const routes: Routes = [
-    {path: '', component: GroupComponent},
+    {path: '', component: HomepageComponent},
     {path: 'groups', component: GroupsComponent, canActivate: [AuthGuard]},
     {path: 'groups/:groupId', component: GroupComponent, canActivate: [AuthGuard]},
     {path: 'notfound', component: PageNotFoundComponent}
 ];
 
-// {path: '', component: HomepageComponent},
+
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
