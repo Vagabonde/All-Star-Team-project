@@ -2,26 +2,6 @@ p {
     margin: 0;
 }
 
-.closed {
-    transform: translateX(-100%);
-    display: none;
-}
-
-.side-nav {
-    height: 100%;
-    width: 100%;
-}
-
-a.btn {
-    position: absolute;
-    top: -6px;
-    left: -42px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-}
-
 .sidebar-block {
     padding: 10px;
     background-color: #fff;
@@ -37,6 +17,10 @@ a.btn {
 
 .group-name-arrow {
     cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+        transform: scale(0.8);
+    }
 }
 
 .group-name-paragraph {
@@ -112,7 +96,7 @@ a.btn {
 .user-card {
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
@@ -121,6 +105,7 @@ a.btn {
     padding: 30px 0px;
     border-bottom: 1px solid #979797;
     margin: 0px 10px 15px 10px;
+    flex-direction: column;
 }
 
 .curator-name {
@@ -136,6 +121,13 @@ a.btn {
     overflow: overlay;
 }
 
+.student-block-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .block-left {
     display: flex;
     align-items: center;
@@ -148,4 +140,26 @@ a.btn {
 
 .else-button {
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.student-info-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 0.5s ease-in-out;
+}
+
+.hiden {
+    height: 0;
+    opacity: 0;
+}
+
+.showed {
+    height: 24px;
+    margin-top: 20px;
+}
+
+.active {
+    transform: rotate(-90deg);
 }
