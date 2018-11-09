@@ -6,6 +6,7 @@ import {TabsComponent} from "../tabs/tabs.component";
 import { HomeworkTabComponent } from '../homework-tab/homework-tab.component';
 import { FormsModule } from '@angular/forms';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
     imports: [
         CommonModule,
         FormsModule,
-        MDBBootstrapModule.forRoot()
+        MDBBootstrapModule.forRoot(),
+        RouterModule
     ],
     exports: [
         TimelineComponent,

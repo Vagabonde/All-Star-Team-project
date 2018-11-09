@@ -1,4 +1,33 @@
 .group-block-wrapper {
-    // height: 90%;
+    height: 90%;
     background-color: #f0f2f5;
+}
+
+.col-4 {
+    transition: all .7s;
+    padding: 0;
+    flex: none;
+}
+
+.row {
+    flex-wrap: nowrap;
+}
+
+.closed {
+    width: 0;
+    z-index: -1;
+    transform: translate(-150%);
+}
+
+.side-nav {
+    width: 100%;
+    z-index: 1;
+    transform: translate(0%);
+}
+
+a.btn {
+    position: absolute;
+    top: 1.5%;
+    left: 1.5%;
+    margin: 0;
 }
