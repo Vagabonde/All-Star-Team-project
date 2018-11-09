@@ -1,6 +1,6 @@
 import { Task } from '../../interface/task';
 
-export const TASKS: Task[] = [
+export const LESSONS: Task[] = [
 
   { id: 1, name: 'lesson', date: '10/20/18', lectureTitle: 'CSS Frameworks', lecturerName: 'Yuriy Dzhavala', description: 'A CSS framework is a pre-prepared software framework that is meant to allow for easier, more standards-compliant web design using the Cascading Style Sheets language. Most of these frameworks contain at least a grid', materials: [['Thoughtful CSS Architecture ', 'https://seesparkbox.com/foundry/thoughtful_css_architecture'], ['CSS Utility Classes and "Separation of Concerns"', 'https://adamwathan.me/css-utility-classes-and-separation-of-concerns/'], ['SMACSS book', 'https://smacss.com/book/'], ['Bem by examples', 'https://seesparkbox.com/foundry/bem_by_example'], ['Bootstrap. Getting started', 'https://getbootstrap.com/docs/4.0/getting-started/introduction/']]},
   { id: 2, name: 'lesson', date: '10/22/18', lectureTitle: 'OOP', lecturerName: 'Vasyl Motsyak', description: 'Object-oriented programming is a programming paradigm based on the concept of "objects", which may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods', materials: [['Object-oriented Programming', 'http://eloquentjavascript.net/1st_edition/chapter8.html'], ['Object-oriented JavaScript for beginners', 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS'], ['Video: Alex Samilyak, OOP in JS','https://youtu.be/Qn3Qah7W6Vs']]},

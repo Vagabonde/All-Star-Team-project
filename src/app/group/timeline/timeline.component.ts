@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../../interface/task'
-import { TASKS } from '../../shared/mocks/mock-tasks'
+import { LessonService } from '../../shared/services/lesson.service';
+
 
 @Component({
   selector: 'app-timeline',
@@ -9,7 +10,7 @@ import { TASKS } from '../../shared/mocks/mock-tasks'
 })
 
 export class TimelineComponent implements OnInit {
-  tasks = TASKS;
+  tasks: Task[];
   selectedTask: Task;
   currentDate: Date = new Date();
   fiveDaysInMillisec: number = 5 * 24 * 60 * 60 * 1000;
@@ -27,8 +28,12 @@ export class TimelineComponent implements OnInit {
     }
   }
 
-  constructor() {
+  constructor(private lessonService: LessonService) {
 
+
+  }
+
+  setDefaultActiveTask(): void {
     const todayTime = new Date(this.currentDate.toLocaleDateString()).getTime();
     let activeTask: Task = this.tasks[0];
 
@@ -49,5 +54,9 @@ export class TimelineComponent implements OnInit {
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.tasks = this.lessonService.getLessons();
+    this.setDefaultActiveTask();
   }
+
+}
