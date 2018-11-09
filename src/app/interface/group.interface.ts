@@ -1,4 +1,4 @@
-import {Lesson} from "./lesson.interface";
+import { Lesson } from './lesson.interface';
 
 export interface GroupInterface {
     id: string;
