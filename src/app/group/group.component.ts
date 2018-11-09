@@ -27,7 +27,8 @@ export class GroupComponent implements OnInit, OnDestroy {
 
     getSideNavState() {
         return {
-            'side-nav': this.sideNavEnabled
+          'side-nav': this.sideNavEnabled,
+          'closed': !this.sideNavEnabled
         };
     }
 
