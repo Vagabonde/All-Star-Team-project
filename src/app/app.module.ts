@@ -19,6 +19,8 @@ import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
+import {StorageServiceModule} from 'angular-webstorage-service';
+import {MockService} from './mock.service';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,7 @@ import {GroupsPageModule} from './groups/groups-page.module'
         ModalLoginComponent,
         ModalSignUpComponent,
         HeaderComponent,
-        PageNotFoundComponent,
+        PageNotFoundComponent
 
     ],
     imports: [
@@ -41,9 +43,10 @@ import {GroupsPageModule} from './groups/groups-page.module'
         AngularFireStorageModule,
         GroupModule,
         GroupsPageModule,
-        FormsModule
+        FormsModule,
+        StorageServiceModule
     ],
-    providers: [AuthService, AuthGuard],
+    providers: [AuthService, AuthGuard, MockService],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
 })
