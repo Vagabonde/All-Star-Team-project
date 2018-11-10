@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 //import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
+import { UserService } from './shared/services/user.service';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {GroupsPageModule} from './groups/groups-page.module'
     ],
     providers: [
         AuthService,
+        UserService,
     ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]

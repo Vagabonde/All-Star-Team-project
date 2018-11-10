@@ -1,27 +1,41 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../interface/user';
+import { USERS } from '../mocks/mock-user';
+import { Observable, of } from 'rxjs'
+
 
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class UserService {
 
   constructor() { }
 
-  public getStudents() {
-    return
+
+  getUsers(): Observable<User[]> {
+    return of(USERS);
   }
 
-  public getStudentByIdGroup(groupId) {
-    return Group_groupId;
-  }
+//   public getStudents() {
+//     let students = USERS.map(user) {
+//       if (user.isAdmin == false) {
+//         return user;
+//       }
+//     }
+//   }
 
-  public getCuratorByGroup() {
-    Group_groupId_curator;
-  }
+//   public getStudentsByIdGroup(groupId) {
+//     return Group_groupId;
+//   }
 
-  public getStudentById() {
-    return users.id.user
-  }
+//   public getCuratorByGroup() {
+//     return userTrueIsAdmin;
+//   }
+
+//   public getStudentById() {
+//     return users.id.user
+//   }
 }

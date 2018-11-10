@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GROUPS } from '../../shared/mocks/mock-groups';
+import { UserService } from '../../shared/services/user.service';
+import { User } from '../../interface/user';
 
 
 @Component({
@@ -8,7 +10,24 @@ import { GROUPS } from '../../shared/mocks/mock-groups';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+
+  users: User[];
   groups = GROUPS;
+
+  getUsers(): void {
+    this.userService.getUsers()
+    .subscribe(users => this.users = users);
+  }
+
+  constructor(private userService: UserService) {
+
+  }
+
+  ngOnInit() {
+    this.getUsers();
+  }
+
+
 
   groupExample = {
     groupName: 'GROUP NAME JS',
@@ -26,23 +45,21 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  constructor() {
 
-  }
+
+
   selected:any;
-
 
   select(item) {
     if(this.selected === item) {
-    this.selected = ''; 
+    this.selected = '';
     } else {
       this.selected = item;
     }
 };
 
 
-  ngOnInit() {
-  }
+
 
   isActive(item) {
     if(this.selected === item) {

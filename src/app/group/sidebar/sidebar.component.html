@@ -35,11 +35,11 @@
         </div>
       </div>
       <div class="students-block">
-        <div class="user-card studets" *ngFor="let user of groupExample.partisipants.students">
+        <div class="user-card studets" *ngFor="let user of users">
           <div class="student-block-main">
             <div class="student-block-left block-left">
               <img class="student-logo partisipants-logo" src="../../../assets/student_icon.png" alt="student-logo">
-              <p class="student-name">{{user}}</p>
+              <p class="student-name">{{user.name}}</p>
             </div>
             <img class="student-else-button else-button" (click)="select(user)" [ngClass]="isActiveDots(user)" src="../../../assets/dots icon.png" alt="else button">
           </div>
