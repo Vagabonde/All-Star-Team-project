@@ -55,8 +55,10 @@ export class TimelineComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tasks = this.lessonService.getLessons();
-    this.setDefaultActiveTask();
+    this.lessonService.getLessons().subscribe(lessons => {
+      this.tasks = lessons;
+      this.setDefaultActiveTask();
+    })
   }
 
 }
