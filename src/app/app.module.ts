@@ -44,7 +44,9 @@ import {GroupsPageModule} from './groups/groups-page.module'
         GroupsPageModule,
         FormsModule
     ],
-    providers: [AuthService],
+    providers: [
+        AuthService,
+    ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
 })
