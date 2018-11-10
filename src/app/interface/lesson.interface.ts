@@ -1,10 +1,10 @@
 export interface Lesson {
-    id: string;
+    id: number;
     name: string;
     lectureTitle: string;
     lecturerName: string;
     description: string;
-    date: Date;
+    date: string;
     shortDescription: string;
     materials: Array<Array<string>>;
 }

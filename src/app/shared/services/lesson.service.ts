@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../../interface/task';
+import { Lesson } from '../../interface/lesson.interface';
 import { LESSONS } from '../mocks/mock-lessons';
 
 
@@ -10,7 +10,7 @@ export class LessonService {
 
   constructor() { }
 
-  getLessons(): Task[] {
+  getLessons(): Lesson[] {
     return LESSONS;
   }
 }
