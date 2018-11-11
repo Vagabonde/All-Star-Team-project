@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GROUPS } from '../../shared/mocks/mock-groups';
 import { UserService } from '../../shared/services/user.service';
 import { User } from '../../interface/user';
@@ -11,41 +12,56 @@ import { User } from '../../interface/user';
 })
 export class SidebarComponent implements OnInit {
 
-  users: User[];
+
   groups = GROUPS;
 
-  getUsers(): void {
-    this.userService.getUsers()
-    .subscribe(users => this.users = users);
-  }
+  users: User[];
+  curator: User;
+  students: User[];
+  currentGroupId: string;
+  currentStudent: User;
+  currentStudentId: string = '3495';
 
-  constructor(private userService: UserService) {
+
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute,
+  ) {
 
   }
 
   ngOnInit() {
-    this.getUsers();
+    this.currentGroupId = this.route.snapshot.paramMap.get('groupId');
+
+    this.userService.getCuratorByGroupId(this.currentGroupId)
+    .subscribe(curator => this.curator = curator);
+
+
+    this.userService.getStudentsByGroupId(this.currentGroupId)
+    .subscribe(students => this.students = students);
+
+
+    this.userService.getStudentById(this.currentStudentId)
+    .subscribe(student => this.currentStudent = student);
   }
 
 
 
-  groupExample = {
-    groupName: 'GROUP NAME JS',
-    currentStudent: {
-      name: 'Головач Лєна',
-      job: 'student',
-      email: 'petro@gmail.com'
-    },
-    partisipants: {
-      curator: {
-        name: 'Олег Мельник',
-        job: 'curator'
-      },
-      students: ['Вася Пупкін', 'Попандополо Данило', 'Іво Бобул', 'Олег Винник', 'Бутилка Рома', 'Тупіцина Магдалєна', 'Непийпиво Андрій', 'Срака Степан']
-    }
-  }
-
-
+  // groupExample = {
+  //   groupName: 'GROUP NAME JS',
+  //   currentStudent: {
+  //     name: 'Головач Лєна',
+  //     job: 'student',
+  //     email: 'petro@gmail.com'
+  //   },
+  //   partisipants: {
+  //     curator: {
+  //       name: 'Олег Мельник',
+  //       job: 'curator'
+  //     },
+  //     students: ['Вася Пупкін', 'Попандополо Данило', 'Іво Бобул', 'Олег Винник', 'Бутилка Рома', 'Тупіцина Магдалєна', 'Непийпиво Андрій', 'Срака Степан']
+  //   }
+  // }
 
 
   selected:any;
@@ -57,9 +73,6 @@ export class SidebarComponent implements OnInit {
       this.selected = item;
     }
 };
-
-
-
 
   isActive(item) {
     if(this.selected === item) {

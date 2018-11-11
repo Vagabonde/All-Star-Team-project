@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../interface/user';
 import { USERS } from '../mocks/mock-user';
-import { Observable, of } from 'rxjs'
-
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
@@ -15,27 +14,27 @@ export class UserService {
   constructor() { }
 
 
-  getUsers(): Observable<User[]> {
+  public getUsers(): Observable<User[]> {
     return of(USERS);
   }
 
-//   public getStudents() {
-//     let students = USERS.map(user) {
-//       if (user.isAdmin == false) {
-//         return user;
-//       }
-//     }
-//   }
+  public getStudents(): Observable<User[]> {
+    let students = USERS.filter(user => !user.isAdmin);
+    return of(students);
+  }
 
-//   public getStudentsByIdGroup(groupId) {
-//     return Group_groupId;
-//   }
+  public getCuratorByGroupId(groupId: string): Observable<User> {
+    let curator = USERS.filter(user => user.isAdmin && user.groupId === groupId)[0]; //here could be array of curators
+    return of(curator);
+  }
 
-//   public getCuratorByGroup() {
-//     return userTrueIsAdmin;
-//   }
+  public getStudentsByGroupId(groupId: string): Observable<User[]> {
+    let students = USERS.filter(user => !user.isAdmin && user.groupId === groupId);
+    return of(students);
+  }
 
-//   public getStudentById() {
-//     return users.id.user
-//   }
+  public getStudentById(studentId: string): Observable<User> {
+    let student = USERS.filter(user => !user.isAdmin && user.id === studentId)[0];
+    return of(student);
+  }
 }
