@@ -11,8 +11,11 @@
     </button>
     <hr>
     <form class="form-inline">
-        <div class="input-div"><input type="text" class="form-control hw-input" name="link" placeholder="Link to your homework" [(ngModel)]="HWlink"></div>
+        <div class="input-div"><input type="text" class="form-control hw-input" name="link"
+                                      placeholder="Link to your homework" [(ngModel)]="HWlink"></div>
 
-        <div><button type="submit" (click)="setLocalStorage()" class="btn btn-primary mb-2 hw-button">ВСЬО</button></div>
+        <div>
+            <button type="submit" (click)="setLocalStorage(); changeBtnText()" [ngStyle]="{'background-color': backgroundColor }" class="btn mb-2 hw-button">{{ text }}</button>
+        </div>
     </form>
 </div>
