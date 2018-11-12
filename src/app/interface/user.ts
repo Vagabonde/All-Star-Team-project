@@ -1,6 +1,8 @@
-import { UserLessonInterface } from './userLesson.interface';
+import { UserLesson } from './userLesson.interface';
 
 export class User {
+    constructor() {}
+    id: number;
     constructor() {
     }
 
@@ -10,5 +12,5 @@ export class User {
     github_repo: string;
     groupId: string;
     isAdmin: boolean;
-    lessons: UserLessonInterface[];
+    lessons: UserLesson[];
 }

@@ -1,6 +1,6 @@
 import { Lesson } from './lesson.interface';
 
-export interface GroupInterface {
+export interface Group {
     id: string;
     name: string;
     img: string;
