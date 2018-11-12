@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/All-Star-Team-project",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
