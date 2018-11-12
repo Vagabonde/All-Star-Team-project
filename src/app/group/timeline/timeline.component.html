@@ -6,7 +6,7 @@
                     'task': true,
                     'hoverable': true,
                     'task-old': isOldTask(task),
-                    'task-active': task == selectedTask
+                    'task-active': task === selectedTask
                 }">
                 <div class="task-name">{{task.name.toUpperCase()}}</div>
                 <div class="task-number">{{task.id.toString().padStart(2, '0')}}</div>

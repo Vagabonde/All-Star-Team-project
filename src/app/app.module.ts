@@ -21,6 +21,8 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
 import {MockService} from './services/mock.service';
+import { UserService } from './shared/services/user.service';
+
 
 @NgModule({
     declarations: [
@@ -46,7 +48,11 @@ import {MockService} from './services/mock.service';
         FormsModule,
         StorageServiceModule
     ],
-    providers: [AuthService, MockService],
+    providers: [
+        AuthService,
+        UserService,
+        MockService,
+    ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
 })
