@@ -20,7 +20,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 //import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
-import {MockService} from './mock.service';
+import {MockService} from './services/mock.service';
 
 @NgModule({
     declarations: [
