@@ -1,17 +1,17 @@
 <div class="h-100">
     <div class="group-name-block sidebar-block ">
-      <a [routerLink]="['/groups']"><img class="group-name-arrow"  src="../../../assets/arrow-point-to-right.png" alt="arrow-left"></a>
-      <p class="group-name-paragraph">{{groupExample.groupName}}</p>
-      <img class="group-name-logo" src="../../../assets/JS.png" alt="js-logo">
+      <a [routerLink]="['/groups']"><img class="group-name-arrow"  src="/assets/arrow-point-to-right.png" alt="arrow-left"></a>
+      <p class="group-name-paragraph">Group Name JS</p>
+      <img class="group-name-logo" src="/assets/JS.png" alt="js-logo">
     </div>
     <div class="current-student-block sidebar-block">
       <div class="current-student-logo">
-        <img class="current-student-img" src="../../../assets/user_icon.png" alt="current-user-logo">
+        <img class="current-student-img" src="/assets/user_icon.png" alt="current-user-logo">
       </div>
       <div class="current-student-info">
-        <p class="current-student-name">{{groupExample.currentStudent.name}}</p>
-        <span class="current-student-prof profession">{{groupExample.currentStudent.job}}</span>
-        <span class="current-student-email">{{groupExample.currentStudent.email}}</span>
+        <p class="current-student-name">{{currentStudent.name}}</p>
+        <span class="current-student-prof profession">student</span>
+        <span class="current-student-email">{{currentStudent.email}}</span>
       </div>
     </div>
     <div class="participants-block sidebar-block">
@@ -20,28 +20,28 @@
         <div class="user-card curator">
           <div class="student-block-main">
             <div class="curator-block-left block-left">
-              <img class="curator-logo partisipants-logo" src="../../../assets/student_icon.png" alt="curator-logo">
+              <img class="curator-logo partisipants-logo" src="/assets/student_icon.png" alt="curator-logo">
               <div class="curator-info">
-                <p class="curator-name">{{groupExample.partisipants.curator.name}}</p>
-                <span class="curator-prof profession">{{groupExample.partisipants.curator.job}}</span>
+                <p class="curator-name">{{curator.name}}</p>
+                <span class="curator-prof profession">curator</span>
               </div>
             </div>
-            <img class="curator-else-button else-button" (click)="select(groupExample.partisipants.curator.name)" [ngClass]="isActiveDots(groupExample.partisipants.curator.name)" src="../../../assets/dots icon.png" alt="else button">
+            <img class="curator-else-button else-button" (click)="select(curator.name)" [ngClass]="isActiveDots(curator.name)" src="/assets/dots icon.png" alt="else button">
           </div>
-          <div class="student-info-buttons" [ngClass]="isActive(groupExample.partisipants.curator.name)">
+          <div class="student-info-buttons" [ngClass]="isActive(curator.name)">
             <a href="#">Email</a>
             <a href="#">GitHub</a>
           </div>
         </div>
       </div>
       <div class="students-block">
-        <div class="user-card studets" *ngFor="let user of groupExample.partisipants.students">
+        <div class="user-card studets" *ngFor="let user of students">
           <div class="student-block-main">
             <div class="student-block-left block-left">
-              <img class="student-logo partisipants-logo" src="../../../assets/student_icon.png" alt="student-logo">
-              <p class="student-name">{{user}}</p>
+              <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
+              <p class="student-name">{{user.name}}</p>
             </div>
-            <img class="student-else-button else-button" (click)="select(user)" [ngClass]="isActiveDots(user)" src="../../../assets/dots icon.png" alt="else button">
+            <img class="student-else-button else-button" (click)="select(user)" [ngClass]="isActiveDots(user)" src="/assets/dots icon.png" alt="else button">
           </div>
           <div class="student-info-buttons" [ngClass]="isActive(user)">
             <a href="#">Email</a>
