@@ -17,7 +17,7 @@ import {GroupModule} from './group/group.module';
 import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
-import {AuthGuard} from './core/auth.guard';
+//import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
 import {MockService} from './mock.service';
@@ -30,7 +30,7 @@ import {MockService} from './mock.service';
         ModalLoginComponent,
         ModalSignUpComponent,
         HeaderComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
 
     ],
     imports: [
@@ -46,7 +46,7 @@ import {MockService} from './mock.service';
         FormsModule,
         StorageServiceModule
     ],
-    providers: [AuthService, AuthGuard, MockService],
+    providers: [AuthService, MockService],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
 })

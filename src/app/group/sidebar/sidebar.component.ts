@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GROUPS } from '../../mock-groups';
+import { GROUPS } from '../../shared/mocks/mock-groups';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class SidebarComponent implements OnInit {
   groupExample = {
     groupName: 'GROUP NAME JS',
     currentStudent: {
-      name: 'Петрик П’яточкін',
+      name: 'Головач Лєна',
       job: 'student',
       email: 'petro@gmail.com'
     },
@@ -29,18 +29,32 @@ export class SidebarComponent implements OnInit {
   constructor() {
 
   }
-  sideNavEnabled:boolean = true;
+  selected:any;
 
-  toggleSideNavState() {
-    this.sideNavEnabled = !this.sideNavEnabled;
-  }
+
+  select(item) {
+    if(this.selected === item) {
+    this.selected = ''; 
+    } else {
+      this.selected = item;
+    }
+};
+
 
   ngOnInit() {
   }
-  getSideNavState() {
-    return {
-      'side-nav': this.sideNavEnabled,
-      'closed': !this.sideNavEnabled
-    };
+
+  isActive(item) {
+    if(this.selected === item) {
+      return 'showed'
+    } else {
+      return 'hiden'
+    }
   }
+  isActiveDots(item) {
+    if(this.selected === item) {
+      return 'active'
+    }
+  }
+
 }

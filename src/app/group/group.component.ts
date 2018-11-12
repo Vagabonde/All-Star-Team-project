@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {GROUPS} from '../mock-groups';
+import {GROUPS} from '../shared/mocks/mock-groups';
 
 @Component({
     selector: 'app-group',
@@ -27,7 +27,8 @@ export class GroupComponent implements OnInit, OnDestroy {
 
     getSideNavState() {
         return {
-            'side-nav': this.sideNavEnabled
+          'side-nav': this.sideNavEnabled,
+          'closed': !this.sideNavEnabled
         };
     }
 
