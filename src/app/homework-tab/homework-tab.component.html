@@ -15,7 +15,9 @@
                                       placeholder="Link to your homework" [(ngModel)]="HWlink"></div>
 
         <div>
-            <button type="submit" (click)="setLocalStorage(); changeBtnText()" [ngStyle]="{'background-color': backgroundColor }" class="btn mb-2 hw-button">{{ text }}</button>
+            <button type="submit" (click)="onHomeworkSubmit(); changeBtnText()"
+                    [ngStyle]="{'background-color': backgroundColor }" class="btn mb-2 hw-button" [disabled]="!isEnabledSubmitLessonButton">{{ text }}
+            </button>
         </div>
     </form>
 </div>

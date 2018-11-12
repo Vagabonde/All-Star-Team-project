@@ -1,7 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {Task} from '../interface/task';
-import {TASKS} from '../shared/mocks/mock-tasks';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import  { Task } from '../interface/task';
+import { TASKS } from '../shared/mocks/mock-tasks';
 
 
 @Component({
@@ -22,9 +22,9 @@ export class HomeworkTabComponent implements OnInit {
 
     ngOnInit() {
     }
-
-    setLocalStorage() {
-        localStorage.setItem('currentHomework', this.HWlink)
+    //Replace existing logic with submitHomework method.
+    onHomeworkSubmit() {
+        localStorage.setItem('currentHomework', this.HWlink);
         this.HWlink = '';
     }
 
@@ -34,4 +34,8 @@ export class HomeworkTabComponent implements OnInit {
             this.backgroundColor = '#00FF7F';
         }
     }
+    //Add aditional condities
+   public get isEnabledSubmitLessonButton() {
+       return true;
+   }
 }
