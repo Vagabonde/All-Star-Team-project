@@ -15,6 +15,7 @@ import {environment} from '../environments/environment';
 import {HeaderComponent} from './header/header.component';
 import {GroupModule} from './group/group.module';
 import {AuthService} from './services/auth.service';
+import {LessonService} from './shared/services/lesson.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 //import {AuthGuard} from './core/auth.guard';
@@ -52,6 +53,7 @@ import { UserService } from './shared/services/user.service';
         AuthService,
         UserService,
         MockService,
+        LessonService,
     ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]

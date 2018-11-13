@@ -2,5 +2,6 @@
 .idea
 .directory
 .vscode
+.firebase
 dist
 /node_modules
