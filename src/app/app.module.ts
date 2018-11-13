@@ -20,6 +20,8 @@ import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 //import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
+import {StorageServiceModule} from 'angular-webstorage-service';
+import {MockService} from './services/mock.service';
 import { UserService } from './shared/services/user.service';
 
 
@@ -44,12 +46,14 @@ import { UserService } from './shared/services/user.service';
         AngularFireStorageModule,
         GroupModule,
         GroupsPageModule,
-        FormsModule
+        FormsModule,
+        StorageServiceModule
     ],
     providers: [
         AuthService,
         UserService,
-        LessonService
+        MockService,
+        LessonService,
     ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
