@@ -1,11 +1,4 @@
-// .group-block-wrapper {
-//     height: 90%;
-//     background-color: #f0f2f5;
-// }
-
 .side-bar {
-    // transition: all .7s;
-    // padding: 0;
     flex: none;
 }
 
@@ -16,16 +9,13 @@
 .side-nav-closed {
 
     transform: translateX(-100%);
-    // visibility: collapse;
     transition: all .7s;
         display: none;
 }
 
 .side-nav-open {
     transform: translateX(0%);
-    // visibility: visible;
     transition: all .7s;
-
     display: block;
 }
 
