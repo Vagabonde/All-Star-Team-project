@@ -3,9 +3,9 @@
 //     background-color: #f0f2f5;
 // }
 
-.col-4 {
-    transition: all .7s;
-    padding: 0;
+.side-bar {
+    // transition: all .7s;
+    // padding: 0;
     flex: none;
 }
 
@@ -14,15 +14,19 @@
 }
 
 .side-nav-closed {
-    width: 0;
-    z-index: -1;
-    transform: translate(-150%);
+
+    transform: translateX(-100%);
+    // visibility: collapse;
+    transition: all .7s;
+        display: none;
 }
 
 .side-nav-open {
-    width: 100%;
-    z-index: 1;
-    transform: translate(0%);
+    transform: translateX(0%);
+    // visibility: visible;
+    transition: all .7s;
+
+    display: block;
 }
 
 a.btn {

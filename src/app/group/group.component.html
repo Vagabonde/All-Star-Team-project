@@ -1,10 +1,9 @@
 <div class="group-block-wrapper">
   <div class="container h-100 py-3">
     <div class="row h-100">
-      <app-sidebar class="col-4" [ngClass]="getSideNavState()"></app-sidebar>
+      <app-sidebar class="col-4 side-bar" [ngClass]="getSideNavState()"></app-sidebar>
       <a class="btn p-3 button-collapse" (click)="toggleSideNavState()"><i class="fa fa-bars"></i></a>
       <app-timeline class="col"></app-timeline>
     </div>
   </div>
 </div>
-<div>{{innerWidth}}</div>

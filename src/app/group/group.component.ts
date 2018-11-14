@@ -9,8 +9,6 @@ import {GROUPS} from '../shared/mocks/mock-groups';
 })
 
 
-
-
 export class GroupComponent implements OnInit, OnDestroy {
 
 
@@ -61,7 +59,6 @@ export class GroupComponent implements OnInit, OnDestroy {
         } else {
             this.sideNavEnabled = true;
         }
-
 
     }
 
