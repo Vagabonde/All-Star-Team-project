@@ -13,10 +13,7 @@ export class UserService {
 
   constructor() { }
 
-  public getStudentById(studentId: string): Observable<User> {
-    let student = USERS.filter(user => !user.isAdmin && user.id === studentId)[0];
-    return of(student);
-  }
+
   public getUsers(): Observable<User[]> {
     return of(USERS);
   }
