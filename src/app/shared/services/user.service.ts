@@ -37,4 +37,11 @@ export class UserService {
     let student = USERS.filter(user => !user.isAdmin && user.id === studentId)[0];
     return of(student);
   }
+
+  // public setUserLessons(userId: string){
+  //   //Знайти юзера по юзер айді
+  //   //Взяти груп айді юзера
+  //     // знайти всі лесони по груп айді
+  //
+  // }
 }

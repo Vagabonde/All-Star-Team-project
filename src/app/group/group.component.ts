@@ -35,7 +35,7 @@ export class GroupComponent implements OnInit, OnDestroy {
     ngOnInit() {
       this.paramsSubscription = this.route.params.subscribe(params => {
             this.group = this.groups.find((el) => {
-                return parseInt(params.groupId) === el.id;
+                return params.groupId === el.id;
             });
         });
     }

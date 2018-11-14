@@ -2,10 +2,6 @@ import { UserLesson } from './userLesson.interface';
 
 export class User {
     constructor() {}
-    id: number;
-    constructor() {
-    }
-
     id: string;
     name: string;
     email: string;
@@ -13,4 +9,9 @@ export class User {
     groupId: string;
     isAdmin: boolean;
     lessons: UserLesson[];
+
+    // submitHomework(lessonId, homeworkLink){
+    //     //this.lessons.findLessonByLessonId
+    //     //
+    // }
 }
