@@ -6,7 +6,7 @@ export const USERS: User[] = [
         name: 'Kirstin Birch',
         email: 'kristin@gmial.com',
         github_repo: 'https://github.com/kristinrepo',
-        groupId: '1',
+        groupId: 'front-end',
         isAdmin: false,
         lessons: []
     },
@@ -15,7 +15,7 @@ export const USERS: User[] = [
         name: 'Stephania Ransom',
         email: 'stephania@gmial.com',
         github_repo: 'https://github.com/stephaniarepo',
-        groupId: '1',
+        groupId: 'front-end',
         isAdmin: false,
         lessons: []
     },
@@ -24,7 +24,7 @@ export const USERS: User[] = [
         name: 'Ellis Brocato',
         email: 'brocato@gmial.com',
         github_repo: 'https://github.com/brocatorepo',
-        groupId: '1',
+        groupId: 'front-end',
         isAdmin: false,
         lessons: []
     },
@@ -33,7 +33,7 @@ export const USERS: User[] = [
         name: 'Neoma Nealy',
         email: 'neoma@gmial.com',
         github_repo: 'https://github.com/neomarepo',
-        groupId: '1',
+        groupId: 'front-end',
         isAdmin: true,
         lessons: []
     },
@@ -42,7 +42,7 @@ export const USERS: User[] = [
         name: 'Kirs Red',
         email: 'kristin@gmial.com',
         github_repo: 'https://github.com/kristinrepo',
-        groupId: '1',
+        groupId: 'front-end',
         isAdmin: false,
         lessons: []
     },
@@ -51,7 +51,7 @@ export const USERS: User[] = [
         name: 'Sonya Ran',
         email: 'stephania@gmial.com',
         github_repo: 'https://github.com/stephaniarepo',
-        groupId: '2',
+        groupId: 'angularjs',
         isAdmin: false,
         lessons: []
     },
@@ -60,7 +60,7 @@ export const USERS: User[] = [
         name: 'Elvis Bro',
         email: 'brocato@gmial.com',
         github_repo: 'https://github.com/brocatorepo',
-        groupId: '2',
+        groupId: 'angularjs',
         isAdmin: true,
         lessons: []
     },
@@ -69,7 +69,7 @@ export const USERS: User[] = [
         name: 'Key Rich',
         email: 'kristin@gmial.com',
         github_repo: 'https://github.com/kristinrepo',
-        groupId: '1',
+        groupId: 'front-end',
         isAdmin: false,
         lessons: []
     },
@@ -78,7 +78,7 @@ export const USERS: User[] = [
         name: 'Mia Bansom',
         email: 'stephania@gmial.com',
         github_repo: 'https://github.com/stephaniarepo',
-        groupId: '1',
+        groupId: 'front-end',
         isAdmin: false,
         lessons: []
     },
@@ -87,7 +87,7 @@ export const USERS: User[] = [
         name: 'Rich Stuck',
         email: 'brocato@gmial.com',
         github_repo: 'https://github.com/brocatorepo',
-        groupId: '1',
+        groupId: 'front-end',
         isAdmin: false,
         lessons: []
     },

@@ -1,9 +1,9 @@
 import { Homework } from "./homework.interface";
 
-export interface UserLesson { //change name w/o interface
-    id: string;
+export interface UserLesson {
+    id: number;
     feedback: string;
     mark: number;
     isAttended: boolean;
-    homework: Homework[];
+    homework: Homework;
 }

@@ -3,7 +3,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import {MockService} from './services/mock.service';
 import {GROUPS} from './shared/mocks/mock-groups';
-import {TASKS} from './shared/mocks/mock-tasks';
+import {LESSONS_FRONT_END} from './shared/mocks/mock-lessons-front-end';
 import {USERS} from './shared/mocks/mock-user';
 
 @Component({
@@ -14,7 +14,7 @@ import {USERS} from './shared/mocks/mock-user';
 export class AppComponent implements OnInit {
     title = 'keep-up-to-date';
     items: Observable<any[]>;
-    values: Array<object> = [GROUPS, USERS, TASKS];
+    values: Array<object> = [GROUPS, USERS, LESSONS_FRONT_END];
     valuesNames: Array<string> = ['groups','users','tasks'];
 
     constructor(db: AngularFirestore, public mockService: MockService) {
