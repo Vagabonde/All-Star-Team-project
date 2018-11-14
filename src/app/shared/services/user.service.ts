@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { User } from '../../interface/user';
 import { USERS } from '../mocks/mock-user';
 import { Observable, of } from 'rxjs';
+import { GROUPS } from '../mocks/mock-groups';
+import {Lesson} from "../../interface/lesson.interface";
 
 
 @Injectable({
@@ -38,10 +40,23 @@ export class UserService {
     return of(student);
   }
 
-  // public setUserLessons(userId: string){
-  //   //Знайти юзера по юзер айді
-  //   //Взяти груп айді юзера
-  //     // знайти всі лесони по груп айді
-  //
-  // }
+  public getStudentGroupId(studentId: string){
+      let student = USERS.filter(user => !user.isAdmin && user.id === studentId)[0];
+      let studentGroupId = student.groupId;
+      return studentGroupId;
+  }
+
+    public getLessonsByGroupId(groupId: string): Lesson[] {
+        let groupById = GROUPS.filter(lesson => lesson.id === groupId)[0];
+        return groupById.lessons;
+    }
+
 }
+
+//   public setUserLessons(userId: string){
+//     //Знайти юзера по юзер айді
+//       this.getStudentsByGroupId('95');
+//     //Взяти груп айді юзера
+//       this.getStudentsByGroupId('95');
+//       // знайти всі лесони по груп айді
+// }

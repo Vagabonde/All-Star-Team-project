@@ -91,5 +91,4 @@ export const USERS: User[] = [
         isAdmin: false,
         lessons: []
     },
-
-]
+];

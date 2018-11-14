@@ -12,6 +12,6 @@ export const GROUPS: Group[] = [
         id: 'angularjs',
         name: 'AngularJS',
         img: 'angular.png',
-        lessons: LESSONS_FRONT_END
+        lessons: []
     },
 ];

@@ -1,5 +1,4 @@
 import {Component, OnInit, Input} from '@angular/core';
-
 import {UserService} from "../shared/services/user.service";
 
 
@@ -23,10 +22,16 @@ export class HomeworkTabComponent implements OnInit {
     };
 
     onHomeworkSubmit() {
-        this.currentStudent = this._userService.getStudentById('95').subscribe(users => {
-            users.lessons.push(this.lessonLink);
-            console.log(users);
-        })
+        // this.currentStudent = this._userService.getStudentById('95').subscribe(users => {
+        //     users.lessons.push(this.lessonLink);
+        //     console.log(users);
+        // })
+        let a = this._userService.getStudentById('95');
+        let b = this._userService.getStudentGroupId('95');
+        let c = this._userService.getLessonsByGroupId('front-end');
+        console.log(a);
+        console.log(b);
+        console.log(c);
     }
 
     changeBtnText() {

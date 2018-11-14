@@ -10,8 +10,7 @@ export class User {
     isAdmin: boolean;
     lessons: UserLesson[];
 
-    // submitHomework(lessonId, homeworkLink){
+    // submitHomework(lessonId: any, homeworkLink: string){
     //     //this.lessons.findLessonByLessonId
-    //     //
-    // }
+    //     }
 }
