@@ -1,7 +1,7 @@
-.group-block-wrapper {
-    height: 90%;
-    background-color: #f0f2f5;
-}
+// .group-block-wrapper {
+//     height: 90%;
+//     background-color: #f0f2f5;
+// }
 
 .col-4 {
     transition: all .7s;
@@ -13,13 +13,13 @@
     flex-wrap: nowrap;
 }
 
-.closed {
+.side-nav-closed {
     width: 0;
     z-index: -1;
     transform: translate(-150%);
 }
 
-.side-nav {
+.side-nav-open {
     width: 100%;
     z-index: 1;
     transform: translate(0%);
