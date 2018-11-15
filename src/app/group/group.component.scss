@@ -10,7 +10,7 @@
 
     transform: translateX(-100%);
     transition: all .7s;
-        display: none;
+    display: none;
 }
 
 .side-nav-open {
@@ -20,8 +20,6 @@
 }
 
 a.btn {
-    position: absolute;
-    top: 1.5%;
-    left: 1.5%;
-    margin: 0;
+    // width: 20px;
+    height: 20px;
 }
