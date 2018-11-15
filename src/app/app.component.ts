@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
-import {MockService} from './services/mock.service';
+import {MockService} from './shared/services/mock.service';
 import {GROUPS} from './shared/mocks/mock-groups';
-import {TASKS} from './shared/mocks/mock-tasks';
+import {LESSONS} from './shared/mocks/mock-lessons';
 import {USERS} from './shared/mocks/mock-user';
 
 @Component({
@@ -14,14 +14,15 @@ import {USERS} from './shared/mocks/mock-user';
 export class AppComponent implements OnInit {
     title = 'keep-up-to-date';
     items: Observable<any[]>;
-    values: Array<object> = [GROUPS, USERS, TASKS];
-    valuesNames: Array<string> = ['groups','users','tasks'];
+    values: Array<object> = [{'groups': GROUPS}, {'users': USERS}, {'lessons': LESSONS}];
 
     constructor(db: AngularFirestore, public mockService: MockService) {
         this.items = db.collection('items').valueChanges();
     };
 
     ngOnInit() {
-        this.values.forEach((value, index) => this.mockService.setUpLocalStorage(this.valuesNames[index], value));
+        this.values.forEach((value, index) => this.mockService.setUpLocalStorage(value));
     }
 }
+
+

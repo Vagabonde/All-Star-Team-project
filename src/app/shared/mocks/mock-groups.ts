@@ -1,4 +1,7 @@
-export const GROUPS = [
-    {id: 1, name: 'Front-end', img: 'JS.png'},
-    {id: 2, name: 'AngularJS', img: 'angular.png'},
+import {Group} from '../../interface/group.interface'
+import {LESSONS} from './mock-lessons';
+
+export const GROUPS: Group[] = [
+    {id: 'FE', name: 'Front-end', img: 'JS.png', lessons: LESSONS},
+    {id: 'BA', name: 'Business analysis', img: 'angular.png', lessons: []},
 ];

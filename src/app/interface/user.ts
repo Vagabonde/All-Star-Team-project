@@ -1,8 +1,6 @@
 import { UserLesson } from './userLesson.interface';
 
 export class User {
-    constructor() {}
-    id: number;
     constructor() {
     }
 

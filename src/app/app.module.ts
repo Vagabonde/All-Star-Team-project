@@ -21,8 +21,9 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 //import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
-import {MockService} from './services/mock.service';
+import {MockService} from './shared/services/mock.service';
 import { UserService } from './shared/services/user.service';
+import {GroupService} from './shared/services/group.service';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { UserService } from './shared/services/user.service';
         UserService,
         MockService,
         LessonService,
+        GroupService,
     ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
