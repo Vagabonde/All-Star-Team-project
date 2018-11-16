@@ -11,10 +11,7 @@ const key: string = 'users';
 })
 export class UserService {
 
-    constructor(public mockService: MockService) {
-
-
-    }
+    constructor(public mockService: MockService) {}
 
     users = this.mockService.storage.get(key);
 
