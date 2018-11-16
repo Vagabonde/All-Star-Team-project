@@ -34,20 +34,48 @@
           </div>
         </div>
       </div>
+
+
       <div class="students-block">
-        <div class="user-card studets" *ngFor="let user of students">
-          <div class="student-block-main">
-            <div class="student-block-left block-left">
-              <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
-              <p class="student-name">{{user.name}}</p>
-            </div>
-            <img class="student-else-button else-button" (click)="select(user)" [ngClass]="isActiveDots(user)" src="/assets/dots icon.png" alt="else button">
+        <div *ngIf="!addUsersModeActive">
+          <div>
+            <button class="student-else-button else-button" (click)=addUsers()>Add</button>
           </div>
-          <div class="student-info-buttons" [ngClass]="isActive(user)">
-            <a href="#">Email</a>
-            <a href="#">GitHub</a>
+          <div class="user-card studets" *ngFor="let user of students">
+            <div class="student-block-main">
+              <div class="student-block-left block-left">
+                <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
+                <p class="student-name">{{user.name}}</p>
+              </div>
+              <img class="student-else-button else-button" (click)="select(user)" [ngClass]="isActiveDots(user)" src="/assets/dots icon.png" alt="else button">
+            </div>
+            <div class="student-info-buttons" [ngClass]="isActive(user)">
+              <a href="#">Email</a>
+              <a href="#">GitHub</a>
+            </div>
           </div>
         </div>
+        <div *ngIf="addUsersModeActive">
+
+        <div *ngFor="let user of potentialStudents">
+            <div class="student-block-main">
+                <div class="student-block-left block-left">
+                  <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
+                  <label for="studentCheck">{{user.name}}</label>
+                </div>
+                <input type="checkbox" name="" id="studentCheck" (click)="toggleUser(user)" [checked]="user.groupId">
+            </div>
+        </div>
+
+        <div>
+          <button class="student-else-button else-button" (click)=showUsers()>Show users</button>
+        </div>
+
+      </div>
+
+
+
+
       </div>
     </div>
   </div>

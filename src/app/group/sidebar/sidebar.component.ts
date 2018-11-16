@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { GROUPS } from '../../shared/mocks/mock-groups';
 import { UserService } from '../../shared/services/user.service';
 import { User } from '../../interface/user';
@@ -14,57 +15,86 @@ export class SidebarComponent implements OnInit {
 
 
   groups = GROUPS;
+  selected:any;
 
-  users: User[];
   curator: User;
   students: User[];
+  potentialStudents: User[];
   currentGroupId: string;
   currentStudent: User;
   currentStudentId: string = '3495';
 
+  addUsersModeActive: boolean = false;
 
   constructor(
     private userService: UserService,
-    private route: ActivatedRoute,
-  ) {
+    private route: ActivatedRoute) {
+
 
   }
 
   ngOnInit() {
     this.currentGroupId = this.route.snapshot.paramMap.get('groupId');
 
+
     this.userService.getCuratorByGroupId(this.currentGroupId)
     .subscribe(curator => this.curator = curator);
 
+    this.userService.getStudents()
+    .subscribe(allStudents => this.potentialStudents = allStudents.filter(user => !user.groupId || user.groupId === this.currentGroupId));
 
-    this.userService.getStudentsByGroupId(this.currentGroupId)
-    .subscribe(students => this.students = students);
+
+    this.updateUsers();
+
 
 
     this.userService.getStudentById(this.currentStudentId)
     .subscribe(student => this.currentStudent = student);
   }
 
+  toggleUser(user) {
+    if (user.groupId === '') {
+      this.userService.setStudentGroup(user, this.currentGroupId);
+
+      // for(let i = 0; i < this.students.length; i++) {
+      //   if(this.students[i].id === user.id) {
+      //     this.students[i].groupId = this.currentGroupId;
+      //   }
+      // }
+
+    } else {
+      this.userService.setStudentGroup(user, '');
+
+      // for(let i = 0; i < this.students.length; i++) {
+      //   if(this.students[i].id === user.id) {
+      //     this.students[i].groupId = '';
+      //   }
+      // }
+    }
+
+    // let s = this.students;
+    // this.students = s;
+
+    // this.students.push(user);
+    // this.students.pop();
+
+    this.updateUsers();
+  }
+
+  addUsers(): void {
+    this.addUsersModeActive = true;
+  }
+
+  showUsers(): void {
+    this.addUsersModeActive = false;
+  }
+
+  updateUsers(): void {
+    this.userService.getStudentsByGroupId(this.currentGroupId)
+    .subscribe(students => this.students = students);
+  }
 
 
-  // groupExample = {
-  //   groupName: 'GROUP NAME JS',
-  //   currentStudent: {
-  //     name: 'Головач Лєна',
-  //     job: 'student',
-  //     email: 'petro@gmail.com'
-  //   },
-  //   partisipants: {
-  //     curator: {
-  //       name: 'Олег Мельник',
-  //       job: 'curator'
-  //     },
-  //     students: ['Вася Пупкін', 'Попандополо Данило', 'Іво Бобул', 'Олег Винник', 'Бутилка Рома', 'Тупіцина Магдалєна', 'Непийпиво Андрій', 'Срака Степан']
-  //   }
-  // }
-
-
-  selected:any;
 
   select(item) {
     if(this.selected === item) {
