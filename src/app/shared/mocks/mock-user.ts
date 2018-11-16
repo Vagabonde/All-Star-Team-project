@@ -38,7 +38,7 @@ export const USERS: User[] = [
         lessons: []
     },
     {
-        id: '128736',
+        id: '1287362',
         name: 'Kirs Red',
         email: 'kristin@gmial.com',
         github_repo: 'https://github.com/kristinrepo',
@@ -69,7 +69,7 @@ export const USERS: User[] = [
         name: 'Key Rich',
         email: 'kristin@gmial.com',
         github_repo: 'https://github.com/kristinrepo',
-        groupId: 'front-end',
+        groupId: '',
         isAdmin: false,
         lessons: []
     },
@@ -78,7 +78,7 @@ export const USERS: User[] = [
         name: 'Mia Bansom',
         email: 'stephania@gmial.com',
         github_repo: 'https://github.com/stephaniarepo',
-        groupId: 'front-end',
+        groupId: '',
         isAdmin: false,
         lessons: []
     },
