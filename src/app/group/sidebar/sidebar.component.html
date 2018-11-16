@@ -9,9 +9,9 @@
         <img class="current-student-img" src="/assets/user_icon.png" alt="current-user-logo">
       </div>
       <div class="current-student-info">
-        <p class="current-student-name">{{currentStudent.name}}</p>
+        <p class="current-student-name">{{currentUser.name}}</p>
         <span class="current-student-prof profession">student</span>
-        <span class="current-student-email">{{currentStudent.email}}</span>
+        <span class="current-student-email">{{currentUser.email}}</span>
       </div>
     </div>
     <div class="participants-block sidebar-block">
@@ -38,7 +38,7 @@
 
       <div class="students-block">
         <div *ngIf="!addUsersModeActive">
-          <div>
+          <div *ngIf="currentUser.isAdmin">
             <button class="student-else-button else-button" (click)=addUsers()>Add</button>
           </div>
           <div class="user-card studets" *ngFor="let user of students">

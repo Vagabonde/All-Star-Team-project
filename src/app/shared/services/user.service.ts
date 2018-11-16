@@ -38,6 +38,11 @@ export class UserService {
     return of(student);
   }
 
+  public getUserById(userId: string): Observable<User> {
+    let user = USERS.filter(u => u.id === userId )[0];
+    return of(user)
+  }
+
   public setStudentGroup(student: User, currentGroupId: string): void {
     for (let i = 0; i < USERS.length; i++) {
       if (USERS[i].id === student.id) {

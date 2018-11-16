@@ -21,16 +21,17 @@ export class SidebarComponent implements OnInit {
   students: User[];
   potentialStudents: User[];
   currentGroupId: string;
-  currentStudent: User;
-  currentStudentId: string = '3495';
+  // currentStudent: User;
+  // currentStudentId: string = '3495';
+  currentUser: User;
+  currentUserId: string = '1993036'; //curator Id
+  // currentUserId: string = '128736'; //student id;
 
   addUsersModeActive: boolean = false;
 
   constructor(
     private userService: UserService,
     private route: ActivatedRoute) {
-
-
   }
 
   ngOnInit() {
@@ -48,8 +49,8 @@ export class SidebarComponent implements OnInit {
 
 
 
-    this.userService.getStudentById(this.currentStudentId)
-    .subscribe(student => this.currentStudent = student);
+    this.userService.getUserById(this.currentUserId)
+    .subscribe(user => this.currentUser = user);
   }
 
   toggleUser(user) {
