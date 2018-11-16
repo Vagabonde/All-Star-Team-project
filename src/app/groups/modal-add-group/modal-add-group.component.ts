@@ -18,7 +18,8 @@ export class ModalAddGroupComponent implements OnInit {
 
     addGroup() {
         if (this.inputValue) {
-            GROUPS.push({id: GROUPS[GROUPS.length - 1].id + 1, name: this.inputValue, img: 'default-group.png'});
+            const id = this.inputValue.replace(/\s/gi, '_').toLocaleLowerCase();
+            GROUPS.push({id, name: this.inputValue, img: 'default-group.png', lessons:[]});
             this.inputValue = '';
         }
     }

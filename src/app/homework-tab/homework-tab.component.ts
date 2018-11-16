@@ -1,8 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {Component, OnInit, Input} from '@angular/core';
 
-import  { Task } from '../interface/task';
-import { TASKS } from '../shared/mocks/mock-tasks';
+import {UserService} from "../shared/services/user.service";
 
 
 @Component({
@@ -12,21 +10,23 @@ import { TASKS } from '../shared/mocks/mock-tasks';
 })
 export class HomeworkTabComponent implements OnInit {
     @Input() selectedTask;
-
     public text: string = 'ВСЬО';
     private backgroundColor: string = "#5a95f5";
+    private currentStudent: object = {};
+    private lessonLink: any = '';
 
-    HWlink: string = '';
-
-    constructor() {
+    constructor(private _userService: UserService) {
+        this.currentStudent = {};
     }
 
     ngOnInit() {
-    }
-    //Replace existing logic with submitHomework method.
+    };
+
     onHomeworkSubmit() {
-        localStorage.setItem('currentHomework', this.HWlink);
-        this.HWlink = '';
+        this.currentStudent = this._userService.getStudentById('95').subscribe(users => {
+            users.lessons.push(this.lessonLink);
+            console.log(users);
+        })
     }
 
     changeBtnText() {
@@ -35,8 +35,9 @@ export class HomeworkTabComponent implements OnInit {
             this.backgroundColor = '#00FF7F';
         }
     }
+
     //Add aditional condities
-   public get isEnabledSubmitLessonButton() {
-       return true;
-   }
+    public get isEnabledSubmitLessonButton() {
+        return true;
+    }
 }

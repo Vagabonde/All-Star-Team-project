@@ -11,14 +11,18 @@
             </div>
             <div class="modal-body mx-3" *ngIf="isNewUser">
                 <form (ngSubmit)="onLoginEmail()">
+                    <div class="mb-form text-center text-danger">
+                        <span>{{errorMessage}}</span>
+                        <span>{{error.message}}</span>
+                    </div>
                     <div class="md-form mb-5">
                         <i class="fa fa-envelope prefix grey-text"></i>
-                        <input type="text" id="defaultForm-email" class="form-control" mdbInputDirective name="email" placeholder="E-Mail" required [(ngModel)]="email">
+                        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="defaultForm-email" class="form-control" mdbInputDirective name="email" placeholder="E-Mail" required [(ngModel)]="email">
                     </div>
 
                     <div class="md-form mb-4">
                         <i class="fa fa-lock prefix grey-text"></i>
-                        <input type="password" id="defaultForm-pass" class="form-control" mdbInputDirective placeholder="Password" name="password" required [(ngModel)]="password">
+                        <input type="password" pattern=".{6,}" id="defaultForm-pass" class="form-control" mdbInputDirective placeholder="Password" name="password" required [(ngModel)]="password">
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
                         <button type="submit" mdbBtn color="light-blue" class="waves-light" mdbWavesEffect>Log In</button>

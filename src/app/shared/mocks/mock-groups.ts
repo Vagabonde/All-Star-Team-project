@@ -1,7 +1,17 @@
-import {Group} from '../../interface/group.interface'
-import {LESSONS} from './mock-lessons';
+import {Group} from "../../interface/group.interface";
+import { LESSONS_FRONT_END } from "./mock-lessons-front-end";
 
 export const GROUPS: Group[] = [
-    {id: 'FE', name: 'Front-end', img: 'JS.png', lessons: LESSONS},
-    {id: 'BA', name: 'Business analysis', img: 'angular.png', lessons: []},
+    {
+        id: 'front-end',
+        name: 'Front-end',
+        img: 'JS.png',
+        lessons: LESSONS_FRONT_END
+    },
+    {
+        id: 'angularjs',
+        name: 'AngularJS',
+        img: 'angular.png',
+        lessons: LESSONS_FRONT_END
+    },
 ];
