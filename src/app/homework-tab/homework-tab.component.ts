@@ -1,5 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {UserService} from "../shared/services/user.service";
+import {Subscription} from "rxjs/subscription";
+import {User} from "../interface/user";
 
 
 @Component({
@@ -11,27 +13,25 @@ export class HomeworkTabComponent implements OnInit {
     @Input() selectedTask;
     public text: string = 'ВСЬО';
     private backgroundColor: string = "#5a95f5";
-    private currentStudent: object = {};
+    private currentStudent: User;
     private lessonLink: any = '';
+    private subscription: Subscription;
 
-    constructor(private _userService: UserService) {
-        this.currentStudent = {};
+    constructor(private userService: UserService) {
     }
 
     ngOnInit() {
+        this.subscription = this.userService.getCurrentUser().subscribe( (student: User) => {
+            this.currentStudent = student;
+        });
     };
 
+    ngOnDestroy(){
+        this.subscription.unsubscribe();
+    }
+
     onHomeworkSubmit() {
-        // this.currentStudent = this._userService.getStudentById('95').subscribe(users => {
-        //     users.lessons.push(this.lessonLink);
-        //     console.log(users);
-        // })
-        let a = this._userService.getStudentById('95');
-        let b = this._userService.getStudentGroupId('95');
-        let c = this._userService.getLessonsByGroupId('front-end');
-        console.log(a);
-        console.log(b);
-        console.log(c);
+        // this.currentStudent = // методу сабміт хомворк
     }
 
     changeBtnText() {

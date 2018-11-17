@@ -17,7 +17,7 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/stephaniarepo',
         groupId: 'front-end',
         isAdmin: false,
-        lessons: []
+        lessons: [],
     },
     {
         id: '12872236',
@@ -35,7 +35,7 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/neomarepo',
         groupId: 'front-end',
         isAdmin: true,
-        lessons: []
+        lessons: [],
     },
     {
         id: '128736',
@@ -44,16 +44,16 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/kristinrepo',
         groupId: 'front-end',
         isAdmin: false,
-        lessons: []
+        lessons: [],
     },
     {
-        id: '3495',
+        id: '3496',
         name: 'Sonya Ran',
         email: 'stephania@gmial.com',
         github_repo: 'https://github.com/stephaniarepo',
         groupId: 'angularjs',
         isAdmin: false,
-        lessons: []
+        lessons: [],
     },
     {
         id: '72236',
@@ -62,7 +62,7 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/brocatorepo',
         groupId: 'angularjs',
         isAdmin: true,
-        lessons: []
+        lessons: [],
     },
     {
         id: '136',
@@ -71,7 +71,7 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/kristinrepo',
         groupId: 'front-end',
         isAdmin: false,
-        lessons: []
+        lessons: [],
     },
     {
         id: '95',
@@ -80,7 +80,7 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/stephaniarepo',
         groupId: 'front-end',
         isAdmin: false,
-        lessons: []
+        lessons: [],
     },
     {
         id: '1287200',
@@ -89,6 +89,6 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/brocatorepo',
         groupId: 'front-end',
         isAdmin: false,
-        lessons: []
+        lessons: [],
     },
 ];

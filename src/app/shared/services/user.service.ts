@@ -41,9 +41,8 @@ export class UserService {
   }
 
   public getStudentGroupId(studentId: string){
-      let student = USERS.filter(user => !user.isAdmin && user.id === studentId)[0];
-      let studentGroupId = student.groupId;
-      return studentGroupId;
+      let student = USERS.filter(user => user.id === studentId)[0];
+       return student.groupId;
   }
 
     public getLessonsByGroupId(groupId: string): Lesson[] {
@@ -51,12 +50,15 @@ export class UserService {
         return groupById.lessons;
     }
 
+    public getCurrentUser(): Observable<User>{
+      return this.getStudentById('95');
+    }
+
+    // public setUserLessons(userId: string){
+    //     let user = this.getStudentById(userId);  //Знайти юзера по юзер айді
+    //     let userGroupId = this.getStudentGroupId(userId); //Взяти груп айді юзера
+    //     return this.getLessonsByGroupId(userGroupId); // знайти всі лесони по груп айді
+    // }
 }
 
-//   public setUserLessons(userId: string){
-//     //Знайти юзера по юзер айді
-//       this.getStudentsByGroupId('95');
-//     //Взяти груп айді юзера
-//       this.getStudentsByGroupId('95');
-//       // знайти всі лесони по груп айді
-// }
+
