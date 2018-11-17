@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Lesson } from '../../interface/lesson.interface';
+import { Lesson } from '../interface/lesson.interface';
 import { LESSONS_FRONT_END } from '../mocks/mock-lessons-front-end';
 import { Observable, of } from 'rxjs';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Lesson } from '../../interface/lesson.interface'
+import { Lesson } from '../../shared/interface/lesson.interface'
 import { LessonService } from '../../shared/services/lesson.service';
 
 
