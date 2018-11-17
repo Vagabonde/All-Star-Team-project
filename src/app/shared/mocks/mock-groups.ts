@@ -1,4 +1,4 @@
-import {Group} from "../../interface/group.interface";
+import {Group} from "../interface/group.interface";
 import { LESSONS_FRONT_END } from "./mock-lessons-front-end";
 
 export const GROUPS: Group[] = [

@@ -1,11 +1,4 @@
-.group-block-wrapper {
-    height: 90%;
-    background-color: #f0f2f5;
-}
-
-.col-4 {
-    transition: all .7s;
-    padding: 0;
+.side-bar {
     flex: none;
 }
 
@@ -13,21 +6,20 @@
     flex-wrap: nowrap;
 }
 
-.closed {
-    width: 0;
-    z-index: -1;
-    transform: translate(-150%);
+.side-nav-closed {
+
+    transform: translateX(-100%);
+    transition: all .7s;
+    display: none;
 }
 
-.side-nav {
-    width: 100%;
-    z-index: 1;
-    transform: translate(0%);
+.side-nav-open {
+    transform: translateX(0%);
+    transition: all .7s;
+    display: block;
 }
 
 a.btn {
-    position: absolute;
-    top: 1.5%;
-    left: 1.5%;
-    margin: 0;
+    // width: 20px;
+    height: 20px;
 }
