@@ -48,7 +48,6 @@ export class SidebarComponent implements OnInit {
     this.updateUsers();
 
 
-
     this.userService.getUserById(this.currentUserId)
     .subscribe(user => this.currentUser = user);
   }

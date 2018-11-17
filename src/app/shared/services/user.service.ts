@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
 import { User } from '../interface/user';
 import { USERS } from '../mocks/mock-user';
-import { Observable, of } from 'rxjs';
+import { UserLesson } from '../interface/userLesson.interface'
+
 
 
 @Injectable({
@@ -51,4 +54,20 @@ export class UserService {
     }
   }
 
+  public addUserLesson(userId: string, lesson: UserLesson): void {
+
+    for(let i = 0; i < USERS.length; i++) {
+      if (USERS[i].id === userId) {
+        USERS[i].lessons.forEach( (item, index) => {
+          if (item.lessonId === lesson.lessonId) {
+            USERS[i].lessons.splice(index, 1);
+          }
+        });
+        USERS[i].lessons.push(lesson);
+      }
+    }
+
+    console.log('saving');
+    console.log(USERS);
+  }
 }

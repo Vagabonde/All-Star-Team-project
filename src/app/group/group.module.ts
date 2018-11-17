@@ -7,13 +7,15 @@ import { HomeworkTabComponent } from './homework-tab/homework-tab.component';
 import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
+import { ResultTabComponent } from './tabs/result-tab/result-tab.component';
 
 @NgModule({
     declarations: [
         TimelineComponent,
         SidebarComponent,
         TabsComponent,
-        HomeworkTabComponent
+        HomeworkTabComponent,
+        ResultTabComponent
     ],
     imports: [
         CommonModule,
