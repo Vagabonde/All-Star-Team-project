@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {MockService} from './mock.service';
 import {Observable, of} from 'rxjs';
-import {Group} from "../../interface/group.interface";
-import {Lesson} from "../../interface/lesson.interface";
+import {Group} from "../../shared/interface/group.interface";
+import {Lesson} from "../../shared/interface/lesson.interface";
 
 const key: string = 'groups';
 
@@ -53,4 +53,3 @@ export class GroupService {
             .catch((error) => console.error(error));*/
     }
 }
-

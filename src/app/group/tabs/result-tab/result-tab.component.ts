@@ -20,8 +20,8 @@ export class ResultTabComponent implements OnInit {
   currentGroupId: string;
   curator: User;
   currentUser: User;
-  // currentUserId: string = '1993036'; //admin
-  currentUserId: string = '128736';//student
+  currentUserId: string = '1993036'; //admin
+  // currentUserId: string = '128736';//student
 
 
   constructor(private userService: UserService, private route: ActivatedRoute) { }
@@ -39,6 +39,7 @@ export class ResultTabComponent implements OnInit {
 
     this.userService.getStudentsByGroupId(this.currentGroupId)
     .subscribe(students => { this.students = students; this.fillModel(students) });
+    console.log(this.students);
   }
 
   getStudentAttendency(user: User): any {
