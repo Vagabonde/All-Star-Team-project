@@ -16,26 +16,28 @@ export class HomeworkTabComponent {
     private backgroundColor: string = "#5a95f5";
     private currentUser: User;
     private lessonLink: string;
+    // currentUserId: string = '1993036'; //admin (for manual switch)
+    currentUserId: string = '128736';//student (for manual switch)
 
-    constructor(private _userService: UserService) {
+    constructor(private _userService: UserService) { }
+
+    ngOnInit() {
+        this._userService.getUserById(this.currentUserId).subscribe(user => {
+            this.currentUser = user});
     }
-    
 
     ngOnChanges() {
-        this._userService.getUserById('128736').subscribe(user => {
-                this.currentUser = user;
-
-                for(let i = 0; i < this.currentUser.lessons.length; i++) {
-                    if (this.currentUser.lessons[i].lessonId === this.selectedTask.id) {
-                        if (this.currentUser.lessons[i].homework.url == '') {
-                            this.currentUser.lessons[i].homework.url = this.lessonLink;
-                        } else {
-                            this.lessonLink = this.currentUser.lessons[i].homework.url;
-                        }
-
+        if (this.currentUser != undefined) {
+            for (let lesson of this.currentUser.lessons) {
+                if (lesson.lessonId === this.selectedTask.id) {
+                    if (lesson.homework.url == '') {
+                        lesson.homework.url = this.lessonLink;
+                    } else {
+                        this.lessonLink = lesson.homework.url;
                     }
                 }
-            });
+            }
+        }
     }
 
     onHomeworkSubmit() {
@@ -43,7 +45,6 @@ export class HomeworkTabComponent {
             url: this.lessonLink,
             isSubmitted: true
         };
-
         this._userService.addUserHomework(this.currentUser.id, newHomework, this.selectedTask);
     }
 

@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {User} from '../../shared/interface/user';
 import {Observable, of} from 'rxjs';
 import {MockService} from './mock.service';
-// import {USERS} from '../mocks/mock-user';
 import {UserLesson} from '../interface/userLesson.interface'
 import {Homework} from '../interface/homework.interface';
 import {Lesson} from '../interface/lesson.interface';
@@ -37,11 +36,6 @@ export class UserService {
       return of(students);
   }
 
-  // public getStudentById(studentId: string): Observable<User> {
-  //     let student = this.users.filter(user => !user.isAdmin && user.id === studentId)[0];
-  //     return of(student);
-  // }
-
   public getUserById(userId: string): Observable<User> {
     let user = this.users.filter(u => u.id === userId )[0];
     return of(user)
@@ -67,9 +61,6 @@ export class UserService {
         this.users[i].lessons.push(lesson);
       }
     }
-
-    console.log('saving');
-    console.log(this.users);
   }
 
   public addUserHomework(userId: string, newHomework: Homework, currentLesson: Lesson) {
@@ -84,5 +75,4 @@ export class UserService {
       }
     }
   }
-
 }

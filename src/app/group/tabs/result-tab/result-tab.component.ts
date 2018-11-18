@@ -38,8 +38,7 @@ export class ResultTabComponent implements OnInit {
     this.currentGroupId = this.route.snapshot.paramMap.get('groupId');
 
     this.userService.getStudentsByGroupId(this.currentGroupId)
-    .subscribe(students => { this.students = students; this.fillModel(students) });
-    console.log(this.students);
+    .subscribe(students => {this.students = students; this.fillModel(students)});
   }
 
   getStudentAttendency(user: User): any {
@@ -77,7 +76,6 @@ export class ResultTabComponent implements OnInit {
       });
     }
     this.model = newModel;
-
   }
 
   saveUserLessons() {
@@ -85,5 +83,4 @@ export class ResultTabComponent implements OnInit {
       this.userService.addUserLesson(user.id, user.lesson);
     }
   }
-
 }
