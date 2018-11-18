@@ -19,30 +19,23 @@ export class HomeworkTabComponent {
 
     constructor(private _userService: UserService) {
     }
-
-
-
+    
 
     ngOnChanges() {
-        this._userService.getUserById('128736')
-            .subscribe(user => { this.currentUser = user;
+        this._userService.getUserById('128736').subscribe(user => {
+                this.currentUser = user;
 
+                for(let i = 0; i < this.currentUser.lessons.length; i++) {
+                    if (this.currentUser.lessons[i].lessonId === this.selectedTask.id) {
+                        if (this.currentUser.lessons[i].homework.url == '') {
+                            this.currentUser.lessons[i].homework.url = this.lessonLink;
+                        } else {
+                            this.lessonLink = this.currentUser.lessons[i].homework.url;
+                        }
 
-        for(let i = 0; i < this.currentUser.lessons.length; i++) {
-            if (this.currentUser.lessons[i].lessonId === this.selectedTask.id) {
-                if (this.currentUser.lessons[i].homework.url == '') {
-                    this.currentUser.lessons[i].homework.url = this.lessonLink;
-                } else {
-                    this.lessonLink = this.currentUser.lessons[i].homework.url;
+                    }
                 }
-
-            }
-        }
-    });
-
-
-
-
+            });
     }
 
     onHomeworkSubmit() {
@@ -53,8 +46,6 @@ export class HomeworkTabComponent {
 
         this._userService.addUserHomework(this.currentUser.id, newHomework, this.selectedTask);
     }
-
-
 
     changeBtnText() {
         if (this.text === 'ВСЬО') {
@@ -67,5 +58,4 @@ export class HomeworkTabComponent {
     public get isEnabledSubmitLessonButton() {
         return true;
     }
-
 }
