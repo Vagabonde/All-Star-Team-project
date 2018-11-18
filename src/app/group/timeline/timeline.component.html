@@ -1,6 +1,6 @@
 <div class="timeLineBox d-flex">
 
-    <div *ngFor="let task of tasks">
+    <div *ngFor="let task of tasks; let i = index">
         <div (click)="onSelect(task, $event)"
                 [ngClass]="{
                     'task': true,
@@ -8,8 +8,8 @@
                     'task-old': isOldTask(task),
                     'task-active': task === selectedTask
                 }">
-                <div class="task-name">{{task.name.toUpperCase()}}</div>
-                <div class="task-number">{{task.id.toString().padStart(2, '0')}}</div>
+                <div class="task-name">{{'lesson'| uppercase}}</div>
+                <div class="task-number">{{(i+1).toString().padStart(2, '0')}}</div>
                 <div class="lessonDate">{{task.date}}</div>
 
         </div>

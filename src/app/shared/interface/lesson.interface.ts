@@ -1,6 +1,5 @@
 export interface Lesson {
-    id: number;
-    name: string;
+    id: string;
     lectureTitle: string;
     lecturerName: string;
     description: string;

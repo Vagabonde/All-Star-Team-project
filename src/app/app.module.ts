@@ -22,9 +22,8 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
 import {MockService} from './shared/services/mock.service';
-import { UserService } from './shared/services/user.service';
+import {UserService} from './shared/services/user.service';
 import {GroupService} from './shared/services/group.service';
-
 
 @NgModule({
     declarations: [

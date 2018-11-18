@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {User} from '../../interface/user';
 import {Observable, of} from 'rxjs';
 import {MockService} from './mock.service';
-
+import { USERS } from '../mocks/mock-user';
+import { UserLesson } from '../interface/userLesson.interface'
 
 const key: string = 'users';
 
@@ -38,4 +39,34 @@ export class UserService {
         let student = this.users.filter(user => !user.isAdmin && user.id === studentId)[0];
         return of(student);
     }
+  
+  public getUserById(userId: string): Observable<User> {
+    let user = USERS.filter(u => u.id === userId )[0];
+    return of(user)
+  }
+
+  public setStudentGroup(student: User, currentGroupId: string): void {
+    for (let i = 0; i < USERS.length; i++) {
+      if (USERS[i].id === student.id) {
+        USERS[i].groupId = currentGroupId;
+      }
+    }
+  }
+
+  public addUserLesson(userId: string, lesson: UserLesson): void {
+
+    for(let i = 0; i < USERS.length; i++) {
+      if (USERS[i].id === userId) {
+        USERS[i].lessons.forEach( (item, index) => {
+          if (item.lessonId === lesson.lessonId) {
+            USERS[i].lessons.splice(index, 1);
+          }
+        });
+        USERS[i].lessons.push(lesson);
+      }
+    }
+
+    console.log('saving');
+    console.log(USERS);
+  }
 }

@@ -1,4 +1,4 @@
-import { User } from '../../interface/user';
+import { User } from '../interface/user';
 
 export const USERS: User[] = [
     {
@@ -8,7 +8,52 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/kristinrepo',
         groupId: 'front-end',
         isAdmin: false,
-        lessons: []
+        lessons: [
+            {
+
+                lessonId: '1',
+                feedback: 'nice job',
+                mark: '100',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz1',
+                    isSubmitted: true,
+                }
+            },
+            {
+
+                lessonId: '2',
+                feedback: 'nice job 2',
+                mark: '100',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz2',
+                    isSubmitted: true,
+                }
+            },
+            {
+
+                lessonId: '3',
+                feedback: 'nice job 3',
+                mark: '100',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz3',
+                    isSubmitted: true,
+                }
+            },
+            {
+
+                lessonId: '4',
+                feedback: 'nice job 4',
+                mark: '100',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz4',
+                    isSubmitted: true,
+                }
+            }
+        ]
     },
     {
         id: '3495',
@@ -38,7 +83,7 @@ export const USERS: User[] = [
         lessons: []
     },
     {
-        id: '128736',
+        id: '1287362',
         name: 'Kirs Red',
         email: 'kristin@gmial.com',
         github_repo: 'https://github.com/kristinrepo',
@@ -69,16 +114,58 @@ export const USERS: User[] = [
         name: 'Key Rich',
         email: 'kristin@gmial.com',
         github_repo: 'https://github.com/kristinrepo',
-        groupId: 'front-end',
+        groupId: '',
         isAdmin: false,
-        lessons: []
+        lessons:
+        [
+            {
+                lessonId: '1',
+                feedback: 'awful',
+                mark: '30',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz1',
+                    isSubmitted: true,
+                }
+            },
+            {
+                lessonId: '2',
+                feedback: 'awful 2',
+                mark: '0',
+                isAttended: false,
+                homework: {
+                    url: 'http://url.com/dz2',
+                    isSubmitted: true,
+                }
+            },
+            {
+                lessonId: '3',
+                feedback: 'awful 3',
+                mark: '25',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz3',
+                    isSubmitted: false,
+                }
+            },
+            {
+                lessonId: '4',
+                feedback: 'awful 4',
+                mark: '40',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz4',
+                    isSubmitted: true,
+                }
+            }
+        ]
     },
     {
         id: '95',
         name: 'Mia Bansom',
         email: 'stephania@gmial.com',
         github_repo: 'https://github.com/stephaniarepo',
-        groupId: 'front-end',
+        groupId: '',
         isAdmin: false,
         lessons: []
     },

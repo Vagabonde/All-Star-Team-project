@@ -1,9 +1,9 @@
 import { Homework } from "./homework.interface";
 
 export interface UserLesson {
-    id: number;
+    lessonId: string;
     feedback: string;
-    mark: number;
+    mark: string;
     isAttended: boolean;
     homework: Homework;
 }
