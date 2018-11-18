@@ -4,6 +4,8 @@ import {Observable, of} from 'rxjs';
 import {MockService} from './mock.service';
 import { USERS } from '../mocks/mock-user';
 import { UserLesson } from '../interface/userLesson.interface'
+import { Homework } from '../interface/homework.interface';
+import { Lesson } from '../interface/lesson.interface';
 
 const key: string = 'users';
 
@@ -39,7 +41,7 @@ export class UserService {
         let student = this.users.filter(user => !user.isAdmin && user.id === studentId)[0];
         return of(student);
     }
-  
+
   public getUserById(userId: string): Observable<User> {
     let user = USERS.filter(u => u.id === userId )[0];
     return of(user)
@@ -69,4 +71,18 @@ export class UserService {
     console.log('saving');
     console.log(USERS);
   }
+
+  public addUserHomework(userId: string, newHomework: Homework, currentLesson: Lesson) {
+    for(let i = 0; i < USERS.length; i++) {
+      if (USERS[i].id === userId) {
+        for (let j = 0; j < USERS[i].lessons.length; j++) {
+          if(USERS[i].lessons[j].lessonId === currentLesson.id) {
+            USERS[i].lessons[j].homework = newHomework;
+            console.log(USERS[i]);
+          }
+        }
+      }
+    }
+  }
+
 }

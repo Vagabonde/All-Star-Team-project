@@ -1,6 +1,8 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
-import {UserService} from "../../shared/services/user.service";
+import {UserService} from '../../shared/services/user.service';
+import {Homework} from '../../shared/interface/homework.interface';
+import {User} from '../../shared/interface/user';
 
 
 @Component({
@@ -8,26 +10,51 @@ import {UserService} from "../../shared/services/user.service";
     templateUrl: './homework-tab.component.html',
     styleUrls: ['./homework-tab.component.scss']
 })
-export class HomeworkTabComponent implements OnInit {
+export class HomeworkTabComponent {
     @Input() selectedTask;
     public text: string = 'ВСЬО';
     private backgroundColor: string = "#5a95f5";
-    private currentStudent: object = {};
-    private lessonLink: any = '';
+    private currentUser: User;
+    private lessonLink: string;
 
     constructor(private _userService: UserService) {
-        this.currentStudent = {};
     }
 
-    ngOnInit() {
-    };
+
+
+
+    ngOnChanges() {
+        this._userService.getUserById('128736')
+            .subscribe(user => { this.currentUser = user;
+
+
+        for(let i = 0; i < this.currentUser.lessons.length; i++) {
+            if (this.currentUser.lessons[i].lessonId === this.selectedTask.id) {
+                if (this.currentUser.lessons[i].homework.url == '') {
+                    this.currentUser.lessons[i].homework.url = this.lessonLink;
+                } else {
+                    this.lessonLink = this.currentUser.lessons[i].homework.url;
+                }
+
+            }
+        }
+    });
+
+
+
+
+    }
 
     onHomeworkSubmit() {
-        this.currentStudent = this._userService.getStudentById('95').subscribe(users => {
-            users.lessons.push(this.lessonLink);
-            console.log(users);
-        })
+        let newHomework: Homework = {
+            url: this.lessonLink,
+            isSubmitted: true
+        };
+
+        this._userService.addUserHomework(this.currentUser.id, newHomework, this.selectedTask);
     }
+
+
 
     changeBtnText() {
         if (this.text === 'ВСЬО') {
@@ -40,4 +67,5 @@ export class HomeworkTabComponent implements OnInit {
     public get isEnabledSubmitLessonButton() {
         return true;
     }
+
 }
