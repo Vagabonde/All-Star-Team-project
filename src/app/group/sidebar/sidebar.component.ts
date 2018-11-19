@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { GROUPS } from '@shared/mocks/mock-groups';
 import { UserService } from '@service/user.service';
 import { User } from '@interface/user';
-import {AuthService} from "@service/auth.service";
 
 
 @Component({
@@ -28,12 +27,7 @@ export class SidebarComponent implements OnInit {
 
     constructor(
         private userService: UserService,
-        private route: ActivatedRoute,
-        private auth: AuthService) {
-    }
-
-    logOut(){
-        this.auth.signOut();
+        private route: ActivatedRoute,) {
     }
 
     ngOnInit() {
