@@ -14,16 +14,16 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from '../environments/environment';
 import {HeaderComponent} from './header/header.component';
 import {GroupModule} from './group/group.module';
-import {AuthService} from './services/auth.service';
-import {LessonService} from './shared/services/lesson.service';
+import {AuthService} from '@service/auth.service';
+import {LessonService} from '@service/lesson.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 //import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
-import {MockService} from './services/mock.service';
-import {UserService} from './shared/services/user.service';
-
+import {MockService} from '@service/mock.service';
+import {UserService} from '@service/user.service';
+import {GroupService} from '@service/group.service';
 
 @NgModule({
     declarations: [
@@ -54,6 +54,7 @@ import {UserService} from './shared/services/user.service';
         UserService,
         MockService,
         LessonService,
+        GroupService,
     ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]

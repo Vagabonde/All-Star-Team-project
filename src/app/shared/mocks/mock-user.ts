@@ -1,4 +1,4 @@
-import { User } from '../interface/user';
+import {User} from '@interface/user';
 
 export const USERS: User[] = [
     {
@@ -49,8 +49,8 @@ export const USERS: User[] = [
                 mark: '100',
                 isAttended: true,
                 homework: {
-                    url: 'http://url.com/dz4',
-                    isSubmitted: true,
+                    url: '',
+                    isSubmitted: false,
                 }
             }
         ]
@@ -178,5 +178,4 @@ export const USERS: User[] = [
         isAdmin: false,
         lessons: []
     },
-
-]
+];
