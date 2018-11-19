@@ -14,7 +14,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from '../environments/environment';
 import {HeaderComponent} from './header/header.component';
 import {GroupModule} from './group/group.module';
-import {AuthService} from './services/auth.service';
+import {AuthService} from '@service/auth.service';
 import {LessonService} from '@service/lesson.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
