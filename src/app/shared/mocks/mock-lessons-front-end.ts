@@ -1,4 +1,4 @@
-import { Lesson } from '../interface/lesson.interface';
+import {Lesson} from '@interface/lesson.interface';
 
 export const LESSONS_FRONT_END: Lesson[] = [
   { id: '1', date: '10/20/18', shortDescription: 'css', lectureTitle: 'CSS Frameworks', lecturerName: 'Yuriy Dzhavala', description: 'A CSS framework is a pre-prepared software framework that is meant to allow for easier, more standards-compliant web design using the Cascading Style Sheets language. Most of these frameworks contain at least a grid', materials: [['Thoughtful CSS Architecture ', 'https://seesparkbox.com/foundry/thoughtful_css_architecture'], ['CSS Utility Classes and "Separation of Concerns"', 'https://adamwathan.me/css-utility-classes-and-separation-of-concerns/'], ['SMACSS book', 'https://smacss.com/book/'], ['Bem by examples', 'https://seesparkbox.com/foundry/bem_by_example'], ['Bootstrap. Getting started', 'https://getbootstrap.com/docs/4.0/getting-started/introduction/']]},

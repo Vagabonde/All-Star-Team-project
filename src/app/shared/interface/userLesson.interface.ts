@@ -1,4 +1,4 @@
-import { Homework } from "./homework.interface";
+import {Homework} from "@interface/homework.interface";
 
 export interface UserLesson {
     lessonId: string;

@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../../../shared/services/user.service';
-import { User } from '../../../shared/interface/user';
-import { Lesson } from '../../../shared/interface/lesson.interface';
-import { UserLesson } from '../../../shared/interface/userLesson.interface';
+import {Component, OnInit, Input} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {UserService} from '@service/user.service';
+import {User} from '@interface/user';
+import {Lesson} from '@interface/lesson.interface';
+import {UserLesson} from '@interface/userLesson.interface';
 
 @Component({
   selector: 'app-result-tab',
