@@ -172,3 +172,23 @@ p {
   height: 25px;
   cursor: pointer;
 }
+
+.tooltiptext {
+  visibility: hidden;
+  font-size: 12px;
+  font-weight: bold;
+  width: 150px;
+  background-color: #2ec2d9;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  text-align: center;
+  z-index: 1;
+}
+
+.getOut:hover .tooltiptext {
+  visibility: visible;
+}
