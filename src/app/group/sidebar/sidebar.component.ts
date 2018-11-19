@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { GROUPS } from '../../shared/mocks/mock-groups';
-import { UserService } from '../../shared/services/user.service';
-import { User } from '../../shared/interface/user';
+import { GROUPS } from '@shared/mocks/mock-groups';
+import { UserService } from '@service/user.service';
+import { User } from '@interface/user';
 
 
 @Component({

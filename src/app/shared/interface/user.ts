@@ -1,4 +1,4 @@
-import { UserLesson } from './userLesson.interface';
+import {UserLesson} from '@interface/userLesson.interface';
 
 export class User {
     constructor() {}

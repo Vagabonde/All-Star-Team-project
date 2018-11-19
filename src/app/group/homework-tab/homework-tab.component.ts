@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
 
-import {UserService} from '../../shared/services/user.service';
-import {Homework} from '../../shared/interface/homework.interface';
-import {User} from '../../shared/interface/user';
+import {UserService} from '@service/user.service';
+import {Homework} from '@interface/homework.interface';
+import {User} from '@interface/user';
 
 
 @Component({
