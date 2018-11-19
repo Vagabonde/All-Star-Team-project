@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import {AuthService} from "@service/auth.service";
 import { GROUPS } from '@shared/mocks/mock-groups';
 import { UserService } from '@service/user.service';
 import { User } from '@interface/user';
@@ -27,7 +27,12 @@ export class SidebarComponent implements OnInit {
 
     constructor(
         private userService: UserService,
-        private route: ActivatedRoute,) {
+        private route: ActivatedRoute,
+        private auth: AuthService) {
+    }
+
+    logOut(){
+        this.auth.signOut();
     }
 
     ngOnInit() {
