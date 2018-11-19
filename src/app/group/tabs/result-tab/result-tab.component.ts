@@ -27,20 +27,19 @@ export class ResultTabComponent implements OnInit {
   constructor(private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-  this.currentGroupId = this.route.snapshot.paramMap.get('groupId');
-
-  this.userService.getStudentsByGroupId(this.currentGroupId)
-    .subscribe(students => { this.students = students; this.fillModel(students) });
-
-
   this.userService.getCuratorByGroupId(this.currentGroupId)
     .subscribe(curator => this.curator = curator);
 
-
   this.userService.getUserById(this.currentUserId)
   .subscribe(user => this.currentUser = user);
+  }
 
-}
+  ngOnChanges() {
+    this.currentGroupId = this.route.snapshot.paramMap.get('groupId');
+
+    this.userService.getStudentsByGroupId(this.currentGroupId)
+    .subscribe(students => {this.students = students; this.fillModel(students)});
+  }
 
   getStudentAttendency(user: User): any {
     let userLessons = user.lessons.filter(user => user.lessonId === this.selectedTask.id)
@@ -84,9 +83,4 @@ export class ResultTabComponent implements OnInit {
       this.userService.addUserLesson(user.id, user.lesson);
     }
   }
-
-  get diag() {
-    return JSON.stringify(this.model); //its for diagnosting if it works (must be deleted)
-  }
-
 }

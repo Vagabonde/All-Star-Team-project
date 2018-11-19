@@ -49,8 +49,8 @@ export const USERS: User[] = [
                 mark: '100',
                 isAttended: true,
                 homework: {
-                    url: 'http://url.com/dz4',
-                    isSubmitted: true,
+                    url: '',
+                    isSubmitted: false,
                 }
             }
         ]
