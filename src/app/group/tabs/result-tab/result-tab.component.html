@@ -9,10 +9,10 @@
   <tr *ngFor="let user of students">
 
     <td>{{user.name}}</td>
-    <td>{{getStudentAttendency(user)}}</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{getStudetLessonData(user, 'isAttended')}}</td>
+    <td>{{getStudetLessonData(user, 'mark')}}</td>
+    <td>{{getStudetLessonData(user, 'feedback')}}</td>
+    <td>{{getStudentHomeworkLink(user)}}</td>
   </tr>
 </table>
 

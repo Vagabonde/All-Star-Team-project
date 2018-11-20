@@ -24,7 +24,7 @@ export const USERS: User[] = [
 
                 lessonId: '2',
                 feedback: 'nice job 2',
-                mark: '100',
+                mark: '3',
                 isAttended: true,
                 homework: {
                     url: 'http://url.com/dz2',
@@ -35,7 +35,7 @@ export const USERS: User[] = [
 
                 lessonId: '3',
                 feedback: 'nice job 3',
-                mark: '100',
+                mark: '50',
                 isAttended: true,
                 homework: {
                     url: 'http://url.com/dz3',
@@ -46,7 +46,7 @@ export const USERS: User[] = [
 
                 lessonId: '4',
                 feedback: 'nice job 4',
-                mark: '100',
+                mark: '5',
                 isAttended: true,
                 homework: {
                     url: '',
