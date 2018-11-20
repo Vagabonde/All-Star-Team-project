@@ -41,9 +41,7 @@ export class ResultTabComponent implements OnInit {
     .subscribe(students => {this.students = students; this.fillModel(students)});
   }
 
-
-
-  getStudetLessonData(user: User, data: any) {
+  getStudetLessonData(user: User, data: string): any {
     let userLessons = user.lessons.filter(user => user.lessonId === this.selectedTask.id)
     if (userLessons.length > 0) {
       return userLessons[0][data];
@@ -60,8 +58,7 @@ export class ResultTabComponent implements OnInit {
       return '';
     }
   }
-
-
+  
   fillModel(students: User[]) {
     let newModel = [];
     let lesson: UserLesson;
