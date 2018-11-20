@@ -2,6 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 
 import {UserService} from "../../shared/services/user.service";
 
+import {FirestoreService} from '../../shared/services/db.service';
 
 @Component({
     selector: 'app-homework-tab',
@@ -15,7 +16,7 @@ export class HomeworkTabComponent implements OnInit {
     private currentStudent: object = {};
     private lessonLink: any = '';
 
-    constructor(private _userService: UserService) {
+    constructor(private _userService: UserService, private db: FirestoreService) {
         this.currentStudent = {};
     }
 

@@ -18,7 +18,7 @@ import {AuthService} from './shared/services/auth.service';
 import {LessonService} from './shared/services/lesson.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
-import {AuthGuard} from './core/auth.guard';
+// import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
 import {MockService} from './shared/services/mock.service';
@@ -50,7 +50,7 @@ import {FirestoreService} from './shared/services/db.service';
         StorageServiceModule
     ],
     providers: [
-        AuthGuard,
+        // AuthGuard,
         AuthService,
         UserService,
         MockService,

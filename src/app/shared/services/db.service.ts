@@ -4,42 +4,46 @@ import {
   AngularFirestoreCollection,
   AngularFirestoreDocument 
 } from '@angular/fire/firestore';
-import { Group } from '../interface/group.interface';
+// import { Group } from '../interface/group.interface';
+import { Just } from '../interface/just';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class FirestoreService {
-  groupsCollection: AngularFirestoreCollection<Group>;
-  groups: Observable<Group[]>;
-  groupDoc: AngularFirestoreDocument<Group>;
-
+  collection: AngularFirestoreCollection<Just>;
+  items: Observable<Just[]>;
+  document: AngularFirestoreDocument<Just>;
+  keys: Array<String>;
+  // dataName: string = 'users';
   constructor(public afs:AngularFirestore) {
-    this.groupsCollection = this.afs.collection('groups');
-    this.groups = this.groupsCollection.snapshotChanges().map(changes => {
-      return changes.map(a => {
-        const data = a.payload.doc.data() as Group;
-        data.id = a.payload.doc.id;
-        return data;
-      });
-    });
+    
+    // .map(changes => {
+    //   return changes.map(a => {
+    //     const data = a.payload.doc.data() as Just;
+    //     data.id = a.payload.doc.id;
+    //     return data;
+    //   });
+    // });
   }
 
   getGroups() {
-    return this.groups; 
+    return console.log(this.afs.collection('groups')); 
   }
 
-  addGroup(group: Group) {
-    this.groupsCollection.add(group);
+  add(name: string, id: string, dataName: Just) {
+    this.collection = this.afs.collection(name);
+    this.collection.doc(id).set(dataName);
+    this.items = this.collection.valueChanges()
   }
 
-  deleteGroup(group: Group) {
-    this.groupDoc = this.afs.doc(`groups/${group.id}`);
-    this.groupDoc.delete();
+  delete(name: string, id: string) {
+    this.document = this.afs.doc(`${name}/${id}`);
+    this.document.delete();
   }
 
-  updateGroup(group: Group) {
-    this.groupDoc = this.afs.doc(`groups/${group.id}`);
-    this.groupDoc.update(group);
+  update(name: string, id: string, dataName: Just) {
+    this.document = this.afs.doc(`${name}/${id}`);
+    this.document.update(dataName);
   }
 }
