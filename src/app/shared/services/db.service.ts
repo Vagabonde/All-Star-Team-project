@@ -1,45 +1,36 @@
-import { Injectable } from '@angular/core';
-import { 
-  AngularFirestore,
-  AngularFirestoreCollection,
-  AngularFirestoreDocument 
+import {Injectable} from '@angular/core';
+import {
+    AngularFirestore,
+    AngularFirestoreCollection,
+    AngularFirestoreDocument
 } from '@angular/fire/firestore';
-import { Group } from '../interface/group.interface';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
-export class FirestoreService {
-  groupsCollection: AngularFirestoreCollection<Group>;
-  groups: Observable<Group[]>;
-  groupDoc: AngularFirestoreDocument<Group>;
+export class DbService {
+    collection: AngularFirestoreCollection < any > ;
+    items: Observable < any[] > ;
+    document: AngularFirestoreDocument < any > ;
+    
+    constructor(public afs: AngularFirestore) {}
 
-  constructor(public afs:AngularFirestore) {
-    this.groupsCollection = this.afs.collection('groups');
-    this.groups = this.groupsCollection.snapshotChanges().map(changes => {
-      return changes.map(a => {
-        const data = a.payload.doc.data() as Group;
-        data.id = a.payload.doc.id;
-        return data;
-      });
-    });
-  }
+    getData(collectionName: string) {
+        return console.log(this.afs.collection(collectionName).get());
+    }
 
-  getGroups() {
-    return this.groups; 
-  }
+    addData(collectionName: string, id: string, data: any) {
+        this.collection = this.afs.collection(collectionName);
+        this.collection.doc(id).set(data);
+        this.items = this.collection.valueChanges()
+    }
 
-  addGroup(group: Group) {
-    this.groupsCollection.add(group);
-  }
+    deleteData(collectionName: string, id: string) {
+        this.document = this.afs.doc(`${collectionName}/${id}`);
+        this.document.delete();
+    }
 
-  deleteGroup(group: Group) {
-    this.groupDoc = this.afs.doc(`groups/${group.id}`);
-    this.groupDoc.delete();
-  }
-
-  updateGroup(group: Group) {
-    this.groupDoc = this.afs.doc(`groups/${group.id}`);
-    this.groupDoc.update(group);
-  }
+    updateData(collectionName: string, id: string, data: any) {
+        this.document = this.afs.doc(`${collectionName}/${id}`);
+        this.document.update(data);
+    }
 }
