@@ -18,12 +18,13 @@ import {AuthService} from '@service/auth.service';
 import {LessonService} from '@service/lesson.service';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
-//import {AuthGuard} from './core/auth.guard';
+import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
 import {MockService} from '@service/mock.service';
 import {UserService} from '@service/user.service';
 import {GroupService} from '@service/group.service';
+import {GroupAttendanceGuard} from '@app/core/group-attendance.guard';
 
 @NgModule({
     declarations: [
@@ -55,6 +56,8 @@ import {GroupService} from '@service/group.service';
         MockService,
         LessonService,
         GroupService,
+        GroupAttendanceGuard,
+        AuthGuard
     ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]
