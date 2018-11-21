@@ -9,20 +9,21 @@ import {User} from "@interface/user";
     providedIn: 'root'
 })
 export class GroupAttendanceGuard implements CanActivate {
-    constructor(private userService: UserService, private authService: AuthService, private router: Router) {
+    constructor(private authService: AuthService, private router: Router) {
     }
 
-    private userSubscription: Subscription;
     private currentUser: User;
 
     canActivate(
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean {
 
-        const id = this.authService.currentUser.additionalUserInfo.profile.id;
-        this.userSubscription = this.userService.getUserById(id).subscribe((user) => this.currentUser = user);
+        const groupId = this.authService.currentUser.groupId;
+        //this.userSubscription = this.userService.getUserById(id.toString()).subscribe((user) => this.currentUser = user);
 
-        if (!this.currentUser.groupId || this.currentUser.isAdmin) {
+        //console.log(this.currentUser);
+
+        if (!groupId || this.authService.currentUser.isAdmin) {
             return true;
         } else {
             this.router.navigateByUrl(`groups/${this.currentUser.groupId}`);

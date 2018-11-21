@@ -58,16 +58,17 @@ export class AuthService {
         email: result.additionalUserInfo.profile.email,
         github_repo: result.additionalUserInfo.profile.html_url,
         avatar_src: result.additionalUserInfo.profile.avatar_url,
-        groupId: 'front-end',
+        groupId: '',
         isAdmin: false,
         lessons: []
-      }
+      };
       USERS.unshift(newUser);
+      console.log(USERS);
       let values: Array<object> = [{'groups': GROUPS}, {'users': USERS}, {'lessons': LESSONS_FRONT_END}];
       values.forEach((value) => this.mockService.setUpLocalStorage(value));
-      this.authState = result;
+      this.authState = newUser;
     }).catch(error => {
-        console.log(error)
+        console.log(error);
         throw error
       });
   }
