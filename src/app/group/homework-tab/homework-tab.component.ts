@@ -16,8 +16,8 @@ export class HomeworkTabComponent {
     private backgroundColor: string = "#5a95f5";
     private currentUser: User;
     private lessonLink: string;
-    // currentUserId: string = '1993036'; //admin (for manual switch)
-    currentUserId: string = '128736';//student (for manual switch)
+    currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
+    // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
 
     constructor(private _userService: UserService) { }
 
@@ -30,11 +30,7 @@ export class HomeworkTabComponent {
         if (this.currentUser != undefined) {
             for (let lesson of this.currentUser.lessons) {
                 if (lesson.lessonId === this.selectedTask.id) {
-                    if (lesson.homework.url == '') {
-                        lesson.homework.url = this.lessonLink;
-                    } else {
-                        this.lessonLink = lesson.homework.url;
-                    }
+                    this.lessonLink = lesson.homework.url;
                 }
             }
         }

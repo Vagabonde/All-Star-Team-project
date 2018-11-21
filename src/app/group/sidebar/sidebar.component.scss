@@ -10,20 +10,22 @@ p {
 .group-name-block {
     height: 10%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.group-name-arrow {
-    cursor: pointer;
-    transition: all 0.5s;
-    &:hover {
-        transform: scale(0.8);
-    }
-}
+// .group-name-arrow {
+//     cursor: pointer;
+//     transition: all 0.5s;
+//     &:hover {
+//         transform: scale(0.8);
+//     }
+// }
 
 .group-name-paragraph {
+    width: 80%;
+    // text-align: center;
     font-weight: bold;
     font-size: 15px;
 }
@@ -91,6 +93,9 @@ p {
 
 .partisipants-logo {
     margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
 .user-card {

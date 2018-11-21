@@ -1,10 +1,52 @@
 <nav class="navbar navbar-light bg-white">
     <div class="container">
-        <img src="/assets/EPAM_logo.svg" height="30" alt="">
-    </div>
-    <div class="nav">
-        <!-- <div> <a href="">logOut</a></div>
-        <div>student</div>
-        <div>group</div> -->
+        <img src="/assets/logo.png" height="30" alt="">
+        <div class="getOut text-right" *ngIf="isLoggedIn()">
+            <div>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <img class="current-student-img" src="/assets/user_icon.png" alt="current-user-logo">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-item current-student-profile ">
+                        <span class="text-uppercase font-weight-bold">{{currentUser.name}}</span>
+                        <span class="current-student">student</span>
+                        {{currentUser.email}}
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" (click)="logOut();">
+                        <span class="mr-4">Log Out</span><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/
+                                  Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcg
+                                  VmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4
+                                  bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4
+                                  PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAw
+                                  IDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxn
+                                  PgoJCTxnPgoJCQk8cGF0aCBkPSJNNTEwLjM3MSwyMjYuNTEzYy0xLjA4OC0yLjYwMy0yLjY0NS00Ljk3MS00LjYyOS02
+                                  Ljk1NWwtNjMuOTc5LTYzLjk3OWMtOC4zNDEtOC4zMi0yMS44MjQtOC4zMi0zMC4xNjUsMCAgICAgYy04LjM0MSw4LjM0M
+                                  S04LjM0MSwyMS44NDUsMCwzMC4xNjVsMjcuNTg0LDI3LjU4NEgzMjAuMDEzYy0xMS43OTcsMC0yMS4zMzMsOS41NTctMj
+                                  EuMzMzLDIxLjMzM3M5LjUzNiwyMS4zMzMsMjEuMzMzLDIxLjMzMyAgICAgaDExOS4xNjhsLTI3LjU4NCwyNy41ODRjLTg
+                                  uMzQxLDguMzQxLTguMzQxLDIxLjg0NSwwLDMwLjE2NWM0LjE2LDQuMTgxLDkuNjIxLDYuMjUxLDE1LjA4Myw2LjI1MXMx
+                                  MC45MjMtMi4wNjksMTUuMDgzLTYuMjUxICAgICBsNjMuOTc5LTYzLjk3OWMxLjk4NC0xLjk2MywzLjU0MS00LjMzMSw0L
+                                  jYyOS02Ljk1NUM1MTIuNTI1LDIzNy42MDYsNTEyLjUyNSwyMzEuNzE4LDUxMC4zNzEsMjI2LjUxM3oiIGZpbGw9IiMyZW
+                                  MyZDkiLz4KCQkJPHBhdGggZD0iTTM2Mi42OCwyOTguNjY3Yy0xMS43OTcsMC0yMS4zMzMsOS41NTctMjEuMzMzLDIxLjM
+                                  zM3YxMDYuNjY3aC04NS4zMzNWODUuMzMzYzAtOS40MDgtNi4xODctMTcuNzI4LTE1LjIxMS0yMC40MzcgICAgIGwtNzQu
+                                  MDkxLTIyLjIyOWgxNzQuNjM1djEwNi42NjdjMCwxMS43NzYsOS41MzYsMjEuMzMzLDIxLjMzMywyMS4zMzNzMjEuMzMzL
+                                  TkuNTU3LDIxLjMzMy0yMS4zMzN2LTEyOCAgICAgQzM4NC4wMTMsOS41NTcsMzc0LjQ3NywwLDM2Mi42OCwwSDIxLjM0N2
+                                  MtMC43NjgsMC0xLjQ1MSwwLjMyLTIuMTk3LDAuNDA1Yy0xLjAwMywwLjEwNy0xLjkyLDAuMjc3LTIuODgsMC41MTIgICA
+                                  gIGMtMi4yNCwwLjU3Ni00LjI2NywxLjQ1MS02LjE2NSwyLjY0NWMtMC40NjksMC4yOTktMS4wNDUsMC4zMi0xLjQ5Myww
+                                  LjY2MUM4LjQ0LDQuMzUyLDguMzc2LDQuNTg3LDguMjA1LDQuNzE1ICAgICBDNS44OCw2LjU0OSwzLjkzOSw4Ljc4OSwyL
+                                  jUzMSwxMS40NTZjLTAuMjk5LDAuNTc2LTAuMzYzLDEuMTk1LTAuNTk3LDEuNzkyYy0wLjY4MywxLjYyMS0xLjQyOSwzLj
+                                  ItMS42ODUsNC45OTIgICAgIGMtMC4xMDcsMC42NCwwLjA4NSwxLjIzNywwLjA2NCwxLjg1NmMtMC4wMjEsMC40MjctMC4
+                                  yOTksMC44MTEtMC4yOTksMS4yMzdWNDQ4YzAsMTAuMTc2LDcuMTg5LDE4LjkyMywxNy4xNTIsMjAuOTA3ICAgICBsMjEz
+                                  LjMzMyw0Mi42NjdjMS4zODcsMC4yOTksMi43OTUsMC40MjcsNC4xODEsMC40MjdjNC44ODUsMCw5LjY4NS0xLjY4NSwxM
+                                  y41MjUtNC44NDNjNC45MjgtNC4wNTMsNy44MDgtMTAuMDkxLDcuODA4LTE2LjQ5MSAgICAgdi0yMS4zMzNIMzYyLjY4Yz
+                                  ExLjc5NywwLDIxLjMzMy05LjU1NywyMS4zMzMtMjEuMzMzVjMyMEMzODQuMDEzLDMwOC4yMjQsMzc0LjQ3NywyOTguNjY
+                                  3LDM2Mi42OCwyOTguNjY3eiIgZmlsbD0iIzJlYzJkOSIvPgoJCTwvZz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9n
+                                  Pgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KP
+                                  C9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"/>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </nav>
