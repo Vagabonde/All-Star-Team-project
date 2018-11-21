@@ -40,14 +40,18 @@ export class SidebarComponent implements OnInit {
     .subscribe(curator => this.curator = curator);
 
     this.userService.getStudents()
-    .subscribe(allStudents => this.potentialStudents = allStudents.filter(user => !user.groupId || user.groupId === this.currentGroupId));
+    .subscribe(allStudents =>
+      this.potentialStudents = allStudents
+        .filter(user => !user.groupId || user.groupId === this.currentGroupId)
+        .sort((a, b) => a.name.localeCompare(b.name))
+    );
 
     this.updateUsers();
 
     this.userService.getUserById(this.currentUserId)
     .subscribe(user => this.currentUser = user);
   }
-  
+
 
   toggleUser(user) {
 
@@ -69,7 +73,7 @@ export class SidebarComponent implements OnInit {
 
   updateUsers(): void {
     this.userService.getStudentsByGroupId(this.currentGroupId)
-    .subscribe(students => this.students = students);
+    .subscribe(students => this.students = students.sort((a, b) => a.name.localeCompare(b.name)));
   }
 
   select(item) {
