@@ -2,22 +2,67 @@ import {User} from '@interface/user';
 
 export const USERS: User[] = [
     {
-        id: '128736',
+        id: 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2',
         name: 'Kirstin Birch',
-        email: 'kristin@gmial.com',
+        email: 'testapp1@gmail.com', //password: 111111;
         github_repo: 'https://github.com/kristinrepo',
         avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'front-end',
         isAdmin: false,
-        lessons: []
+        lessons: [
+            {
+
+                lessonId: '1',
+                feedback: 'nice job',
+                mark: '100',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz1',
+                    isSubmitted: true,
+                }
+            },
+            {
+
+                lessonId: '2',
+                feedback: 'nice job 2',
+                mark: '3',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz2',
+                    isSubmitted: true,
+                }
+            },
+            {
+
+                lessonId: '3',
+                feedback: 'nice job 3',
+                mark: '50',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz3',
+                    isSubmitted: true,
+                }
+            },
+            {
+
+                lessonId: '4',
+                feedback: 'nice job 4',
+                mark: '5',
+                isAttended: true,
+                homework: {
+                    url: '',
+                    isSubmitted: false,
+                }
+            }
+        ]
     },
     {
-        id: '3495',
+        id: 'bzl50eV21WZoNKsCyUWU6F6sJIO2',//pass: 222222
         name: 'Stephania Ransom',
-        email: 'stephania@gmial.com',
+        email: 'testapp2@gmial.com',
         github_repo: 'https://github.com/stephaniarepo',
         avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
-        groupId: 'front-end',
+        groupId: '',
         isAdmin: false,
         lessons: []
     },
@@ -32,9 +77,9 @@ export const USERS: User[] = [
         lessons: []
     },
     {
-        id: '1993036',
+        id: '78vUGlS2S7RywUuqfBw0zPQKxLv2',
         name: 'Neoma Nealy',
-        email: 'neoma@gmial.com',
+        email: 'testappadmin@gmial.com',// pass: 000000
         github_repo: 'https://github.com/neomarepo',
         avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'front-end',
@@ -52,9 +97,9 @@ export const USERS: User[] = [
         lessons: []
     },
     {
-        id: '3495',
+        id: '1wTxYwovssMDjGvuveKNi2DPqi83',
         name: 'Sonya Ran',
-        email: 'stephania@gmial.com',
+        email: 'testapp4@gmial.com', //pass:444444
         github_repo: 'https://github.com/stephaniarepo',
         avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'angularjs',
@@ -72,11 +117,11 @@ export const USERS: User[] = [
         lessons: []
     },
     {
-        id: '136',
+        id: 'W7zSwRmjklfnsaUXcoLOeSReDke2',
         name: 'Key Rich',
-        email: 'kristin@gmial.com',
-        github_repo: 'https://github.com/kristinrepo',
         avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
+        email: 'testapp3@gmial.com',
+        github_repo: 'https://github.com/kristinrepo', //pass: 333333
         groupId: 'front-end',
         isAdmin: false,
         lessons: []

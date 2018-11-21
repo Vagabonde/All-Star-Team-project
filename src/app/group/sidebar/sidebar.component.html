@@ -1,6 +1,6 @@
 <div class="h-100">
-    <div class="group-name-block sidebar-block ">
-      <a [routerLink]="['/groups']"><img class="group-name-arrow"  src="/assets/arrow-point-to-right.png" alt="arrow-left"></a>
+    <div class="group-name-block sidebar-block">
+      <!-- <a [routerLink]="['/groups']"><img class="group-name-arrow"  src="/assets/arrow-point-to-right.png" alt="arrow-left"></a> -->
       <p class="group-name-paragraph">Group Name JS</p>
       <img class="group-name-logo" src="/assets/JS.png" alt="js-logo">
     </div>
@@ -45,8 +45,9 @@
           </div>
         </div>
         <div *ngIf="addUsersModeActive">
+          <input type="text" [(ngModel)]="searchUser">
 
-        <div *ngFor="let user of potentialStudents">
+        <div *ngFor="let user of potentialStudents | search:searchUser">
             <div class="student-block-main">
                 <div class="student-block-left block-left">
                   <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
