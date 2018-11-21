@@ -12,12 +12,12 @@ import {User} from '@interface/user';
 })
 export class HomeworkTabComponent {
     @Input() selectedTask;
-    public text: string = 'ВСЬО';
+    public text: string = 'Submit';
     private backgroundColor: string = "#5a95f5";
     private currentUser: User;
     private lessonLink: string;
-    currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
-    // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
+    // currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
+    currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
 
     constructor(private _userService: UserService) { }
 
@@ -26,8 +26,11 @@ export class HomeworkTabComponent {
             this.currentUser = user});
     }
 
+
+
     ngOnChanges() {
         if (this.currentUser != undefined) {
+            this.lessonLink = '';
             for (let lesson of this.currentUser.lessons) {
                 if (lesson.lessonId === this.selectedTask.id) {
                     this.lessonLink = lesson.homework.url;
@@ -41,12 +44,12 @@ export class HomeworkTabComponent {
             url: this.lessonLink,
             isSubmitted: true
         };
-        this._userService.addUserHomework(this.currentUser.id, newHomework, this.selectedTask);
+        this._userService.addUserHomework(this.currentUser.id, newHomework, this.selectedTask.id);
     }
 
     changeBtnText() {
-        if (this.text === 'ВСЬО') {
-            this.text = 'АЙ, МОЛОДЕЦЬ!';
+        if (this.text === 'Submit') {
+            this.text = 'Done';
             this.backgroundColor = '#00FF7F';
         }
     }

@@ -63,13 +63,12 @@ export class UserService {
     }
   }
 
-  public addUserHomework(userId: string, newHomework: Homework, currentLesson: Lesson) {
+  public addUserHomework(userId: string, newHomework: Homework, currentLessonId: string) {
     for(let i = 0; i < this.users.length; i++) {
       if (this.users[i].id === userId) {
         for (let j = 0; j < this.users[i].lessons.length; j++) {
-          if(this.users[i].lessons[j].lessonId === currentLesson.id) {
+          if(this.users[i].lessons[j].lessonId === currentLessonId) {
             this.users[i].lessons[j].homework = newHomework;
-            console.log(this.users[i]);
           }
         }
       }
