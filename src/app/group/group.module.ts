@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
 import { ResultTabComponent } from './tabs/result-tab/result-tab.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { ResultTabComponent } from './tabs/result-tab/result-tab.component';
         SidebarComponent,
         TabsComponent,
         HomeworkTabComponent,
-        ResultTabComponent
+        ResultTabComponent,
+        SearchPipe
     ],
     imports: [
         CommonModule,
