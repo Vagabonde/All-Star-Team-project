@@ -15,8 +15,7 @@ export class HeaderComponent {
     }
 
     currentUser: User;
-    // currentUserId: string = '1993036'; //admin
-    currentUserId: string = '128736';//student
+    currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2';
 
     ngOnInit(){
         this.userService.getUserById(this.currentUserId).subscribe(user => this.currentUser = user)

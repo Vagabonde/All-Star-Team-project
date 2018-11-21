@@ -22,8 +22,8 @@ export class SidebarComponent implements OnInit {
   potentialStudents: User[];
   currentGroupId: string;
   currentUser: User;
-  currentUserId: string = '1993036'; //curator Id
-  // currentUserId: string = '128736'; //student id;
+  currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
+  // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
   searchUser: string = '';
 
   addUsersModeActive: boolean = false;

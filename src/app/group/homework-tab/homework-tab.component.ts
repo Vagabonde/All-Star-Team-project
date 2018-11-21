@@ -16,8 +16,8 @@ export class HomeworkTabComponent {
     private backgroundColor: string = "#5a95f5";
     private currentUser: User;
     private lessonLink: string;
-    // currentUserId: string = '1993036'; //admin (for manual switch)
-    currentUserId: string = '128736';//student (for manual switch)
+    currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
+    // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
 
     constructor(private _userService: UserService) { }
 
