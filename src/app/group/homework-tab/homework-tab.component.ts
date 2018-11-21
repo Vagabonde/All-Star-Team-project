@@ -1,6 +1,8 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
-import {UserService} from "../../shared/services/user.service";
+import {UserService} from '@service/user.service';
+import {Homework} from '@interface/homework.interface';
+import {User} from '@interface/user';
 
 
 @Component({
@@ -8,25 +10,38 @@ import {UserService} from "../../shared/services/user.service";
     templateUrl: './homework-tab.component.html',
     styleUrls: ['./homework-tab.component.scss']
 })
-export class HomeworkTabComponent implements OnInit {
+export class HomeworkTabComponent {
     @Input() selectedTask;
     public text: string = 'ВСЬО';
     private backgroundColor: string = "#5a95f5";
-    private currentStudent: object = {};
-    private lessonLink: any = '';
+    private currentUser: User;
+    private lessonLink: string;
+    // currentUserId: string = '1993036'; //admin (for manual switch)
+    currentUserId: string = '128736';//student (for manual switch)
 
-    constructor(private _userService: UserService) {
-        this.currentStudent = {};
-    }
+    constructor(private _userService: UserService) { }
 
     ngOnInit() {
-    };
+        this._userService.getUserById(this.currentUserId).subscribe(user => {
+            this.currentUser = user});
+    }
+
+    ngOnChanges() {
+        if (this.currentUser != undefined) {
+            for (let lesson of this.currentUser.lessons) {
+                if (lesson.lessonId === this.selectedTask.id) {
+                    this.lessonLink = lesson.homework.url;
+                }
+            }
+        }
+    }
 
     onHomeworkSubmit() {
-        this.currentStudent = this._userService.getStudentById('95').subscribe(users => {
-            users.lessons.push(this.lessonLink);
-            console.log(users);
-        })
+        let newHomework: Homework = {
+            url: this.lessonLink,
+            isSubmitted: true
+        };
+        this._userService.addUserHomework(this.currentUser.id, newHomework, this.selectedTask);
     }
 
     changeBtnText() {

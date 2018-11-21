@@ -14,17 +14,21 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from '../environments/environment';
 import {HeaderComponent} from './header/header.component';
 import {GroupModule} from './group/group.module';
-import {AuthService} from './shared/services/auth.service';
-import {LessonService} from './shared/services/lesson.service';
+
+import {AuthService} from '@service/auth.service';
+import {LessonService} from '@service/lesson.service';
+
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 //import {AuthGuard} from './core/auth.guard';
 import {GroupsPageModule} from './groups/groups-page.module'
 import {StorageServiceModule} from 'angular-webstorage-service';
-import {MockService} from './shared/services/mock.service';
-import {UserService} from './shared/services/user.service';
-import {GroupService} from './shared/services/group.service';
-import {DbService} from './shared/services/db.service';
+
+import {MockService} from '@service/mock.service';
+import {UserService} from '@service/user.service';
+import {GroupService} from '@service/group.service';
+import {DbService} from '@service/db.service';
+
 @NgModule({
     declarations: [
         AppComponent,

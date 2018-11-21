@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { GROUPS } from '../../shared/mocks/mock-groups';
-import { UserService } from '../../shared/services/user.service';
-import { User } from '../../shared/interface/user';
+import { GROUPS } from '@shared/mocks/mock-groups';
+import { UserService } from '@service/user.service';
+import { User } from '@interface/user';
 
 
 @Component({
@@ -37,16 +37,13 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.currentGroupId = this.route.snapshot.paramMap.get('groupId');
 
-
     this.userService.getCuratorByGroupId(this.currentGroupId)
     .subscribe(curator => this.curator = curator);
 
     this.userService.getStudents()
     .subscribe(allStudents => this.potentialStudents = allStudents.filter(user => !user.groupId || user.groupId === this.currentGroupId));
 
-
     this.updateUsers();
-
 
     this.userService.getUserById(this.currentUserId)
     .subscribe(user => this.currentUser = user);
@@ -93,8 +90,6 @@ export class SidebarComponent implements OnInit {
     this.userService.getStudentsByGroupId(this.currentGroupId)
     .subscribe(students => this.students = students);
   }
-
-
 
   select(item) {
     if(this.selected === item) {

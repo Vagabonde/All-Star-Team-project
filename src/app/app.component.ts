@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
-import {MockService} from './shared/services/mock.service';
-import {GROUPS} from './shared/mocks/mock-groups';
-import {LESSONS_FRONT_END} from './shared/mocks/mock-lessons-front-end';
-import {USERS} from './shared/mocks/mock-user';
+import {MockService} from '@service/mock.service';
+import {GROUPS} from '@shared/mocks/mock-groups';
+import {LESSONS_FRONT_END} from '@shared/mocks/mock-lessons-front-end';
+import {USERS} from '@shared/mocks/mock-user';
 
 @Component({
     selector: 'app-root',

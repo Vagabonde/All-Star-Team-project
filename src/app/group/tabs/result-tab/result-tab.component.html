@@ -4,11 +4,15 @@
     <th>Attendency</th>
     <th>Mark</th>
     <th>Feedback</th>
+    <th>Homework</th>
   </tr>
   <tr *ngFor="let user of students">
 
     <td>{{user.name}}</td>
-    <td>{{getStudentAttendency(user)}}</td>
+    <td>{{getStudetLessonData(user, 'isAttended')}}</td>
+    <td>{{getStudetLessonData(user, 'mark')}}</td>
+    <td>{{getStudetLessonData(user, 'feedback')}}</td>
+    <td>{{getStudentHomeworkLink(user)}}</td>
   </tr>
 </table>
 
@@ -22,16 +26,17 @@
           <th>Attendency</th>
           <th>Mark</th>
           <th>Feedback</th>
+          <th>Link to homework</th>
         </tr>
         <tr>
           <td>{{user.name}}</td>
           <td><input type="checkbox" [(ngModel)]="user.lesson.isAttended" name="isAttended"></td>
           <td><input type="text" [(ngModel)]="user.lesson.mark" name="mark"></td>
           <td><input type="text" [(ngModel)]="user.lesson.feedback" name="feedback"></td>
+          <td>{{user.lesson.homework.url}}</td>
         </tr>
       </table>
     </form>
   </div>
   <button type="submit" (click)="saveUserLessons()">SAVE</button>
-  {{diag}}
 </div>

@@ -1,3 +1,30 @@
 .navbar {
   box-shadow: 0 2px 2px 0 #30c6dd;
+  display: flex;
+  flex-direction: row;
+}
+
+.getOut img{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.navbar .dropdown-menu{
+  left: auto;
+}
+
+.current-student-profile{
+  display: flex;
+  flex-direction: column;
+}
+
+.current-student{
+  font-size: 12px;
+  font-weight: bold;
+  color: #2ec2d9;
+}
+
+.navbar .dropdown-menu a{
+  text-align: center;
 }
