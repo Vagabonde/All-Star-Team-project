@@ -21,10 +21,11 @@ export class ResultTabComponent implements OnInit, OnDestroy {
   currentGroupId: string;
   curator: User;
   currentUser: User;
-  // currentUserId: string = '1993036'; //admin
-  currentUserId: string = '128736';//student
   subCurator: Subscription;
   subUser: Subscription;
+  currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
+  // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
+
 
 
   constructor(private userService: UserService, private route: ActivatedRoute) { }

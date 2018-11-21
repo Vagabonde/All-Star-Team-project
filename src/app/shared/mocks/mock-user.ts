@@ -2,9 +2,9 @@ import {User} from '@interface/user';
 
 export const USERS: User[] = [
     {
-        id: '128736',
+        id: 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2',
         name: 'Kirstin Birch',
-        email: 'kristin@gmial.com',
+        email: 'testapp1@gmail.com', //password: 111111;
         github_repo: 'https://github.com/kristinrepo',
         groupId: 'front-end',
         isAdmin: false,
@@ -56,11 +56,11 @@ export const USERS: User[] = [
         ]
     },
     {
-        id: '3495',
+        id: 'bzl50eV21WZoNKsCyUWU6F6sJIO2',//pass: 222222
         name: 'Stephania Ransom',
-        email: 'stephania@gmial.com',
+        email: 'testapp2@gmial.com',
         github_repo: 'https://github.com/stephaniarepo',
-        groupId: 'front-end',
+        groupId: '',
         isAdmin: false,
         lessons: []
     },
@@ -74,9 +74,9 @@ export const USERS: User[] = [
         lessons: []
     },
     {
-        id: '1993036',
+        id: '78vUGlS2S7RywUuqfBw0zPQKxLv2',
         name: 'Neoma Nealy',
-        email: 'neoma@gmial.com',
+        email: 'testappadmin@gmial.com',// pass: 000000
         github_repo: 'https://github.com/neomarepo',
         groupId: 'front-end',
         isAdmin: true,
@@ -92,9 +92,9 @@ export const USERS: User[] = [
         lessons: []
     },
     {
-        id: '3495',
+        id: '1wTxYwovssMDjGvuveKNi2DPqi83',
         name: 'Sonya Ran',
-        email: 'stephania@gmial.com',
+        email: 'testapp4@gmial.com', //pass:444444
         github_repo: 'https://github.com/stephaniarepo',
         groupId: 'angularjs',
         isAdmin: false,
@@ -110,11 +110,11 @@ export const USERS: User[] = [
         lessons: []
     },
     {
-        id: '136',
+        id: 'W7zSwRmjklfnsaUXcoLOeSReDke2',
         name: 'Key Rich',
-        email: 'kristin@gmial.com',
-        github_repo: 'https://github.com/kristinrepo',
-        groupId: '',
+        email: 'testapp3@gmial.com',
+        github_repo: 'https://github.com/kristinrepo', //pass: 333333
+        groupId: 'front-end',
         isAdmin: false,
         lessons:
         [
