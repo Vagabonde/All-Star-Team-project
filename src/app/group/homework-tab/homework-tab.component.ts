@@ -30,11 +30,7 @@ export class HomeworkTabComponent {
         if (this.currentUser != undefined) {
             for (let lesson of this.currentUser.lessons) {
                 if (lesson.lessonId === this.selectedTask.id) {
-                    if (lesson.homework.url == '') {
-                        lesson.homework.url = this.lessonLink;
-                    } else {
-                        this.lessonLink = lesson.homework.url;
-                    }
+                    this.lessonLink = lesson.homework.url;
                 }
             }
         }
