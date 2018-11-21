@@ -27,9 +27,15 @@
 
       <div class="students-block">
         <div *ngIf="!addUsersModeActive">
-          <div *ngIf="currentUser.isAdmin">
-            <button class="student-else-button else-button" (click)=addUsers()>Add</button>
+          <div *ngIf="currentUser.isAdmin" (click)=addUsers() class="manage-group">
+            <div class="manage-block">
+              <img class="group-manage-icon" src="/assets/group.png" alt="group-manage-icon">
+              <p>Manage users</p>
+            </div>
+
           </div>
+          <hr>
+        <!-- </div> -->
           <div class="user-card studets" *ngFor="let user of students">
             <div class="student-block-main">
               <div class="student-block-left block-left">

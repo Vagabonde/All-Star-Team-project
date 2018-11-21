@@ -4,7 +4,7 @@ import {UserService} from '@service/user.service';
 import {User} from '@interface/user';
 import {Lesson} from '@interface/lesson.interface';
 import {UserLesson} from '@interface/userLesson.interface';
-import { Subscribable, Subscription } from 'rxjs';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-result-tab',

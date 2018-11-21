@@ -140,7 +140,22 @@ p {
     font-weight: bold;
 }
 
+.group-manage-icon {
+    width: 40px;
+    height: auto;
+    margin-right: 10%;
+}
+
+.manage-block {
+    display: flex;
+    // justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
 .else-button {
+    margin: 0 7%;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
