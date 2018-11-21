@@ -1,16 +1,17 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {UserService} from '@service/user.service';
 import {User} from '@interface/user';
 import {Lesson} from '@interface/lesson.interface';
 import {UserLesson} from '@interface/userLesson.interface';
+import { Subscribable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-result-tab',
   templateUrl: './result-tab.component.html',
   styleUrls: ['./result-tab.component.scss']
 })
-export class ResultTabComponent implements OnInit {
+export class ResultTabComponent implements OnInit, OnDestroy {
 
 
   @Input() selectedTask: Lesson;
@@ -22,17 +23,25 @@ export class ResultTabComponent implements OnInit {
   currentUser: User;
   // currentUserId: string = '1993036'; //admin
   currentUserId: string = '128736';//student
+  subCurator: Subscription;
+  subUser: Subscription;
 
 
   constructor(private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.userService.getCuratorByGroupId(this.currentGroupId)
+    this.subCurator = this.userService.getCuratorByGroupId(this.currentGroupId)
       .subscribe(curator => this.curator = curator);
 
-    this.userService.getUserById(this.currentUserId)
-    .subscribe(user => this.currentUser = user);
+    this.subUser = this.userService.getUserById(this.currentUserId)
+      .subscribe(user => this.currentUser = user);
   }
+
+  ngOnDestroy() {
+    this.subCurator.unsubscribe();
+    this.subUser.unsubscribe();
+  }
+
 
   ngOnChanges() {
     this.currentGroupId = this.route.snapshot.paramMap.get('groupId');
@@ -58,7 +67,7 @@ export class ResultTabComponent implements OnInit {
       return '';
     }
   }
-  
+
   fillModel(students: User[]) {
     let newModel = [];
     let lesson: UserLesson;
