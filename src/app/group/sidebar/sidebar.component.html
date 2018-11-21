@@ -45,8 +45,9 @@
           </div>
         </div>
         <div *ngIf="addUsersModeActive">
+          <input type="text" [(ngModel)]="searchUser">
 
-        <div *ngFor="let user of potentialStudents">
+        <div *ngFor="let user of potentialStudents | search:searchUser">
             <div class="student-block-main">
                 <div class="student-block-left block-left">
                   <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
