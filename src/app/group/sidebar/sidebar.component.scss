@@ -24,15 +24,16 @@ p {
 // }
 
 .group-name-paragraph {
-    width: 80%;
+    width: 75%;
     // text-align: center;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .group-name-logo {
     width: 40px;
     height: 40px;
+    margin-right: 5%;
     background-color: #000;
 }
 
@@ -68,6 +69,7 @@ p {
 
 .current-student-name {
     font-weight: bold;
+    // line-height: 0;
 }
 
 .profession {
@@ -83,7 +85,7 @@ p {
 }
 
 .participants-block {
-    height: calc(75% - 20px);
+    height: 90vh;
     position: relative;
 }
 
@@ -128,6 +130,8 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 10%;
+    cursor: pointer;
 }
 
 .block-left {
@@ -155,7 +159,7 @@ p {
 }
 
 .else-button {
-    margin: 0 7%;
+    // margin: 0 7%;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
@@ -179,4 +183,28 @@ p {
 
 .active {
     transform: rotate(-90deg);
+}
+
+.group-manage-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#search-by-name {
+    width: 90%;
+    &::placeholder {
+    color: #ccc;
+    }
+}
+
+.close-btn {
+    width: 60%;
+    height: 40px;
+    background-color: #5a95f5;
+    color: #fff;
+    border: none;
+}
+
+.form-control {
+    background-color: #5a95f5;
 }
