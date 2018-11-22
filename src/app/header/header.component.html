@@ -10,9 +10,10 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <div class="dropdown-item current-student-profile ">
-                        <span class="text-uppercase font-weight-bold">{{currentUser?.name}}</span>
-                        <span class="current-student">student</span>
-                        {{currentUser?.email}}
+                        <span class="text-uppercase font-weight-bold">{{(userService.getUserById(getCurrentUser()) | async)?.name}}</span>
+                        <span *ngIf="!(userService.getUserById(getCurrentUser()) | async)?.isAdmin" class="current-student">student</span>
+                        <span *ngIf="(userService.getUserById(getCurrentUser()) | async)?.isAdmin" class="current-student">curator</span>
+                        {{(userService.getUserById(getCurrentUser()) | async)?.email}}
                     </div>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" (click)="logOut();">
