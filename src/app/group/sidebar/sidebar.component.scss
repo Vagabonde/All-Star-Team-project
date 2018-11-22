@@ -15,14 +15,6 @@ p {
     margin-bottom: 10px;
 }
 
-// .group-name-arrow {
-//     cursor: pointer;
-//     transition: all 0.5s;
-//     &:hover {
-//         transform: scale(0.8);
-//     }
-// }
-
 .group-name-paragraph {
     width: 75%;
     // text-align: center;
@@ -152,10 +144,14 @@ p {
 
 .manage-block {
     display: flex;
-    // justify-content: flex-start;
     align-items: center;
-    padding: 0 10px;
+    padding: 10px;
     cursor: pointer;
+}
+
+hr {
+    line-height: 0;
+    margin-top: 0;
 }
 
 .else-button {
@@ -203,6 +199,7 @@ p {
     background-color: #5a95f5;
     color: #fff;
     border: none;
+    cursor: pointer;
 }
 
 .form-control {

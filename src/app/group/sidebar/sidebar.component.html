@@ -25,10 +25,10 @@
         </div>
       </div>
 
-      <div class="students-block">
+      <div class="students-block" >
         <div *ngIf="!addUsersModeActive">
           <div *ngIf="currentUser.isAdmin" (click)=addUsers() class="manage-group">
-            <div class="manage-block">
+            <div class="manage-block" [class.hoverable]="true">
               <img class="group-manage-icon" src="/assets/group.png" alt="group-manage-icon">
               <p class="group-manage-title">Manage users</p>
             </div>
@@ -36,7 +36,7 @@
           </div>
           <hr>
 
-          <div class="user-card studets" *ngFor="let user of students">
+          <div class="user-card studets" *ngFor="let user of students" [class.hoverable]="true">
             <div class="student-block-main" (click)="select(user)">
               <div class="student-block-left block-left">
                 <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
@@ -56,7 +56,7 @@
             <input id="search-by-name" type="text" [(ngModel)]="searchUser" class="form-control" placeholder="search by name">
           </div>
 
-        <div class="user-card studets" *ngFor="let user of potentialStudents | search:searchUser">
+        <div class="user-card studets" *ngFor="let user of potentialStudents | search:searchUser" [class.hoverable]="true">
             <div class="student-block-main" (click)="toggleUser(user)">
                 <div class="student-block-left block-left">
                   <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
@@ -69,7 +69,7 @@
         </div>
 
         <div class="user-card studets">
-          <button class="close-btn" (click)=showUsers()>Close</button>
+          <button class="close-btn" (click)="showUsers()" [class.hoverable]="true" >Close</button>
         </div>
 
       </div>
