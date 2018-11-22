@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
-import { GROUPS } from '@shared/mocks/mock-groups';
-import { UserService } from '@service/user.service';
-import { User } from '@interface/user';
+import {GROUPS} from '@shared/mocks/mock-groups';
+import {UserService} from '@service/user.service';
+import {User} from '@interface/user';
 
 
 @Component({
@@ -15,17 +15,16 @@ export class SidebarComponent implements OnInit {
 
 
   groups = GROUPS;
-  selected:any;
+  selected: any;
 
   curator: User;
   students: User[];
   potentialStudents: User[];
   currentGroupId: string;
-  // currentStudent: User;
-  // currentStudentId: string = '3495';
   currentUser: User;
-  currentUserId: string = '1993036'; //curator Id
-  // currentUserId: string = '128736'; //student id;
+  currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
+  // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
+  searchUser: string = '';
 
   addUsersModeActive: boolean = false;
 
@@ -41,7 +40,11 @@ export class SidebarComponent implements OnInit {
     .subscribe(curator => this.curator = curator);
 
     this.userService.getStudents()
-    .subscribe(allStudents => this.potentialStudents = allStudents.filter(user => !user.groupId || user.groupId === this.currentGroupId));
+    .subscribe(allStudents =>
+      this.potentialStudents = allStudents
+        .filter(user => !user.groupId || user.groupId === this.currentGroupId)
+        .sort((a, b) => a.name.localeCompare(b.name))
+    );
 
     this.updateUsers();
 
@@ -49,32 +52,14 @@ export class SidebarComponent implements OnInit {
     .subscribe(user => this.currentUser = user);
   }
 
+
   toggleUser(user) {
+
     if (user.groupId === '') {
       this.userService.setStudentGroup(user, this.currentGroupId);
-
-      // for(let i = 0; i < this.students.length; i++) {
-      //   if(this.students[i].id === user.id) {
-      //     this.students[i].groupId = this.currentGroupId;
-      //   }
-      // }
-
     } else {
       this.userService.setStudentGroup(user, '');
-
-      // for(let i = 0; i < this.students.length; i++) {
-      //   if(this.students[i].id === user.id) {
-      //     this.students[i].groupId = '';
-      //   }
-      // }
     }
-
-    // let s = this.students;
-    // this.students = s;
-
-    // this.students.push(user);
-    // this.students.pop();
-
     this.updateUsers();
   }
 
@@ -88,7 +73,7 @@ export class SidebarComponent implements OnInit {
 
   updateUsers(): void {
     this.userService.getStudentsByGroupId(this.currentGroupId)
-    .subscribe(students => this.students = students);
+    .subscribe(students => this.students = students.sort((a, b) => a.name.localeCompare(b.name)));
   }
 
   select(item) {
@@ -97,7 +82,7 @@ export class SidebarComponent implements OnInit {
     } else {
       this.selected = item;
     }
-};
+  }
 
   isActive(item) {
     if(this.selected === item) {
@@ -106,10 +91,10 @@ export class SidebarComponent implements OnInit {
       return 'hiden'
     }
   }
+
   isActiveDots(item) {
     if(this.selected === item) {
       return 'active'
     }
   }
-
 }
