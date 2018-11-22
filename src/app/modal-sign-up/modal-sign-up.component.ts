@@ -55,9 +55,11 @@ export class ModalSignUpComponent implements OnInit {
     }
 
     validateForm(email: string, password: string): boolean {
-        if (email.length === 0) {
-            this.errorMessage = 'Please enter Email!'
-            return false
+        const EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+
+        if ((email.length === 0) || (!EMAIL_REGEXP.test(email))) {
+            this.errorMessage = 'Invalid email format!'
+            return false;
         }
 
         if (password.length === 0) {
@@ -70,19 +72,6 @@ export class ModalSignUpComponent implements OnInit {
             return false
         }
 
-        this.errorMessage = ''
-
         return true
     }
-
-    isValidMailFormat(email: string) {
-        const EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
-
-        if ((email.length === 0) && (!EMAIL_REGEXP.test(email))) {
-            return false;
-        }
-
-        return true;
-    }
-
 }
