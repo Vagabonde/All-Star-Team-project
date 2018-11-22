@@ -4,7 +4,13 @@ table {
 
 tr, th, td {
     padding: 15px 0px;
-    border-bottom: 1px solid rgb(222, 226, 229);
+    border-bottom: 0.5px solid rgb(222, 226, 229);
+}
+
+tr {
+    display: grid;
+    grid-template-columns: repeat(5,25%);
+    padding: 0;
 }
 
 button {
