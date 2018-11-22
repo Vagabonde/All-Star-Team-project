@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {User} from '@interface/user';
 import {Observable, of} from 'rxjs';
 import {MockService} from './mock.service';
-import {UserLesson} from '@interface/userLesson.interface'
+import {UserLesson} from '@interface/userLesson.interface';
 import {Homework} from '@interface/homework.interface';
 import {Lesson} from '@interface/lesson.interface';
 
@@ -12,10 +12,11 @@ const key: string = 'users';
     providedIn: 'root'
 })
 export class UserService {
+  users: any;
 
-  constructor(public mockService: MockService) {}
-
-  users = this.mockService.storage.get(key);
+  constructor(public mockService: MockService) {
+    this.users = this.mockService.storage.get(key);
+  }
 
   public getUsers(): Observable<User[]> {
       return of(this.users);

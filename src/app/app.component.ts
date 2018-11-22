@@ -9,18 +9,13 @@ import {USERS} from '@shared/mocks/mock-user';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     title = 'keep-up-to-date';
-    items: Observable<any[]>;
     values: Array<object> = [{'groups': GROUPS}, {'users': USERS}, {'lessons': LESSONS_FRONT_END}];
 
-    constructor(db: AngularFirestore, public mockService: MockService) {
-        this.items = db.collection('items').valueChanges();
-    };
-
-    ngOnInit() {
+    constructor(public mockService: MockService) {
         this.values.forEach((value) => this.mockService.setUpLocalStorage(value));
     }
 }
