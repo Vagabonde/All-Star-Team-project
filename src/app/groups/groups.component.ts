@@ -25,7 +25,7 @@ export class GroupsComponent implements OnInit {
   }
 
   getCurrentUser() {
-       return this.authService.currentUserId
+       return this.authService.currentUserId;
     }
 
 

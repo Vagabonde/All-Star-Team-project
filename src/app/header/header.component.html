@@ -1,5 +1,6 @@
 <nav class="navbar navbar-light bg-white">
     <div class="container">
+
         <img src="/assets/logo.png" height="30" alt="">
         <div class="getOut text-right" *ngIf="isLoggedIn()">
             <div>
@@ -9,9 +10,9 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <div class="dropdown-item current-student-profile ">
-                        <span class="text-uppercase font-weight-bold">{{currentUser.name}}</span>
+                        <span class="text-uppercase font-weight-bold">{{currentUser?.name}}</span>
                         <span class="current-student">student</span>
-                        {{currentUser.email}}
+                        {{currentUser?.email}}
                     </div>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" (click)="logOut();">

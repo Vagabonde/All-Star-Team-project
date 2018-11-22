@@ -3,6 +3,7 @@ import {Component, Input} from '@angular/core';
 import {UserService} from '@service/user.service';
 import {Homework} from '@interface/homework.interface';
 import {User} from '@interface/user';
+import {AuthService} from '@service/auth.service';
 
 
 @Component({
@@ -11,21 +12,24 @@ import {User} from '@interface/user';
     styleUrls: ['./homework-tab.component.scss']
 })
 export class HomeworkTabComponent {
+
     @Input() selectedTask;
     public text: string = 'Submit';
     private backgroundColor: string = "#5a95f5";
     private currentUser: User;
     private lessonLink: string;
-    // currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
-    currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
+    currentUserId: string;
 
-    constructor(private _userService: UserService) { }
+
+
+
+    constructor(private _userService: UserService, private authService: AuthService) {
+        this.currentUserId = this.getCurrentUser();
+     }
 
     ngOnInit() {
-        this._userService.getUserById(this.currentUserId).subscribe(user => {
-            this.currentUser = user});
+        this._userService.getUserById(this.currentUserId).subscribe(user => {this.currentUser = user});
     }
-
 
 
     ngOnChanges() {
@@ -37,6 +41,10 @@ export class HomeworkTabComponent {
                 }
             }
         }
+    }
+
+    getCurrentUser() {
+       return this.authService.currentUserId;
     }
 
     onHomeworkSubmit() {
