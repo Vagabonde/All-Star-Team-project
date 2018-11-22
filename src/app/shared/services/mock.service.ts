@@ -1,10 +1,7 @@
 import {Inject, Injectable} from '@angular/core';
 import {LOCAL_STORAGE, StorageService} from 'angular-webstorage-service';
 
-@Injectable({
-    providedIn: "root",
-})
-
+@Injectable()
 export class MockService {
 
     constructor(@Inject(LOCAL_STORAGE) public storage: StorageService) {
