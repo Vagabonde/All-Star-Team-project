@@ -18,16 +18,19 @@
 
 
 <div *ngIf="currentUser?.isAdmin">
-  <div *ngFor="let user of model">
-    <form #f="ngForm">
-      <table>
-        <tr>
+  <table>
+      <tr>
           <th>Student</th>
           <th>Attendency</th>
           <th>Mark</th>
           <th>Feedback</th>
           <th>Link to homework</th>
         </tr>
+    </table>
+  <div *ngFor="let user of model">
+
+    <form #f="ngForm">
+      <table>
         <tr>
           <td>{{user.name}}</td>
           <td><input type="checkbox" [(ngModel)]="user.lesson.isAttended" name="isAttended"></td>
