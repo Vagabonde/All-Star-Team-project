@@ -41,12 +41,17 @@ export class UserService {
     return of(user)
   }
 
+  private updateStorage(key, value) {
+        this.mockService.storage.set(key, value);
+    }
+
   public setStudentGroup(student: User, currentGroupId: string): void {
     for (let i = 0; i < this.users.length; i++) {
       if (this.users[i].id === student.id) {
         this.users[i].groupId = currentGroupId;
       }
     }
+     this.updateStorage(key, this.users);
   }
 
   public addUserLesson(userId: string, lesson: UserLesson): void {
@@ -61,6 +66,7 @@ export class UserService {
         this.users[i].lessons.push(lesson);
       }
     }
+      this.updateStorage(key, this.users);
   }
 
   public addUserHomework(userId: string, newHomework: Homework, currentLesson: Lesson) {
@@ -69,10 +75,10 @@ export class UserService {
         for (let j = 0; j < this.users[i].lessons.length; j++) {
           if(this.users[i].lessons[j].lessonId === currentLesson.id) {
             this.users[i].lessons[j].homework = newHomework;
-            console.log(this.users[i]);
           }
         }
       }
     }
+      this.updateStorage(key, this.users);
   }
 }
