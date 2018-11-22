@@ -33,14 +33,14 @@
           <div class="user-card studets" *ngFor="let user of students">
             <div class="student-block-main">
               <div class="student-block-left block-left">
-                <img class="student-logo partisipants-logo" src="{{user.avatar_src}}" alt="student-logo">
+                <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
                 <p class="student-name">{{user.name}}</p>
               </div>
               <img class="student-else-button else-button" (click)="select(user)" [ngClass]="isActiveDots(user)" src="/assets/dots icon.png" alt="else button">
             </div>
             <div class="student-info-buttons" [ngClass]="isActive(user)">
-              <a href="mailto:{{user.email}}">Email</a>
-              <a target="_blank" href="{{user.github_repo}}">GitHub</a>
+              <a href="#">Email</a>
+              <a href="#">GitHub</a>
             </div>
           </div>
         </div>

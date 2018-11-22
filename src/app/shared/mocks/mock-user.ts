@@ -6,7 +6,6 @@ export const USERS: User[] = [
         name: 'Kirstin Birch',
         email: 'testapp1@gmail.com', //password: 111111;
         github_repo: 'https://github.com/kristinrepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'front-end',
         isAdmin: false,
         lessons: [
@@ -61,7 +60,6 @@ export const USERS: User[] = [
         name: 'Stephania Ransom',
         email: 'stephania@gmail.com',
         github_repo: 'https://github.com/stephaniarepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: '',
         isAdmin: false,
         lessons: []
@@ -71,7 +69,6 @@ export const USERS: User[] = [
         name: 'Ellis Brocato',
         email: 'brocato@gmail.com',
         github_repo: 'https://github.com/brocatorepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'front-end',
         isAdmin: false,
         lessons: []
@@ -81,17 +78,15 @@ export const USERS: User[] = [
         name: 'Neoma Nealy',
         email: 'neoma@gmail.com',
         github_repo: 'https://github.com/neomarepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'front-end',
         isAdmin: true,
         lessons: []
     },
     {
-        id: '128736',
+        id: '1287362',
         name: 'Kirs Red',
         email: 'kristin@gmail.com',
         github_repo: 'https://github.com/kristinrepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'front-end',
         isAdmin: false,
         lessons: []
@@ -101,7 +96,6 @@ export const USERS: User[] = [
         name: 'Sonya Ran',
         email: 'stephania@gmail.com',
         github_repo: 'https://github.com/stephaniarepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'angularjs',
         isAdmin: false,
         lessons: []
@@ -111,7 +105,6 @@ export const USERS: User[] = [
         name: 'Elvis Bro',
         email: 'brocato@gmail.com',
         github_repo: 'https://github.com/brocatorepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'angularjs',
         isAdmin: true,
         lessons: []
@@ -124,15 +117,56 @@ export const USERS: User[] = [
         github_repo: 'https://github.com/kristinrepo', //pass: 333333
         groupId: 'front-end',
         isAdmin: false,
-        lessons: []
+        lessons:
+        [
+            {
+                lessonId: '1',
+                feedback: 'awful',
+                mark: '30',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz1',
+                    isSubmitted: true,
+                }
+            },
+            {
+                lessonId: '2',
+                feedback: 'awful 2',
+                mark: '0',
+                isAttended: false,
+                homework: {
+                    url: 'http://url.com/dz2',
+                    isSubmitted: true,
+                }
+            },
+            {
+                lessonId: '3',
+                feedback: 'awful 3',
+                mark: '25',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz3',
+                    isSubmitted: false,
+                }
+            },
+            {
+                lessonId: '4',
+                feedback: 'awful 4',
+                mark: '40',
+                isAttended: true,
+                homework: {
+                    url: 'http://url.com/dz4',
+                    isSubmitted: true,
+                }
+            }
+        ]
     },
     {
         id: '95',
         name: 'Mia Bansom',
         email: 'stephania@gmail.com',
         github_repo: 'https://github.com/stephaniarepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
-        groupId: 'front-end',
+        groupId: '',
         isAdmin: false,
         lessons: []
     },
@@ -141,7 +175,6 @@ export const USERS: User[] = [
         name: 'Rich Stuck',
         email: 'brocato@gmail.com',
         github_repo: 'https://github.com/brocatorepo',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         groupId: 'front-end',
         isAdmin: false,
         lessons: []

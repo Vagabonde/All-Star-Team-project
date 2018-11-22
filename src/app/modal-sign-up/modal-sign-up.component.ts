@@ -1,16 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '@service/auth.service';
-@Component({
-  selector: 'app-modal-login',
-  templateUrl: './modal-login.component.html',
-  styleUrls: ['./modal-login.component.scss']
-})
-export class ModalLoginComponent implements OnInit {
-  logAsAdmin = 'LOG IN';
-  // logAsStudent = 'Sign in as Student';
 
-  isNewUser = true;
+@Component({
+  selector: 'app-modal-sign-up',
+  templateUrl: './modal-sign-up.component.html',
+  styleUrls: ['./modal-sign-up.component.scss']
+})
+export class ModalSignUpComponent implements OnInit {
+  register = 'Register';
+
+    isNewUser = true;
     email = '';
     password = '';
     errorMessage = '';
@@ -40,13 +40,14 @@ export class ModalLoginComponent implements OnInit {
         };
     }
 
-    onLoginEmail(): void {
+    onSignUp(): void {
         this.clearErrorMessage()
 
         if (this.validateForm(this.email, this.password)) {
-            this.authService.loginWithEmail(this.email, this.password)
-                .then(() => this.router.navigate(['/groups']))
-                .catch(_error => {
+            this.authService.signUpWithEmail(this.email, this.password)
+                .then(() => {
+                    this.router.navigate(['/groups'])
+                }).catch(_error => {
                     this.error = _error
                     this.router.navigate(['/'])
                 })
@@ -54,11 +55,9 @@ export class ModalLoginComponent implements OnInit {
     }
 
     validateForm(email: string, password: string): boolean {
-        const EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
-
-        if ((email.length === 0) || (!EMAIL_REGEXP.test(email))) {
-            this.errorMessage = 'Invalid email format!'
-            return false;
+        if (email.length === 0) {
+            this.errorMessage = 'Please enter Email!'
+            return false
         }
 
         if (password.length === 0) {
@@ -71,6 +70,19 @@ export class ModalLoginComponent implements OnInit {
             return false
         }
 
+        this.errorMessage = ''
+
         return true
     }
+
+    isValidMailFormat(email: string) {
+        const EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+
+        if ((email.length === 0) && (!EMAIL_REGEXP.test(email))) {
+            return false;
+        }
+
+        return true;
+    }
+
 }
