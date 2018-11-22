@@ -32,8 +32,9 @@
               <img class="group-manage-icon" src="/assets/group.png" alt="group-manage-icon">
               <p class="group-manage-title">Manage users</p>
             </div>
+            <hr>
           </div>
-          <hr>
+        
 
           <div class="user-card studets" *ngFor="let user of students" [class.hoverable]="true">
             <div class="student-block-main" (click)="select(user)">
