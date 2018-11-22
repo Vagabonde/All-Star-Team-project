@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit, HostListener} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {GROUPS} from '@shared/mocks/mock-groups';
 
+
 @Component({
     selector: 'app-group',
     templateUrl: './group.component.html',

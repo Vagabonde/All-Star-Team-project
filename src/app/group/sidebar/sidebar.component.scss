@@ -15,24 +15,16 @@ p {
     margin-bottom: 10px;
 }
 
-// .group-name-arrow {
-//     cursor: pointer;
-//     transition: all 0.5s;
-//     &:hover {
-//         transform: scale(0.8);
-//     }
-// }
-
 .group-name-paragraph {
-    width: 80%;
-    // text-align: center;
+    width: 75%;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .group-name-logo {
     width: 40px;
     height: 40px;
+    margin-right: 5%;
     background-color: #000;
 }
 
@@ -83,7 +75,7 @@ p {
 }
 
 .participants-block {
-    height: calc(75% - 20px);
+    height: 84vh;
     position: relative;
 }
 
@@ -128,6 +120,8 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 10%;
+    cursor: pointer;
 }
 
 .block-left {
@@ -138,6 +132,24 @@ p {
 .student-name {
     font-size: 16px;
     font-weight: bold;
+}
+
+.group-manage-icon {
+    width: 40px;
+    height: auto;
+    margin-right: 10%;
+}
+
+.manage-block {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+hr {
+    line-height: 0;
+    margin-top: 0;
 }
 
 .else-button {
@@ -164,4 +176,29 @@ p {
 
 .active {
     transform: rotate(-90deg);
+}
+
+.group-manage-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#search-by-name {
+    width: 90%;
+    &::placeholder {
+    color: #ccc;
+    }
+}
+
+.close-btn {
+    width: 60%;
+    height: 40px;
+    background-color: #5a95f5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-control {
+    background-color: #5a95f5;
 }

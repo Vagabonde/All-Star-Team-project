@@ -1,4 +1,4 @@
-<table *ngIf="!currentUser.isAdmin">
+<table *ngIf="!currentUser?.isAdmin">
   <tr>
     <th>Student</th>
     <th>Attendency</th>
@@ -17,7 +17,7 @@
 </table>
 
 
-<div *ngIf="currentUser.isAdmin">
+<div *ngIf="currentUser?.isAdmin">
   <div *ngFor="let user of model">
     <form #f="ngForm">
       <table>

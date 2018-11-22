@@ -8,7 +8,7 @@
       <p class="participants-header">PARTICIPANTS</p>
       <div class="curator-block">
         <div class="user-card curator">
-          <div class="student-block-main">
+          <div class="student-block-main" (click)="select(curator.name)">
             <div class="curator-block-left block-left">
               <img class="curator-logo partisipants-logo" src="/assets/student_icon.png" alt="curator-logo">
               <div class="curator-info">
@@ -16,7 +16,7 @@
                 <span class="curator-prof profession">curator</span>
               </div>
             </div>
-            <img class="curator-else-button else-button" (click)="select(curator.name)" [ngClass]="isActiveDots(curator.name)" src="/assets/dots icon.png" alt="else button">
+            <img class="curator-else-button else-button"  [ngClass]="isActiveDots(curator.name)" src="/assets/dots icon.png" alt="else button">
           </div>
           <div class="student-info-buttons" [ngClass]="isActive(curator.name)">
             <a href="#">Email</a>
@@ -25,18 +25,23 @@
         </div>
       </div>
 
-      <div class="students-block">
+      <div class="students-block" >
         <div *ngIf="!addUsersModeActive">
-          <div *ngIf="currentUser.isAdmin">
-            <button class="student-else-button else-button" (click)=addUsers()>Add</button>
+          <div *ngIf="currentUser?.isAdmin" (click)=addUsers() class="manage-group">
+            <div class="manage-block" [class.hoverable]="true">
+              <img class="group-manage-icon" src="/assets/group.png" alt="group-manage-icon">
+              <p class="group-manage-title">Manage users</p>
+            </div>
           </div>
-          <div class="user-card studets" *ngFor="let user of students">
-            <div class="student-block-main">
+          <hr>
+
+          <div class="user-card studets" *ngFor="let user of students" [class.hoverable]="true">
+            <div class="student-block-main" (click)="select(user)">
               <div class="student-block-left block-left">
                 <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
                 <p class="student-name">{{user.name}}</p>
               </div>
-              <img class="student-else-button else-button" (click)="select(user)" [ngClass]="isActiveDots(user)" src="/assets/dots icon.png" alt="else button">
+              <img class="student-else-button else-button" [ngClass]="isActiveDots(user)" src="/assets/dots icon.png" alt="else button">
             </div>
             <div class="student-info-buttons" [ngClass]="isActive(user)">
               <a href="#">Email</a>
@@ -44,28 +49,29 @@
             </div>
           </div>
         </div>
+
         <div *ngIf="addUsersModeActive">
-          <input type="text" [(ngModel)]="searchUser">
+          <div class="md-form user-card studets">
+            <input id="search-by-name" type="text" [(ngModel)]="searchUser" class="form-control" placeholder="search by name">
+          </div>
 
-        <div *ngFor="let user of potentialStudents | search:searchUser">
-            <div class="student-block-main">
-                <div class="student-block-left block-left">
-                  <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
-                  <label for="studentCheck">{{user.name}}</label>
-                </div>
-                <input type="checkbox" name="" id="studentCheck" (click)="toggleUser(user)" [checked]="user.groupId">
+        <div class="user-card studets" *ngFor="let user of potentialStudents | search:searchUser" [class.hoverable]="true">
+          <div class="student-block-main" (click)="toggleUser(user)">
+            <div class="student-block-left block-left">
+              <img class="student-logo partisipants-logo" src="/assets/student_icon.png" alt="student-logo">
+              <p class="student-name">{{user.name}}</p>
             </div>
+            <div class="student-else-button else-button">
+              <input type="checkbox" [checked]="user.groupId">
+            </div>
+          </div>
         </div>
 
-        <div>
-          <button class="student-else-button else-button" (click)=showUsers()>Show users</button>
+        <div class="user-card studets">
+          <button class="close-btn" (click)="showUsers()" [class.hoverable]="true" >Close</button>
         </div>
 
       </div>
-
-
-
-
-      </div>
+    </div>
     </div>
   </div>

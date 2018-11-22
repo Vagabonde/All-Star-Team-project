@@ -10,7 +10,7 @@
         </a>
     </button>
     <hr>
-    <form class="form-inline" *ngIf="!currentUser.isAdmin">
+    <form class="form-inline" *ngIf="!currentUser?.isAdmin">
         <div class="input-div"><input type="text" class="form-control hw-input" name="link"
                                       placeholder="Link to your homework" [(ngModel)]="lessonLink"></div>
 

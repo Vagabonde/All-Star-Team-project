@@ -112,7 +112,6 @@ export const USERS: User[] = [
     {
         id: 'W7zSwRmjklfnsaUXcoLOeSReDke2',
         name: 'Key Rich',
-        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
         email: 'testapp3@gmail.com',
         github_repo: 'https://github.com/kristinrepo', //pass: 333333
         groupId: 'front-end',

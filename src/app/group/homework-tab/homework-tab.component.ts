@@ -3,6 +3,7 @@ import {Component, Input} from '@angular/core';
 import {UserService} from '@service/user.service';
 import {Homework} from '@interface/homework.interface';
 import {User} from '@interface/user';
+import {AuthService} from '@service/auth.service';
 
 
 @Component({
@@ -11,23 +12,29 @@ import {User} from '@interface/user';
     styleUrls: ['./homework-tab.component.scss']
 })
 export class HomeworkTabComponent {
+
     @Input() selectedTask;
-    public text: string = 'ВСЬО';
+    public text: string = 'Submit';
     private backgroundColor: string = "#5a95f5";
     private currentUser: User;
     private lessonLink: string;
-    currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
-    // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
+    currentUserId: string;
 
-    constructor(private _userService: UserService) { }
+
+
+
+    constructor(private _userService: UserService, private authService: AuthService) {
+        this.currentUserId = this.getCurrentUser();
+     }
 
     ngOnInit() {
-        this._userService.getUserById(this.currentUserId).subscribe(user => {
-            this.currentUser = user});
+        this._userService.getUserById(this.currentUserId).subscribe(user => {this.currentUser = user});
     }
+
 
     ngOnChanges() {
         if (this.currentUser != undefined) {
+            this.lessonLink = '';
             for (let lesson of this.currentUser.lessons) {
                 if (lesson.lessonId === this.selectedTask.id) {
                     this.lessonLink = lesson.homework.url;
@@ -36,17 +43,21 @@ export class HomeworkTabComponent {
         }
     }
 
+    getCurrentUser() {
+       return this.authService.currentUserId;
+    }
+
     onHomeworkSubmit() {
         let newHomework: Homework = {
             url: this.lessonLink,
             isSubmitted: true
         };
-        this._userService.addUserHomework(this.currentUser.id, newHomework, this.selectedTask);
+        this._userService.addUserHomework(this.currentUser.id, newHomework, this.selectedTask.id);
     }
 
     changeBtnText() {
-        if (this.text === 'ВСЬО') {
-            this.text = 'АЙ, МОЛОДЕЦЬ!';
+        if (this.text === 'Submit') {
+            this.text = 'Done';
             this.backgroundColor = '#00FF7F';
         }
     }

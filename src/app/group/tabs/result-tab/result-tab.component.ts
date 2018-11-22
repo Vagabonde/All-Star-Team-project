@@ -4,7 +4,8 @@ import {UserService} from '@service/user.service';
 import {User} from '@interface/user';
 import {Lesson} from '@interface/lesson.interface';
 import {UserLesson} from '@interface/userLesson.interface';
-import { Subscribable, Subscription } from 'rxjs';
+import {Subscription} from 'rxjs';
+import {AuthService} from '@service/auth.service';
 
 @Component({
   selector: 'app-result-tab',
@@ -23,12 +24,12 @@ export class ResultTabComponent implements OnInit, OnDestroy {
   currentUser: User;
   subCurator: Subscription;
   subUser: Subscription;
-  currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
-  // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
+  currentUserId: string;
+  
 
-
-
-  constructor(private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private userService: UserService, private route: ActivatedRoute, private authService: AuthService) {
+    this.currentUserId = this.getCurrentUser();
+   }
 
   ngOnInit() {
     this.subCurator = this.userService.getCuratorByGroupId(this.currentGroupId)
@@ -50,6 +51,10 @@ export class ResultTabComponent implements OnInit, OnDestroy {
     this.userService.getStudentsByGroupId(this.currentGroupId)
     .subscribe(students => {this.students = students; this.fillModel(students)});
   }
+
+  getCurrentUser() {
+       return this.authService.currentUserId;
+    }
 
   getStudetLessonData(user: User, data: string): any {
     let userLessons = user.lessons.filter(user => user.lessonId === this.selectedTask.id)

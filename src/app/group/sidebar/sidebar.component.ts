@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {GROUPS} from '@shared/mocks/mock-groups';
 import {UserService} from '@service/user.service';
 import {User} from '@interface/user';
+import {AuthService} from '@service/auth.service';
 
 
 @Component({
@@ -22,7 +23,9 @@ export class SidebarComponent implements OnInit {
   potentialStudents: User[];
   currentGroupId: string;
   currentUser: User;
-  currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
+  currentUserId: string;
+
+  // currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2'; //curator Id
   // currentUserId: string = 'xShY1vEeaoRCYNzeBoLw8Ha5yQt2'; //student id;
   searchUser: string = '';
 
@@ -30,7 +33,10 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private authService: AuthService
+    ) {
+      this.currentUserId = this.getCurrentUser();
   }
 
   ngOnInit() {
@@ -50,6 +56,10 @@ export class SidebarComponent implements OnInit {
 
     this.userService.getUserById(this.currentUserId)
     .subscribe(user => this.currentUser = user);
+  }
+
+  getCurrentUser() {
+    return this.authService.currentUserId;
   }
 
 
