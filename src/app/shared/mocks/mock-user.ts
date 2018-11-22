@@ -58,7 +58,7 @@ export const USERS: User[] = [
     {
         id: 'bzl50eV21WZoNKsCyUWU6F6sJIO2',//pass: 222222
         name: 'Stephania Ransom',
-        email: 'testapp2@gmial.com',
+        email: 'stephania@gmail.com',
         github_repo: 'https://github.com/stephaniarepo',
         groupId: '',
         isAdmin: false,
@@ -67,7 +67,7 @@ export const USERS: User[] = [
     {
         id: '12872236',
         name: 'Ellis Brocato',
-        email: 'brocato@gmial.com',
+        email: 'brocato@gmail.com',
         github_repo: 'https://github.com/brocatorepo',
         groupId: 'front-end',
         isAdmin: false,
@@ -76,7 +76,7 @@ export const USERS: User[] = [
     {
         id: '78vUGlS2S7RywUuqfBw0zPQKxLv2',
         name: 'Neoma Nealy',
-        email: 'testappadmin@gmial.com',// pass: 000000
+        email: 'neoma@gmail.com',
         github_repo: 'https://github.com/neomarepo',
         groupId: 'front-end',
         isAdmin: true,
@@ -85,7 +85,7 @@ export const USERS: User[] = [
     {
         id: '1287362',
         name: 'Kirs Red',
-        email: 'kristin@gmial.com',
+        email: 'kristin@gmail.com',
         github_repo: 'https://github.com/kristinrepo',
         groupId: 'front-end',
         isAdmin: false,
@@ -94,7 +94,7 @@ export const USERS: User[] = [
     {
         id: '1wTxYwovssMDjGvuveKNi2DPqi83',
         name: 'Sonya Ran',
-        email: 'testapp4@gmial.com', //pass:444444
+        email: 'stephania@gmail.com',
         github_repo: 'https://github.com/stephaniarepo',
         groupId: 'angularjs',
         isAdmin: false,
@@ -103,7 +103,7 @@ export const USERS: User[] = [
     {
         id: '72236',
         name: 'Elvis Bro',
-        email: 'brocato@gmial.com',
+        email: 'brocato@gmail.com',
         github_repo: 'https://github.com/brocatorepo',
         groupId: 'angularjs',
         isAdmin: true,
@@ -112,7 +112,8 @@ export const USERS: User[] = [
     {
         id: 'W7zSwRmjklfnsaUXcoLOeSReDke2',
         name: 'Key Rich',
-        email: 'testapp3@gmial.com',
+        avatar_src: 'https://avatars2.githubusercontent.com/u/23295225?v=4',
+        email: 'testapp3@gmail.com',
         github_repo: 'https://github.com/kristinrepo', //pass: 333333
         groupId: 'front-end',
         isAdmin: false,
@@ -163,7 +164,7 @@ export const USERS: User[] = [
     {
         id: '95',
         name: 'Mia Bansom',
-        email: 'stephania@gmial.com',
+        email: 'stephania@gmail.com',
         github_repo: 'https://github.com/stephaniarepo',
         groupId: '',
         isAdmin: false,
@@ -172,7 +173,7 @@ export const USERS: User[] = [
     {
         id: '1287200',
         name: 'Rich Stuck',
-        email: 'brocato@gmial.com',
+        email: 'brocato@gmail.com',
         github_repo: 'https://github.com/brocatorepo',
         groupId: 'front-end',
         isAdmin: false,

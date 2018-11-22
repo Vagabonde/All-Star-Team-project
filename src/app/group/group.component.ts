@@ -27,11 +27,7 @@ export class GroupComponent implements OnInit, OnDestroy {
     }
 
     isMobileSize() {
-        if (this.innerWidth <= 992) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.innerWidth <= 992;
     }
 
     toggleSideNavState() {
@@ -45,6 +41,13 @@ export class GroupComponent implements OnInit, OnDestroy {
         }
     }
 
+    sizeOfContent(){
+        return {
+            'col': !this.sideNavEnabled,
+            'col-7': this.sideNavEnabled
+        }
+    }
+
     ngOnInit() {
         this.paramsSubscription = this.route.params.subscribe(params => {
             this.group = this.groups.find((el) => {
@@ -54,11 +57,7 @@ export class GroupComponent implements OnInit, OnDestroy {
 
         this.innerWidth = window.innerWidth;
 
-        if (this.isMobileSize()) {
-           this.sideNavEnabled = false;
-        } else {
-            this.sideNavEnabled = true;
-        }
+        this.sideNavEnabled = !this.isMobileSize();
 
     }
 

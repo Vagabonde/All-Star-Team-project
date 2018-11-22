@@ -1,5 +1,4 @@
 <div class="timeLineBox d-flex">
-
     <div *ngFor="let task of tasks; let i = index">
         <div (click)="onSelect(task, $event)"
                 [ngClass]="{
@@ -16,7 +15,6 @@
         <!-- <div class="lessonDate">{{task.date}}</div> -->
     </div>
     <div class="line"></div>
-
 </div>
 
 <div *ngIf="selectedTask">

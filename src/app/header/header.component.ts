@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {AuthService} from "@service/auth.service";
 import {User} from "@interface/user";
 import {UserService} from "@service/user.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -18,7 +19,7 @@ export class HeaderComponent {
     currentUserId: string = '78vUGlS2S7RywUuqfBw0zPQKxLv2';
 
     ngOnInit(){
-        this.userService.getUserById(this.currentUserId).subscribe(user => this.currentUser = user)
+        this.userService.getUserById(this.currentUserId).subscribe(user => this.currentUser = user);
     }
 
     logOut() {
