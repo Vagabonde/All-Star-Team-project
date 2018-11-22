@@ -6,6 +6,7 @@ export class User {
     name: string;
     email: string;
     github_repo: string;
+    avatar_src: string;
     groupId: string;
     isAdmin: boolean;
     lessons: UserLesson[];

@@ -6,7 +6,6 @@ import {AppComponent} from './app.component';
 import {GroupComponent} from './group/group.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {ModalLoginComponent} from './modal-login/modal-login.component';
-import {ModalSignUpComponent} from './modal-sign-up/modal-sign-up.component';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
@@ -31,7 +30,6 @@ import {GroupService} from '@service/group.service';
         GroupComponent,
         HomepageComponent,
         ModalLoginComponent,
-        ModalSignUpComponent,
         HeaderComponent,
         PageNotFoundComponent,
 
